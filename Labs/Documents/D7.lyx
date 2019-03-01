@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -39,11 +39,13 @@ knitr
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -73,6 +75,7 @@ knitr
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -85,7 +88,10 @@ knitr
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language swedish
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swedish
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -103,7 +109,7 @@ Datorlaboration 7
 \end_layout
 
 \begin_layout Author
-Måns Magnusson och Josef Wilzén
+Josef Wilzén och Måns Magnusson
 \end_layout
 
 \begin_layout Standard
@@ -220,6 +226,7 @@ g ska se ut.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "wilkinson2006grammar,wilkinson2012grammar,wickham2010layered"
+literal "true"
 
 \end_inset
 
@@ -263,6 +270,7 @@ ggplot
 LatexCommand href
 name "Här"
 target "http://shiny.stat.ubc.ca/r-graph-catalog/"
+literal "false"
 
 \end_inset
 
@@ -276,6 +284,7 @@ target "http://shiny.stat.ubc.ca/r-graph-catalog/"
 LatexCommand href
 name "här"
 target "http://www.r-graph-gallery.com/portfolio/ggplot2-package/"
+literal "false"
 
 \end_inset
 
@@ -1671,6 +1680,7 @@ ggplot2
 LatexCommand href
 name "[Orange rapport]"
 target "https://www.pensionsmyndigheten.se/om-pensionsmyndigheten/vart-uppdrag-och-organisation/arsredovisningar"
+literal "false"
 
 \end_inset
 
@@ -1806,6 +1816,7 @@ s framgår
 LatexCommand href
 name "[här]"
 target "https://github.com/jrnold/ggthemes"
+literal "false"
 
 \end_inset
 
@@ -1924,6 +1935,7 @@ factorial()
 LatexCommand href
 name "Binomialkoefficienter"
 target "https://sv.wikipedia.org/wiki/Binomialkoefficient"
+literal "false"
 
 \end_inset
 
@@ -2023,7 +2035,7 @@ status open
 
 \begin_layout Plain Layout
 
-data(iris)dummyvariabler
+data(iris)
 \end_layout
 
 \begin_layout Plain Layout
@@ -2193,6 +2205,7 @@ Om vi tittar på tabellen ovan är det många värden som är 0 (d.v.s.
 LatexCommand href
 name "Yates korrektion"
 target "http://en.wikipedia.org/wiki/Yates%27s_correction_for_continuity"
+literal "false"
 
 \end_inset
 
@@ -2241,6 +2254,7 @@ Ett annat sätt är att använda
 LatexCommand href
 name "Fishers exakta test"
 target "http://en.wikipedia.org/wiki/Fisher%27s_exact_test"
+literal "false"
 
 \end_inset
 
@@ -2589,6 +2603,7 @@ Skapa en funktion som beräknar värdet på en
 LatexCommand href
 name "hypergeometrisk fördelning"
 target "https://sv.wikipedia.org/wiki/Hypergeometrisk_f%C3%B6rdelning"
+literal "false"
 
 \end_inset
 
@@ -2602,6 +2617,7 @@ Skapa en funktion som beräknar värdet på en
 LatexCommand href
 name "Geometrisk fördelning"
 target "https://sv.wikipedia.org/wiki/Geometrisk_f%C3%B6rdelning"
+literal "false"
 
 \end_inset
 
@@ -2623,6 +2639,7 @@ Royal flush
 LatexCommand href
 name "här"
 target "https://en.wikipedia.org/wiki/Poker_probability#Frequency_of_5-card_poker_hands"
+literal "false"
 
 \end_inset
 
@@ -2829,7 +2846,443 @@ y <- alpha + beta[1]*x+beta[2]*x^2 + rnorm(n, sd=sigma)
 \end_layout
 
 \begin_layout Chapter
-Introduktion till linjär regression
+Housing data
+\end_layout
+
+\begin_layout Enumerate
+Ni ska nu analysera datamaterialet HUS, som innehåller information om en
+ mängd hus.
+ Följande variabler finns i data:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Försäljningspris (dollar)
+\end_layout
+
+\begin_layout Itemize
+Bostadsyta (kvadratfot)
+\end_layout
+
+\begin_layout Itemize
+Antal sovrum
+\end_layout
+
+\begin_layout Itemize
+Antal badrum
+\end_layout
+
+\begin_layout Itemize
+Förekomst av luftkonditionering, 1 = luftkonditionering finns, 0 annars
+\end_layout
+
+\begin_layout Itemize
+Antal bilar som garaget är konstruerat för
+\end_layout
+
+\begin_layout Itemize
+Förekomst av pool, 1 = pool finns, 0 annars
+\end_layout
+
+\begin_layout Itemize
+Byggår 
+\end_layout
+
+\begin_layout Itemize
+Tomtstorlek (kvadratfot) 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Läs in datamaterialet 
+\begin_inset Quotes eld
+\end_inset
+
+HUS.csv
+\begin_inset Quotes erd
+\end_inset
+
+ och spara det som 
+\family typewriter
+HUS
+\family default
+.
+ Det finns även ett dataset 
+\begin_inset Quotes eld
+\end_inset
+
+HUS_eng.csv
+\begin_inset Quotes erd
+\end_inset
+
+, som har engelska namn på variablerna men innehåller samma data.
+ Materialet finns att tillgå 
+\series bold
+\color blue
+
+\begin_inset CommandInset href
+LatexCommand href
+name "[här]"
+target "https://github.com/MansMeg/KursRprgm/tree/master/Labs/DataFiles"
+literal "false"
+
+\end_inset
+
+
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Enumerate
+Gör följande med 
+\family typewriter
+HUS
+\family default
+.
+ Använd ggplot2 för att skapa figurerna.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Plotta en boxplot över variabeln 
+\family typewriter
+Försäljningspris.
+
+\family default
+ Ta fram besrkivande statistik med 
+\family typewriter
+summary()
+\family default
+ för 
+\family typewriter
+Försäljningspris.
+
+\family default
+ Det verkar finnas en del outliers (extremt stora värden), dessa vill vi
+ ta bort från data, kör följande kod:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# ta bort alla hus som har pris större än 3:e kvartilen:
+\end_layout
+
+\begin_layout Plain Layout
+
+index<-HUS[,1]<quantile(HUS[,1])[4] 
+\end_layout
+
+\begin_layout Plain Layout
+
+HUS<-HUS[index,]
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Plotta ett histogram för 
+\family typewriter
+Försäljningspris
+\family default
+, (bonusfråga: ser fördelningen symmetrisk ut?)
+\end_layout
+
+\begin_layout Enumerate
+Gör en scatter plot mellan 
+\family typewriter
+Försäljningspris
+\family default
+ och 
+\family typewriter
+Bostadsyta
+\family default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Låt färgen på punkterna bero på värdet på 
+\family typewriter
+Antal.sovrum
+\end_layout
+
+\begin_layout Enumerate
+Låt färgen på punkterna bero på värdet på 
+\family typewriter
+Luftkonditionering
+\end_layout
+
+\begin_layout Enumerate
+Använd 
+\family typewriter
+facet_grid()
+\family default
+ för att skapa subplots som beror på värdet på 
+\family typewriter
+Luftkonditionering.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Beräkna ett tvåsidigt konfidensintervall (KI) med 
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+ för 
+\family typewriter
+Försäljningspris
+\family default
+ (tips 
+\family typewriter
+?t.test()
+\family default
+ ) spara i 
+\family typewriter
+testPris.
+\end_layout
+
+\begin_layout Enumerate
+Välj ut KI från 
+\family typewriter
+testPris
+\family default
+.
+ tips: 
+\family typewriter
+?t.test()
+\family default
+ och läs under rubriken 
+\begin_inset Quotes eld
+\end_inset
+
+Value
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Kör sedan 
+\family typewriter
+str(testPris).
+
+\family default
+ Testa 
+\family typewriter
+class(testPris)
+\end_layout
+
+\begin_layout Enumerate
+Beräkna ett tvåsidigt KI med 
+\begin_inset Formula $\alpha=0.10$
+\end_inset
+
+ för 
+\family typewriter
+Försäljningspris
+\end_layout
+
+\begin_layout Enumerate
+Beräkna ett enkelsidigt (undre) KI med 
+\begin_inset Formula $\alpha=0.01$
+\end_inset
+
+ för 
+\family typewriter
+Försäljningspris
+\end_layout
+
+\begin_layout Enumerate
+Kör koden nedan, vad blir resutlatet? Hur ska medelvärdet för variabeln
+ 
+\family typewriter
+Luftkonditionering
+\family default
+ tolkas?
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+summary(HUS)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Skapa följande frekvenstabeller från HUS (tips: 
+\family typewriter
+?table()
+\family default
+ )
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+För 
+\family typewriter
+Antal.sovrum
+\end_layout
+
+\begin_layout Enumerate
+För 
+\family typewriter
+Luftkonditionering
+\end_layout
+
+\begin_layout Enumerate
+Mellan variablerna 
+\family typewriter
+Antal.sovrum
+\family default
+ och 
+\family typewriter
+Luftkonditionering
+\family default
+, spara som 
+\family typewriter
+sovLuftTab.
+ Testa class(sovLuftTab)
+\end_layout
+
+\begin_layout Enumerate
+Mellan variablerna 
+\family typewriter
+Antal.sovrum
+\family default
+ och 
+\family typewriter
+Antal.badrum
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Kör 
+\family typewriter
+prop.table(sovLuftTab)
+\family default
+ och 
+\family typewriter
+prop.table(sovLuftTab,margin=1)
+\family default
+.
+ Vad händer med tabellen?
+\end_layout
+
+\begin_layout Enumerate
+Beräkna fishers exakta test för tabellen 
+\family typewriter
+sovLuftTab
+\family default
+, använd 
+\series bold
+
+\begin_inset Formula $\alpha=0.05$
+\end_inset
+
+,
+\series default
+ vad är noll-hypotesen? Kan vi förkasta den? (tips: 
+\family typewriter
+?fisher.test
+\family default
+() ) 
+\end_layout
+
+\begin_layout Enumerate
+Antag att variablen 
+\family typewriter
+Försäljningspris
+\family default
+ representerar en hel population med hus.
+ Dra ett slumpmässigt stickprov med 20 hus utan återläggning.
+ Beräkna ett tvåsidigt KI (
+\begin_inset Formula $\alpha=0.01$
+\end_inset
+
+) utifrån stickprovet för populationsmedelvärdet.
+\end_layout
+
+\begin_layout Enumerate
+Antag nu att hela datasetet HUS är alla hus i en population.
+ Dra ett stickprov slumpmässigt (dvs välj rader) på 40 hus utan återläggning.
+ Gör följande beräkningar utifrån stickprovet:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Numeriska variaber: Beräkna ett tvåsidigt KI med 
+\begin_inset Formula $\alpha=0.01$
+\end_inset
+
+ för populationsmedelvärdet.
+\end_layout
+
+\begin_layout Enumerate
+Binära(0/1) variaber: Beräkna ett tvåsidigt KI med 
+\begin_inset Formula $\alpha=0.01$
+\end_inset
+
+ för populationsandelen.
+ Tips: 
+\family typewriter
+?prop.test(), ?table()
+\end_layout
+
+\end_deeper
+\begin_layout Chapter
+Frivillig fördjupning: Introduktion till linjär regression
 \end_layout
 
 \begin_layout Standard
@@ -3215,6 +3668,7 @@ under the hood
 LatexCommand href
 name "dummyvariabler"
 target "https://en.wikipedia.org/wiki/Dummy_variable_%28statistics%29"
+literal "false"
 
 \end_inset
 
@@ -3253,6 +3707,7 @@ Till sist kan det vara så att vi vill lägga till
 LatexCommand href
 name "interaktionseffekter"
 target "https://en.wikipedia.org/wiki/Interaction_(statistics)"
+literal "false"
 
 \end_inset
 
@@ -3471,6 +3926,7 @@ På ett liknande sätt kan vi snabbt få ut alla
 LatexCommand href
 name "residualer"
 target "https://en.wikipedia.org/wiki/Errors_and_residuals"
+literal "false"
 
 \end_inset
 
@@ -3581,6 +4037,7 @@ Observera att syftet med denna del är att testa lite olika funktionalitet
 LatexCommand href
 name "[här]"
 target "http://en.wikipedia.org/wiki/Linear_regression#Assumptions"
+literal "false"
 
 \end_inset
 
@@ -3940,441 +4397,6 @@ Pröva nu att plotta datamaterialet och använd de diagnostiska verktygen
  verktyg fångar upp detta?
 \end_layout
 
-\begin_layout Chapter
-Housing data
-\end_layout
-
-\begin_layout Enumerate
-Ni ska nu analysera datamaterialet HUS, som innehåller information om en
- mängd hus.
- Följande variabler finns i data:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Försäljningspris (dollar)
-\end_layout
-
-\begin_layout Itemize
-Bostadsyta (kvadratfot)
-\end_layout
-
-\begin_layout Itemize
-Antal sovrum
-\end_layout
-
-\begin_layout Itemize
-Antal badrum
-\end_layout
-
-\begin_layout Itemize
-Förekomst av luftkonditionering, 1 = luftkonditionering finns, 0 annars
-\end_layout
-
-\begin_layout Itemize
-Antal bilar som garaget är konstruerat för
-\end_layout
-
-\begin_layout Itemize
-Förekomst av pool, 1 = pool finns, 0 annars
-\end_layout
-
-\begin_layout Itemize
-Byggår 
-\end_layout
-
-\begin_layout Itemize
-Tomtstorlek (kvadratfot) 
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Läs in datamaterialet 
-\begin_inset Quotes eld
-\end_inset
-
-HUS.csv
-\begin_inset Quotes erd
-\end_inset
-
- och spara det som 
-\family typewriter
-HUS
-\family default
-.
- Det finns även ett dataset 
-\begin_inset Quotes eld
-\end_inset
-
-HUS_eng.csv
-\begin_inset Quotes erd
-\end_inset
-
-, som har engelska namn på variablerna men innehåller samma data.
- Materialet finns att tillgå 
-\series bold
-\color blue
-
-\begin_inset CommandInset href
-LatexCommand href
-name "[här]"
-target "https://github.com/MansMeg/KursRprgm/tree/master/Labs/DataFiles"
-
-\end_inset
-
-
-\series default
-\color inherit
-.
-\end_layout
-
-\begin_layout Enumerate
-Gör följande med 
-\family typewriter
-HUS
-\family default
-.
- Använd ggplot2 för att skapa figurerna.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Plotta en boxplot över variabeln 
-\family typewriter
-Försäljningspris.
-
-\family default
- Ta fram besrkivande statistik med 
-\family typewriter
-summary()
-\family default
- för 
-\family typewriter
-Försäljningspris.
-
-\family default
- Det verkar finnas en del outliers (extremt stora värden), dessa vill vi
- ta bort från data, kör följande kod:
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=FALSE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-# ta bort alla hus som har pris större än 3:e kvartilen:
-\end_layout
-
-\begin_layout Plain Layout
-
-index<-HUS[,1]<quantile(HUS[,1])[4] 
-\end_layout
-
-\begin_layout Plain Layout
-
-HUS<-HUS[index,]
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Plotta ett histogram för 
-\family typewriter
-Försäljningspris
-\family default
-, (bonusfråga: ser fördelningen symmetrisk ut?)
-\end_layout
-
-\begin_layout Enumerate
-Gör en scatter plot mellan 
-\family typewriter
-Försäljningspris
-\family default
- och 
-\family typewriter
-Bostadsyta
-\family default
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Låt färgen på punkterna bero på värdet på 
-\family typewriter
-Antal.sovrum
-\end_layout
-
-\begin_layout Enumerate
-Låt färgen på punkterna bero på värdet på 
-\family typewriter
-Luftkonditionering
-\end_layout
-
-\begin_layout Enumerate
-Använd 
-\family typewriter
-facet_grid()
-\family default
- för att skapa subplots som beror på värdet på 
-\family typewriter
-Luftkonditionering.
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Beräkna ett tvåsidigt konfidensintervall (KI) med 
-\begin_inset Formula $\alpha=0.05$
-\end_inset
-
- för 
-\family typewriter
-Försäljningspris
-\family default
- (tips 
-\family typewriter
-?t.test()
-\family default
- ) spara i 
-\family typewriter
-testPris.
-\end_layout
-
-\begin_layout Enumerate
-Välj ut KI från 
-\family typewriter
-testPris
-\family default
-.
- tips: 
-\family typewriter
-?t.test()
-\family default
- och läs under rubriken 
-\begin_inset Quotes eld
-\end_inset
-
-Value
-\begin_inset Quotes erd
-\end_inset
-
-.
- Kör sedan 
-\family typewriter
-str(testPris).
-
-\family default
- Testa 
-\family typewriter
-class(testPris)
-\end_layout
-
-\begin_layout Enumerate
-Beräkna ett tvåsidigt KI med 
-\begin_inset Formula $\alpha=0.10$
-\end_inset
-
- för 
-\family typewriter
-Försäljningspris
-\end_layout
-
-\begin_layout Enumerate
-Beräkna ett enkelsidigt (undre) KI med 
-\begin_inset Formula $\alpha=0.01$
-\end_inset
-
- för 
-\family typewriter
-Försäljningspris
-\end_layout
-
-\begin_layout Enumerate
-Kör koden nedan, vad blir resutlatet? Hur ska medelvärdet för variabeln
- 
-\family typewriter
-Luftkonditionering
-\family default
- tolkas?
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=FALSE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-summary(HUS)
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Skapa följande frekvenstabeller från HUS (tips: 
-\family typewriter
-?table()
-\family default
- )
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-För 
-\family typewriter
-Antal.sovrum
-\end_layout
-
-\begin_layout Enumerate
-För 
-\family typewriter
-Luftkonditionering
-\end_layout
-
-\begin_layout Enumerate
-Mellan variablerna 
-\family typewriter
-Antal.sovrum
-\family default
- och 
-\family typewriter
-Luftkonditionering
-\family default
-, spara som 
-\family typewriter
-sovLuftTab.
- Testa class(sovLuftTab)
-\end_layout
-
-\begin_layout Enumerate
-Mellan variablerna 
-\family typewriter
-Antal.sovrum
-\family default
- och 
-\family typewriter
-Antal.badrum
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Kör 
-\family typewriter
-prop.table(sovLuftTab)
-\family default
- och 
-\family typewriter
-prop.table(sovLuftTab,margin=1)
-\family default
-.
- Vad händer med tabellen?
-\end_layout
-
-\begin_layout Enumerate
-Beräkna fishers exakta test för tabellen 
-\family typewriter
-sovLuftTab
-\family default
-, använd 
-\series bold
-
-\begin_inset Formula $\alpha=0.05$
-\end_inset
-
-,
-\series default
- vad är noll-hypotesen? Kan vi förkasta den? (tips: 
-\family typewriter
-?fisher.test
-\family default
-() ) 
-\end_layout
-
-\begin_layout Enumerate
-Antag att variablen 
-\family typewriter
-Försäljningspris
-\family default
- representerar en hel population med hus.
- Dra ett slumpmässigt stickprov med 20 hus utan återläggning.
- Beräkna ett tvåsidigt KI (
-\begin_inset Formula $\alpha=0.01$
-\end_inset
-
-) utifrån stickprovet för populationsmedelvärdet.
-\end_layout
-
-\begin_layout Enumerate
-Antag nu att hela datasetet HUS är alla hus i en population.
- Dra ett stickprov slumpmässigt (dvs välj rader) på 40 hus utan återläggning.
- Gör följande beräkningar utifrån stickprovet:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Numeriska variaber: Beräkna ett tvåsidigt KI med 
-\begin_inset Formula $\alpha=0.01$
-\end_inset
-
-för populationsmedelvärdet.
-\end_layout
-
-\begin_layout Enumerate
-Binära(0/1) variaber: Beräkna ett tvåsidigt KI med 
-\begin_inset Formula $\alpha=0.01$
-\end_inset
-
-för populationsandelen.
- Tips: 
-\family typewriter
-?prop.test(), ?table()
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -4656,6 +4678,7 @@ Där
 LatexCommand href
 name "[här]"
 target "http://en.wikipedia.org/wiki/Diagonalizable_matrix#How_to_diagonalize_a_matrix"
+literal "false"
 
 \end_inset
 

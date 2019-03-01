@@ -34,7 +34,7 @@ Programmering i R
 ========================================================
 transition: rotate
 ## Föreläsning 7: Grafik, Linjär regression, statistik
-### [Mans Magnusson](mailto:mans.magnusson@liu.se)
+### [Josef Wilzén](mailto:josef.wilzen@liu.se)
 STIMA, 
 Linköpings universitet
 
@@ -43,9 +43,8 @@ Linköpings universitet
 Föreläsning 7: Innehåll 
 ========================================================
 - ggplot2
-- Statistik, Linjär regression
+- Statistik, (Linjär regression)
 - Miniprojektet
-- Frågor
 
 ggplot2
 ========================================================
@@ -80,6 +79,7 @@ incremental: true
   - ```scales```: skalor för aesthteic mappings
   - ```coordinate system```
 - ggplot2 bygger upp en plot med olika lager, när plotten är klar så visas plotten genom att anropa ```print()```
+    - Speciella klasser för ggplot2
   
 
 ggplot2
