@@ -546,7 +546,7 @@ Inga output från R console/varningar/meddelanden/felmeddelanden ska visas
 \end_layout
 
 \begin_layout Section
-Del II: Analys (Under uppdatering)
+Del II: Analys
 \end_layout
 
 \begin_layout Standard
@@ -575,6 +575,15 @@ PDF
 \series default
 -dokument i LISAM.
  Nedan framgår exakt vilka analyser som ska genomföras.
+ Ta 
+\series bold
+inte
+\series default
+ med del 1 av projektet i Rmd-filen och i PDF för del 2.
+\end_layout
+
+\begin_layout Itemize
+Rapporten ska var ordnad och strukturerad, med lämpliga rubriker.
 \end_layout
 
 \begin_layout Itemize
@@ -598,6 +607,9 @@ riktiga
 kable()
 \family default
 ), inte utskrifter i R-kod.
+ All statistik, information från statistiska test, korrelationer etc ska
+ presenteras i markdowntabeller eller med inline-kod.
+ Avrunda till ett lämpligt antal decimaler i tabellerna.
 \end_layout
 
 \begin_layout Itemize
@@ -641,11 +653,17 @@ literal "false"
 merge()
 \family default
 .
- 
+\end_layout
+
+\begin_layout Itemize
+Skriv en kort inledning där ni beskriver era variabler.
+ Kan vara samma som i del 1.
+ Om ni gör nya transformationer av variablerna i del 2 måste de beskrivas
+ också.
 \end_layout
 
 \begin_layout Standard
-Följande saker ska ni göra med data:
+Följande saker ska ni göra/ta med:
 \end_layout
 
 \begin_layout Enumerate
@@ -699,7 +717,8 @@ cut()
 \family default
 .
  Ni får själva välja vilken nollhypotes ni vill testa.
- 
+ Presentera relevant information från testet/testen i en eller flera tabeller.
+ Beskriv kort hur ni tolkar resultatet.
 \end_layout
 
 \begin_layout Enumerate
@@ -717,13 +736,22 @@ pop_grupp
  Ni ska göra testet på någon annan variabel än totalt antal invånare.
  Ett exempel kan vara att göra ett two-sample t-test där ni testar om medelvärde
 t för en variabel är olika mellan grupperna.
- 
+ Presentera relevant information från testet/testen i en eller flera tabeller.
+ Beskriv kort hur ni tolkar resultatet.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Beräkna korrelationer mellan minst två variabler och beskriv hur ni tolkar
- resultatet.
+Beräkna korrelationer mellan minst två variabler (fler går bra).
+ Gör minst ett hypotestest där ni testar om korrelationen mellan två variabler
+ är noll (=de är linjärt oberoende).
+ Tips: 
+\family typewriter
+cor.test()
+\family default
+.
+ Presentera relevant information i en eller flera tabeller.
+ Beskriv kort hur ni tolkar resultatet.
 \end_layout
 
 \begin_layout Enumerate
@@ -903,6 +931,54 @@ moving_average_Y
 Verkar det finnas någon trend i data? Dvs ökar/minskar data med tiden, eller
  är data konstant över tid.
  Dra er slutsats och skriv ned den i dokumentet.
+\end_layout
+
+\begin_layout Standard
+Lämna in rapporten både som en fullt reproducerbar 
+\series bold
+Rmd
+\series default
+-fil och som 
+\series bold
+PDF
+\series default
+ i LISAM.
+ Tänk på följande:
+\end_layout
+
+\begin_layout Itemize
+I denna del ska samtliga grafer vara skapade med 
+\family typewriter
+ggplot2
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Tabeller ska vara 
+\begin_inset Quotes eld
+\end_inset
+
+riktiga
+\begin_inset Quotes erd
+\end_inset
+
+ tabeller (med ex.
+ 
+\family typewriter
+kable()
+\family default
+), inte utskrifter i R-kod.
+ All statistik, information från statistiska test, korrelationer etc ska
+ presenteras i markdowntabeller eller med inline-kod.
+ Avrunda till ett lämpligt antal decimaler i tabellerna.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Inga output från R console/varningar/meddelanden/felmeddelanden ska visas
+ i dokumentet.
 \end_layout
 
 \end_body

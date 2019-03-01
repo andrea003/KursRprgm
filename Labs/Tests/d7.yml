@@ -2,8 +2,6 @@
 name  : D7
 description : "Statistisk programmering med R: Lab 7"
 tasks:
-  diagonalize_matrix:
-    url: Tasks/diagonalize_matrix_tests.R  
   my_grouped_test:
     url: Tasks/my_grouped_test_tests.R
 mandatory:
