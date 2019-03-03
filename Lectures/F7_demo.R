@@ -19,21 +19,23 @@ data(longley)
 data(mpg)
 ?mpg
 
-?ggplot
 
 # Quick plot:
 qplot(mpg$displ, mpg$hwy)
 qplot(displ, hwy, data=mpg, facets=.~drv)
 
 
-# How to do this the correct way
+# How to do this the "correct" way
 
 p <- ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 p + geom_point()
 # or
 p <- ggplot(data = mpg) + aes(x = displ,y = hwy) + geom_point()
 p
+# samma som 
+print(p)
 
+# kolla 
 str(p)
 summary(p)
 class(p)
@@ -45,9 +47,11 @@ p + facet_grid(.~drv)
 
 p + geom_smooth(method="lm") + facet_grid(.~drv)
 
+p + geom_smooth(method="lm") + facet_grid(drv~.)
+
 p + geom_smooth(method="loess") + facet_grid(.~drv)
 
-# För lite data
+# För lite data för alla celler
 p + facet_grid(fl~drv)
 
 
@@ -82,37 +86,42 @@ ggplot(data = mpg, aes(displ,hwy)) +
 
 # Linjegrafer
 library(ggplot2)
+#install.packages("ggthemes")
+library(ggthemes)
+
 data(Nile)
-Nile <- as.data.frame(Nile) 
-colnames(Nile) <- "level"
-Nile$years <- 1871:1970
-Nile$period <- "- 1900" 
-Nile$period[Nile$years >= 1900] <- "1900 - 1928"
-Nile$period[Nile$years >= 1929] <- "1929 - 1946"
-Nile$period[Nile$years > 1946] <- "1946 + " 
-Nile$period <- as.factor(Nile$period)
+Nile2 <- (data.frame(Nile) )
+class(Nile2)
+colnames(Nile2) <- "level"
+Nile2$years <- 1871:1970
+Nile2$period <- "- 1900" 
+Nile2$period[Nile2$years >= 1900] <- "1900 - 1928"
+Nile2$period[Nile2$years >= 1929] <- "1929 - 1946"
+Nile2$period[Nile2$years > 1946] <- "1946 + " 
+Nile2$period <- as.factor(Nile2$period)
 
 
-ggplot(data=Nile) + aes(x=years, y=level) + geom_line()
 
-ggplot(data=Nile) + aes(x=years, y=level) + geom_line(aes(color = period)) + scale_color_colorblind()
+ggplot(data=Nile2) + aes(x=years, y=level) + geom_line()
 
-ggplot(data=Nile) + aes(x=years, y=level, color = period) + geom_line(aes(linetype = period))
+ggplot(data=Nile2) + aes(x=years, y=level) + geom_line(aes(color = period)) + scale_color_colorblind()
 
+ggplot(data=Nile2) + aes(x=years, y=level, color = period) + geom_line(aes(linetype = period))
+
+ggplot(data=Nile2) + aes(x=years, y=level) + geom_line(aes(linetype = period))
 
 # Teman
-ggplot(data=Nile) + 
+ggplot(data=Nile2) + 
   aes(x=years, y=level, color = period) + 
   geom_line(aes(linetype = period)) + 
   theme_bw()
 
-ggplot(data=Nile) + 
+ggplot(data=Nile2) + 
   aes(x=years, y=level, color = period) + 
   geom_line(aes(linetype = period)) + 
   theme_dark()
 
-install.packages("ggthemes")
-library(ggthemes)
+
 
 ggplot(data=Nile) + 
   aes(x=years, y=level, color = period) + 
@@ -130,19 +139,29 @@ ggplot(data=Nile) +
 
 data(longley)
 ggplot(data=longley) + aes(Year, GNP.deflator) + geom_line()
-
+ggplot(data=longley) + aes(Year, GNP.deflator) + geom_line()+geom_smooth()
 
 # ggplot och histgram:
 data(chickwts)
-a <- ggplot(data=chickwts, aes(x=weight))
-a <- a + geom_bar()
-a <- a + facet_grid(.~feed)
-a
+# a <- ggplot(data=chickwts, aes(x=weight))
+# a <- a + geom_bar()
+# a <- a + facet_grid(.~feed)
+# a
+# 
+# a <- ggplot(data=chickwts, aes(x=weight))
+# a <- a + geom_histogram(binwidth = 39)
+# a <- a + facet_grid(.~feed)
+# a
 
-a <- ggplot(data=chickwts, aes(x=weight))
-a <- a + geom_histogram(binwidth = 10)
-a <- a + facet_grid(.~feed)
-a
+
+#----------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+# statistik, tester mm
+#----------------------------------------------------------------------------
+#----------------------------------------------------------------------------
+
+
+
 
 
 #----------------------------------------------------------------------------
