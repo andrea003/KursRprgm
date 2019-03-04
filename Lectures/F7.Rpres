@@ -57,6 +57,7 @@ ggplot2
 - Alternativ till basgrafiken
 - [https://ggplot2.tidyverse.org/](https://ggplot2.tidyverse.org/)
   - Mer info  [här](https://github.com/hadley/ggplot2-book)
+  - [Inspiration](https://www.r-graph-gallery.com/portfolio/ggplot2-package/)
 - Har egenskapar från basgrafiken men skiljer sig
 - Utgår alltid från en ```data.frame``` 
 

@@ -143,15 +143,15 @@ ggplot(data=longley) + aes(Year, GNP.deflator) + geom_line()+geom_smooth()
 
 # ggplot och histgram:
 data(chickwts)
-# a <- ggplot(data=chickwts, aes(x=weight))
-# a <- a + geom_bar()
-# a <- a + facet_grid(.~feed)
-# a
-# 
-# a <- ggplot(data=chickwts, aes(x=weight))
-# a <- a + geom_histogram(binwidth = 39)
-# a <- a + facet_grid(.~feed)
-# a
+a <- ggplot(data=chickwts, aes(x=weight))
+a <- a + geom_histogram(binwidth = 50)
+a
+a <- a + facet_grid(.~feed)
+a
+
+
+
+
 
 
 #----------------------------------------------------------------------------
@@ -160,24 +160,60 @@ data(chickwts)
 #----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
 
+# cov() och cor()
+data("trees")
+cov(trees)
+cor(trees)
+
+?cor.test
+cor.test(x = trees$Girth,y = trees$Height)
+a<-cor.test(x = trees$Girth,y = trees$Height)
+str(a)
+
+a$statistic
+a$p.value
+a$estimate
+a$conf.int
+
+
+# t.test:
+
+summary(trees)
+
+# trees data:
+# vi vill testa om höjden är större än 73 feet
+
+b<-t.test(x = trees$Height,alternative = "greater",mu = 74)
+b
+
+b$statistic
+
+b$p.value
+
+round(b$p.value,3)
+
+# beräkan KI för alla variabler i trees
+
+A<-matrix(0,2,3)
+
+for(i in 1:3){
+  temp<-t.test(x = trees[,i],conf.level = 0.99)
+  A[,i]<-temp$conf
+}
+colnames(A)<-colnames(trees)
+A
+
+
 
 
 
 
 #----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
-# regression:
+# Frivillig fördjupning: Linjär regression
 #----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
 ?lm
-
-data("trees")
-class(trees)
-plot(trees)
-cov(trees)
-cor(trees)
-cor.test(trees$Girth, trees$Height)
-
 
 # Run linear model
 x <- lm(formula = Volume ~ Girth, data = trees)
