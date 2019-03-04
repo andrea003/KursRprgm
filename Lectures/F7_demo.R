@@ -26,7 +26,7 @@ qplot(displ, hwy, data=mpg, facets=.~drv)
 
 
 # How to do this the "correct" way
-
+class(mpg)
 p <- ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 p + geom_point()
 # or
@@ -62,23 +62,33 @@ names(mpg)
 
 
 # Använda andra aestetics:
-ggplot(data = mpg, aes(displ,hwy)) + 
+ggplot(data = mpg, mapping = aes(x = displ,y = hwy)) + 
   geom_point(color="steelblue") +
   geom_smooth(method="lm")
 
+
+ggplot(data = mpg, mapping = aes(x = displ,y = hwy)) + 
+  geom_point(color=15) +
+  geom_smooth(method="lm")
+
 ggplot(data = mpg, aes(displ,hwy)) + 
-  geom_point(color="green", size=4, alpha=0.5) +
+  geom_point(color="green", size=3, alpha=0.5) +
   geom_smooth(method="lm")
 
 
 # Använda färg och form som aestetic
 ggplot(data = mpg, aes(x = displ, y = hwy)) + 
-  geom_point(aes(color=drv))
+  geom_point(aes(color=drv),size=3)
+  
+# bestämma färger manuellt:
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point(aes(color=drv),size=3)+scale_colour_manual(values = c("red","brown","blue"))
+  
+
 
 ggplot(data = mpg, aes(displ,hwy)) + 
-  geom_point(aes(shape=drv, color=drv)) + 
+  geom_point(aes(shape=drv, color=drv),size=2) + 
   xlab("Displacement") + 
-  ylab("Highway miles")
+  ylab("Highway miles")+ggtitle("Plot")
 
 
 # Styra x labels och y labels
@@ -100,13 +110,15 @@ Nile2$period[Nile2$years >= 1929] <- "1929 - 1946"
 Nile2$period[Nile2$years > 1946] <- "1946 + " 
 Nile2$period <- as.factor(Nile2$period)
 
-
+head(Nile2)
 
 ggplot(data=Nile2) + aes(x=years, y=level) + geom_line()
 
-ggplot(data=Nile2) + aes(x=years, y=level) + geom_line(aes(color = period)) + scale_color_colorblind()
+ggplot(data=Nile2) + aes(x=years, y=level) + 
+  geom_line(aes(color = period)) + scale_color_colorblind()
 
-ggplot(data=Nile2) + aes(x=years, y=level, color = period) + geom_line(aes(linetype = period))
+ggplot(data=Nile2) + aes(x=years, y=level, color = period) + 
+  geom_line(aes(linetype = period))
 
 ggplot(data=Nile2) + aes(x=years, y=level) + geom_line(aes(linetype = period))
 
@@ -123,12 +135,12 @@ ggplot(data=Nile2) +
 
 
 
-ggplot(data=Nile) + 
+ggplot(data=Nile2) + 
   aes(x=years, y=level, color = period) + 
   geom_line(aes(linetype = period)) + 
   theme_economist()
 
-ggplot(data=Nile) + 
+ggplot(data=Nile2) + 
   aes(x=years, y=level, color = period) + 
   geom_line(aes(linetype = period)) + 
   theme_excel()
@@ -143,13 +155,16 @@ ggplot(data=longley) + aes(Year, GNP.deflator) + geom_line()+geom_smooth()
 
 # ggplot och histgram:
 data(chickwts)
+head(chickwts)
+table(chickwts$feed)
+dim(chickwts)
 a <- ggplot(data=chickwts, aes(x=weight))
 a <- a + geom_histogram(binwidth = 50)
 a
 a <- a + facet_grid(.~feed)
 a
 
-
+ggplot(data = chickwts,aes(x = feed,y = weight))+geom_boxplot()
 
 
 
@@ -162,6 +177,9 @@ a
 
 # cov() och cor()
 data("trees")
+head(trees)
+var(trees$Girth)
+var(trees$Height)
 cov(trees)
 cor(trees)
 
@@ -183,7 +201,7 @@ summary(trees)
 # trees data:
 # vi vill testa om höjden är större än 73 feet
 
-b<-t.test(x = trees$Height,alternative = "greater",mu = 74)
+b<-t.test(x = trees$Height,alternative = "greater",mu = 73)
 b
 
 b$statistic
