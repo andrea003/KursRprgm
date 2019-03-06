@@ -855,8 +855,12 @@ new_
 \family default
 Y.
  Addera medelvärdet för 
+\shape italic
+hela 
+\shape default
+tidserien
 \family typewriter
-Y
+ Y
 \family default
  till 
 \family typewriter
@@ -867,6 +871,7 @@ Y för att ge
 new_
 \family default
 Y rätt skala.
+ Se nedan.
 \begin_inset Newline newline
 \end_inset
 
