@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -39,11 +39,13 @@ knitr
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -73,6 +75,7 @@ knitr
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \branch removed
 \selected 0
 \filename_suffix 0
@@ -90,7 +93,10 @@ knitr
 \tocdepth 2
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language swedish
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swedish
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -108,7 +114,7 @@ Datorlaboration 8
 \end_layout
 
 \begin_layout Author
-Måns Magnusson och Josef Wilzén
+Josef Wilzén och Måns Magnusson
 \end_layout
 
 \begin_layout Standard
@@ -208,12 +214,11 @@ stringr
 \end_layout
 
 \begin_layout Standard
-Gör följande delar i 
+Gå igenom följande delar i 
 \shape italic
 Handling and Processing Strings in R
 \shape default
- av Gaston Sanchez.
- 
+ (av Gaston Sanchez) och testa koden i exemplen.
 \end_layout
 
 \begin_layout Labeling
@@ -278,7 +283,7 @@ Kap
 
 6
 \series default
- 6-6.1.3, 6.2.2, 6.4 - 6.4.1, 6.4.3, 6.4.5, 6.4.7, 6.4.9 - 6.4.10
+ 6-6.1.3, 6.2.2, 6.4-6.4.10
 \end_layout
 
 \begin_layout Standard
@@ -290,6 +295,7 @@ Boken finns fritt tillgänglig
 LatexCommand href
 name "[här]"
 target "http://gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf"
+literal "false"
 
 \end_inset
 
@@ -300,7 +306,7 @@ target "http://gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf"
 \end_layout
 
 \begin_layout Chapter
-Modern datahantering
+Frivillig fördjupning: Modern datahantering
 \end_layout
 
 \begin_layout Standard
@@ -444,6 +450,7 @@ Gå igenom och reproducera koden i följande
 LatexCommand href
 name "introduktionstext"
 target "https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html"
+literal "false"
 
 \end_inset
 
@@ -508,7 +515,8 @@ Gå igenom och reproducera koden i följande
 \begin_inset CommandInset href
 LatexCommand href
 name "introduktionstext"
-target "https://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html"
+target "https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html"
+literal "false"
 
 \end_inset
 
@@ -656,7 +664,7 @@ visning/Statistisk #programmering i R/KursRprgmTeacher/Labs/exercise_solutions/"
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Labs/ex
+solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2019/KursRprgmTeacher/Labs/ex
 ercise_solutions/"
 \end_layout
 
@@ -748,367 +756,6 @@ suppressWarnings(set_assignment(lab_path))
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-
-\family typewriter
-messy_swe_pop()
-\end_layout
-
-\begin_layout Standard
-Nu ska vi arbeta med och hantera lite större datamaterial.
- Vid laboratoration 5 använde ni paketet 
-\family typewriter
-pxweb
-\family default
- för att hämta ned befolkningsstatistik från SCB.
- Vi ska nu hämta ned all befolkningsstatistik, på den mest detaljerade nivån
- från SCB.
- Kör följande kod och ladda ned data.
- Det kommer ta ett antal minuter att ladda ned.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=FALSE,echo=TRUE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-swe_pop_data <- 
-\end_layout
-
-\begin_layout Plain Layout
-
-  get_pxweb_data(
-\end_layout
-
-\begin_layout Plain Layout
-
-    url = "http://api.scb.se/OV0104/v1/doris/sv/ssd/BE/BE0101/BE0101A/BefolkningNy
-", 
-\end_layout
-
-\begin_layout Plain Layout
-
-    dims = list(
-\end_layout
-
-\begin_layout Plain Layout
-
-      Region = c('*'), 
-\end_layout
-
-\begin_layout Plain Layout
-
-      Civilstand = c('*'),
-\end_layout
-
-\begin_layout Plain Layout
-
-      Alder = c('*'),
-\end_layout
-
-\begin_layout Plain Layout
-
-      Kon = c('*'),
-\end_layout
-
-\begin_layout Plain Layout
-
-      ContentsCode = c('BE0101N1'),
-\end_layout
-
-\begin_layout Plain Layout
-
-      Tid = c('*')), 
-\end_layout
-
-\begin_layout Plain Layout
-
-  clean = FALSE)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-# Ta inte med koden ovan i filen ni lämnar in!
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Notera att 
-\family typewriter
-clean
-\family default
- är satt till 
-\family typewriter
-FALSE
-\family default
-.
- Detta är det orginalformat SCB har materialet i, vilket är ett 
-\begin_inset Quotes sld
-\end_inset
-
-messy
-\begin_inset Quotes srd
-\end_inset
-
- format.
- Fördelen med detta format är att det tar mindre utrymme, vilket gör att
- det går att ladda ned snabbare.
-\end_layout
-
-\begin_layout Standard
-Skapa nu en funktion du kalla 
-\family typewriter
-messy_swe_pop_handler()
-\family default
- som tar den 
-\family typewriter
-data.frame
-\family default
- du laddat ovan, gör om den till ett 
-\family typewriter
-tidy
-\family default
- format.
- Sedan ska funktionen aggregera upp variablerna civilstånd och kön och returnera
- ett dataset men i 
-\family typewriter
-dplyr
-\family default
--formatet 
-\family typewriter
-tbl_df
-\family default
- eller 
-\family typewriter
-tibble
-\family default
-.
- Notera att ni kan få ett annat antal rader (beroende på när SCB:s senaste
- statistik släpps).
- Men ni bör få samma värden för år 1968 nedan.
- Ni behöver dock översätta variabelnamnen direkt.
- Nedan finns en mall för funktionen som ersätter variabelnamnen automatiskt.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=TRUE,echo=TRUE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-messy_swe_pop_handler <- function(messy){ 
-\end_layout
-
-\begin_layout Plain Layout
-
-  years <- paste0("year", 1968:(1968 + ncol(messy) - 5))   
-\end_layout
-
-\begin_layout Plain Layout
-
-  names(messy) <- c("region", "status", "age", "sex", years)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-  # Put your code here
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-} 
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Tips!
-\series default
- Börja med ett mindre dataset (ex.
- bara år 1968) först.
- Det tar ett antal sekunder att göra dessa berarbetningar på det stora datamater
-ialet.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=FALSE,echo=TRUE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-messy_swe_pop_handler(messy = swe_pop_data)
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Source: local data frame [1,527,552 x 4] Groups: region, year [?]
-\end_layout
-
-\begin_layout Plain Layout
-
-     region  year     age population
-\end_layout
-
-\begin_layout Plain Layout
-
-      <chr> <chr>   <chr>  <int> 
-\end_layout
-
-\begin_layout Plain Layout
-
-1  00 Riket  1968    0 år 110889 
-\end_layout
-
-\begin_layout Plain Layout
-
-2  00 Riket  1968    1 år 120179 
-\end_layout
-
-\begin_layout Plain Layout
-
-3  00 Riket  1968   10 år 104883 
-\end_layout
-
-\begin_layout Plain Layout
-
-4  00 Riket  1968 100+ år    105 
-\end_layout
-
-\begin_layout Plain Layout
-
-5  00 Riket  1968   11 år 106466 
-\end_layout
-
-\begin_layout Plain Layout
-
-6  00 Riket  1968   12 år 107469 
-\end_layout
-
-\begin_layout Plain Layout
-
-7  00 Riket  1968   13 år 106731 
-\end_layout
-
-\begin_layout Plain Layout
-
-8  00 Riket  1968   14 år 104580 
-\end_layout
-
-\begin_layout Plain Layout
-
-9  00 Riket  1968   15 år 109081 
-\end_layout
-
-\begin_layout Plain Layout
-
-10 00 Riket  1968   16 år 109148 
-\end_layout
-
-\begin_layout Plain Layout
-
-# ...
- with 1,527,542 more rows
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Du ska använda 
-\family typewriter
-dplyr
-\family default
- och 
-\family typewriter
-tidyr
-\family default
- för att lösa uppgiften.
- Detta innebär att 
-\family typewriter
-for
-\family default
-, 
-\family typewriter
-while
-\family default
- och 
-\family typewriter
-repeat
-\family default
--loopar är inte tillåtna.
- Inte heller 
-\family typewriter
-aggregate()
-\family default
--funktionen eller någon av 
-\family typewriter
-apply
-\family default
--funktionerna.
 \end_layout
 
 \begin_layout Section
@@ -1421,7 +1068,8 @@ head(wordcount(text=rep("a",10)))
 
 \begin_layout Standard
 \begin_inset Branch removed
-status open
+inverted 0
+status collapsed
 
 \begin_layout Section
 
@@ -1772,6 +1420,7 @@ Levenshtein distance
 LatexCommand href
 name "[här]"
 target "https://en.wikipedia.org/wiki/Levenshtein_distance"
+literal "false"
 
 \end_inset
 
@@ -1872,6 +1521,7 @@ Wagner-Fishers algoritm är en metod för att räkna ut Levenshtein-avståndet
 LatexCommand href
 name "[här]"
 target "https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm"
+literal "false"
 
 \end_inset
 
@@ -1888,6 +1538,7 @@ Tips!
 LatexCommand href
 name "[Här]"
 target "https://gist.github.com/marcinwyszynski/541969df59d02f039945"
+literal "false"
 
 \end_inset
 
@@ -1896,6 +1547,7 @@ target "https://gist.github.com/marcinwyszynski/541969df59d02f039945"
 LatexCommand href
 name "[här]"
 target "https://gist.github.com/kylebgorman/1081951/9b38b7743a3cb5167ab2c6608ac8eea7fc629dca"
+literal "false"
 
 \end_inset
 
@@ -1906,6 +1558,7 @@ v kod att titta på om man kör fast.
 LatexCommand href
 name "[Här]"
 target "https://www.youtube.com/watch?v=Xxx0b7djCrs"
+literal "false"
 
 \end_inset
 
@@ -1914,6 +1567,7 @@ och
 LatexCommand href
 name "[här]"
 target "https://www.youtube.com/watch?v=M3MQt9GJPW0"
+literal "false"
 
 \end_inset
 
@@ -2057,6 +1711,7 @@ Detaljerna om för hur kön och kontrollsiffran beräknas finns i Skatteverkets
 LatexCommand href
 name "[PDF]"
 target "http://www.skatteverket.se/download/18.1e6d5f87115319ffba380001857/1285595720207/70408.pdf"
+literal "false"
 
 \end_inset
 
@@ -2190,6 +1845,7 @@ Nästa steg i funktionen är att kontrollera om ett personnummer är korrekt
 LatexCommand href
 name "[här]"
 target "http://sv.wikipedia.org/wiki/Luhn-algoritmen"
+literal "false"
 
 \end_inset
 

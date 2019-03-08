@@ -2,8 +2,6 @@
 name  : D8
 description : "Statistisk programmering med R: Lab 8"
 tasks:
-  messy_swe_pop_handler:
-    url: Tasks/messy_swe_pop_handler_tests.R
   wordcount:
     url: Tasks/wordcount_tests.R
   pnr_sex:
