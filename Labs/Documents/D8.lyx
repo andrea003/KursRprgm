@@ -545,7 +545,7 @@ Inlämningsuppgifter
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "Inluppg.lyx"
+filename "Inluppg_del2.lyx"
 
 \end_inset
 
@@ -1616,7 +1616,7 @@ status open
 
 \begin_layout Plain Layout
 
-minimum_editing_distance("jobbar", "hoppa")
+minimum_editing_distance(x="jobbar",y="hoppa")
 \end_layout
 
 \begin_layout Plain Layout
@@ -1647,6 +1647,24 @@ minimum_editing_distance("matematik", "statistik")
 \begin_layout Plain Layout
 
 minimum_editing_distance("programmering", "matematik")
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+minimum_editing_distance(1, "matematik")
+\end_layout
+
+\begin_layout Plain Layout
+
+minimum_editing_distance("programmering", TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
