@@ -34,7 +34,7 @@ Programmering i R
 ========================================================
 transition: rotate
 ## Föreläsning 8: Texthantering, tidyr och dplyr
-### [Mans Magnusson](mailto:mans.magnusson@liu.se)
+### [Josef Wilzén](mailto:josef.wilzen@liu.se)
 
 STIMA,
 Linköpings universitet
@@ -45,7 +45,7 @@ Dagens föreläsning:
 ========================================================
 - Inför tentamen
 - Texthantering
-- Databearbetning med dplyr, tidyr och piping
+- Frivillig fördjupning: Modern databearbetning 
 
 
 Inför tentamen
@@ -55,16 +55,8 @@ Inför tentamen
 - Hjälpmedel: 
   - Den inbyggda hjälpen i R (ej internet)
   - Samtliga "fusklappar" som finns på Github
-  - ```markmyassignment``` (om allt fungerar som det ska)
-      
-Inför tentamen
-========================================================
-- Tenta, "fusklappar" och eventualla dataset kommer ni att få tillgång till elektroniskt (ta inte med några papper)
-- Se länkarna nedan för info om tentan:
-  + [här](http://www.ida.liu.se/~examadm/rutiner/student/index.sv.shtml)
-  + eller [här](https://github.com/STIMALiU/KursRprgm/blob/master/Other/SEA%20och%20AES%20studenter.txt)
-- Tentan är anonym
 - **Endast anmälda studenter bereds plats på tentamen.**
+- Återkommer med mer info
 
 Texthantering i R
 ========================================================
@@ -113,6 +105,10 @@ stringr | base | Användning
 `str_trim()` | - | tar bort mellanslag (före/efter textelement)
 `str_pad()` | - | lägger till mellanslag (före/efter textelement)
 
+strängar: demo
+========================================================
+type: section
+
 Pattern matching
 ========================================================
 type: sub-section
@@ -125,7 +121,7 @@ regular expression (regexp)
 - Byggs upp av:
   - literals: "vanliga bokstäver och siffror"
   - metacharacters: (metatecken) sätter upp speciella regler för matchning
-- Se RP:s [video](http://www.youtube.com/user/rdpeng/videos?view=0&flow=grid): Regular Expressions, Regular Expressions in R
+- Se RP:s video [Regular Expressions](https://www.youtube.com/watch?v=NvHjYOilOf8) : Regular Expressions
 - **Tips!** Regexp Golf: https://alf.nu/RegexGolf
 - Testa: https://regex101.com/
 
@@ -141,7 +137,7 @@ Tecken| Betydelse
 ```?``` | föregående tecken är valfritt
 ```{n,m}``` | föregående tecken $n$ eller max $m$
 ```[...]``` | teckenlista (character list)
-$|$ | ELLER
+ &#124;  | ELLER
 ```(...)``` | Gruppering
 ```\``` | Används för att "undvika" metatecken/specialtecken. 
 
@@ -156,7 +152,7 @@ regular expression: teckenklass
 Tecken| Betydelse| Exempel
 ----- | ---- | ----|
 ```-``` | tecken | A-Z a-z 0-9 
-```^``` | ICKE | ^0-9 
+```^``` | ICKE | \^0-9 
 ```\``` | specialtecken | \t\n
 
 **Obs!** I R: ```\\``` krävs
@@ -197,7 +193,7 @@ regular expression: demo
 ========================================================
 type: section
 
-Modern databearbetning 
+Frivillig fördjupning: Modern databearbetning 
 ========================================================
 type: section
 
