@@ -62,14 +62,24 @@ for (i in 1:3){
 # a)
 library(stringr)
 library(lubridate)
-#word_data<-readLines("/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Exams/732G33 exam 2018-08-14/word_data.txt")
-word_data<-readLines("C:/Users/Florence/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Exams/732G33 exam 2018-08-14/word_data.txt")
+word_data<-readLines("/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Exams/732G33 exam 2018-08-14/word_data.txt")
+#word_data<-readLines("C:/Users/Florence/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Exams/732G33 exam 2018-08-14/word_data.txt")
 head(word_data)
 tail(word_data)
 
 # b)
+
+logi<-str_detect(string = word_data, pattern = "a")
+a_word<-word_data[logi]
+sum(logi)
+length(a_word)
+
 no_word<-length(word_data[str_detect(word_data, "a")])
 no_word
+sum(count)
+
+count<-str_count(string = word_data,pattern = "a")
+
 no_a<-sum(str_count(string = word_data,pattern = "a"))
 no_a
 

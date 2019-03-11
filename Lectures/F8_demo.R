@@ -105,7 +105,12 @@ my_letters
 str_detect(string = my_letters, pattern = "ab")
 str_detect(string = my_letters, pattern = "cd")
 
-str_locate(string = my_letters, pattern = "hi")
+a<-str_locate(string = my_letters, pattern = "hi")
+a[1]
+
+d<-str_c(my_letters,"hi,  sdf hi")
+d
+str_locate_all(string = d, pattern = "hi")
 
 
 x <- "[a-z]{3} "
@@ -132,8 +137,12 @@ str_extract_all
 # str_extract {stringr}
 shopping_list <- c("apples x4", "bag of flour", "bag of sugar", "milk x2")
 str_extract(shopping_list, "\\d")
+
 str_extract(shopping_list, "[a-z]+")
+str_extract_all(shopping_list, "[a-z]+")
+
 str_extract(shopping_list, "[a-z]{1,4}")
+
 str_extract(shopping_list, "\\b[a-z]{1,4}\\b")
 
 # Extract all matches
@@ -162,15 +171,17 @@ str_detect(strings, phone)
 strings[str_detect(strings, phone)]
 # Where in the string is the phone number located?
 loc <- str_locate(strings, phone)
-loc
+loc[,1]
+class(loc)
+
 # Extract just the phone numbers
-str_sub(strings, loc[, "start"], loc[, "end"])
+str_sub(string = strings,start =  loc[, "start"], end = loc[, "end"])
 # Or more conveniently:
 str_extract(strings, phone)
 # Pull out the three components of the match
 str_match(strings, phone)
 # Anonymise the data
-str_replace(strings, phone, "XXX-XXX-XXXX")
+str_replace(strings, phone, replacement = "XXX-XXX-XXXX")
 
 
 #----------------------------------------------------------------------------
