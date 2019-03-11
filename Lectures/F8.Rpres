@@ -135,7 +135,7 @@ Tecken| Betydelse
 ```*``` | föregående tecken 0 eller fler gånger
 ```+``` | föregående tecken 1 eller fler gånger
 ```?``` | föregående tecken är valfritt
-```{n,m}``` | föregående tecken $n$ eller max $m$
+```{n,m}``` | föregående tecken ```n``` eller max ```m``` gånger
 ```[...]``` | teckenlista (character list)
  &#124;  | ELLER
 ```(...)``` | Gruppering

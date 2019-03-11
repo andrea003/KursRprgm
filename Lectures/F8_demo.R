@@ -19,10 +19,16 @@ library(stringr)
 
 # str_c
 
-str_c("a","b","c")
-paste("a","b","c")
+str_c("a","b","c",sep = "")
+
+paste("a","b","c",sep = " ")
+paste0("a","b","c")
+
 str_c("a","b","c",sep = "--")
 
+str_c("a","b",TRUE,sep = "--")
+
+# vektorisering:
 str_c(c("a","b","c"),c("d","e","f"),sep = "--")
 
 
@@ -32,24 +38,27 @@ cat(a)
 print(a)
 
 # str_length
+?Constants
+LETTERS
 letters
+
 my_letters <- str_c(letters, collapse = "")
+my_letters
 str_length(my_letters)
 str_length(letters)
 
 # str_sub
 str_sub(string = my_letters, start = 3, end = 6)
+
+# negativa index:
+str_sub(string = my_letters, start = -3, end = -1)
+
+str_sub(string = my_letters, start = 5, end = -5)
+
 my_letters
 str_sub(string = my_letters, start = 3, end = 6) <- " hej! "
 my_letters
 
-# str_split
-str_split(string = c("hej, hur är det?"), pattern = "[:space:]")
-str_split(string = c("hej, hur är det?"), pattern = ",")
-
-b<-c("hej, hur är det?","saidjf aslfk w ajfd asdj")
-x<-str_split(string = b,pattern = "[:space:]")
-x[[1]][1]
 
 # str_trim
 
@@ -61,6 +70,8 @@ str_trim(string = c("   hej!", "    abc  ","test   "),side = "both")
 # str_pad
 str_pad(string = "HEJ!",width = 10,side ="left")
 
+str_pad(string = "HEJ!",width = 10,side ="right")
+
 str_pad(string = "HEJ!",width = 10,side ="both")
 
 
@@ -70,7 +81,25 @@ str_pad(string = "HEJ!",width = 10,side ="both")
 #----------------------------------------------------------------------------
 #----------------------------------------------------------------------------
 
-?regex
+?regexp
+
+# str_split
+# vektor av längd 1
+a<-str_split(string = c("hej, hur är det?"), pattern = "[:space:]")
+print(a)
+a[[1]][1]
+
+# vektor av längd >1
+b<-c("hej, hur är det?","saidjf aslfk w ajfd asdj")
+b
+length(b)
+x<-str_split(string = b,pattern = " ")
+x
+str(x)
+x[[1]][1]
+
+str_split(string = c("hej, hur är det?"), pattern = ",")
+
 
 my_letters
 str_detect(string = my_letters, pattern = "ab")
