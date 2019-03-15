@@ -147,11 +147,11 @@ options(digits = 5)
 
 \begin_layout Plain Layout
 
+suppressMessages(library(pxweb))
 \end_layout
 
 \begin_layout Plain Layout
 
-library(pxweb)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1723,24 +1723,33 @@ Kontrollsiffran beräknas baserat på de övriga siffrorna i personnummret
 \end_layout
 
 \begin_layout Standard
-Detaljerna om för hur kön och kontrollsiffran beräknas finns i Skatteverkets
- broschyr SKV 704 
+Detaljerna om för hur kön och kontrollsiffran beräknas finns i SCBs broschyr
+ 
 \begin_inset CommandInset href
 LatexCommand href
 name "[PDF]"
-target "http://www.skatteverket.se/download/18.1e6d5f87115319ffba380001857/1285595720207/70408.pdf"
+target "https://www.scb.se/statistik/_publikationer/be9999_2007a01_br_be96st0701.pdf"
 literal "false"
 
 \end_inset
 
 .
- Läs igenom denna broschyr innan du gör uppgiften nedan.
+ Läs igenom kaptitel 1.
+ 
+\begin_inset Quotes sld
+\end_inset
+
+Personnummer
+\begin_inset Quotes srd
+\end_inset
+
+ i denna broschyr innan du gör uppgiften nedan.
 \end_layout
 
 \begin_layout Standard
 Exempel på personnummer som kan användas för att testa dina funktioner finns
- dels i broschyren från Skatteverket och dels på Wikipedia (sökord: “Personnumme
-r i Sverige”).
+ dels i broschyren från SCB och dels på Wikipedia (sökord: “Personnummer
+ i Sverige”).
  Du kan självklart även testa med ditt eget personnummer om du vill.
 \end_layout
 
@@ -1852,7 +1861,7 @@ pnr_ctrl()
 \end_layout
 
 \begin_layout Standard
-Nästa steg i funktionen är att kontrollera om ett personnummer är korrekt
+Ni ska nu skapa en funktion som kan kontrollera om ett personnummer är korrekt
  eller inte.
  För att beräkna en kontrollsiffra används den så kallade Luhn-algoritmen,
  mer information finns 
@@ -1935,8 +1944,8 @@ vektor av 0:or 1:or och 2:or på det sätt som beräkningen specificeras av
 \series bold
 Obs!
 \series default
- Skatteverkets beräkning görs inte på hela personnummret, de delar som inte
- ska räknas kan sättas till 0 i beräkningsvektorn.
+ Beräkning görs inte på hela personnummret, de delar som inte ska räknas
+ kan sättas till 0 i beräkningsvektorn.
 \end_layout
 
 \begin_layout Enumerate
