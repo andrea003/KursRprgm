@@ -28,22 +28,28 @@ my_df<-data.frame(numeric=6:1,boolean=rep(c(TRUE,FALSE),3),character=letters[1:6
 my_df
 
 # d)
-my_matrix<-matrix(data = 1:12, nrow = 3, ncol = 4,dimnames = list(c("x1","x2","x3"),c("y1","y2","y3","y4"))) 
+my_matrix<-matrix(data = 1:12, nrow = 3, ncol = 4,
+                  dimnames = list(c("x1","x2","x3"),c("y1","y2","y3","y4"))) 
 my_matrix
 
-
+#rownames()
+#colnames()
 
 #----------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------
 # 2)
 
 # a)
-for (i in 1:3){   
-  print(paste("i: ",i))   
+for (i in 1:3){
+  
+  print(paste("i: ",i))  
+  
   for (j in 1:4){     
     print(paste("j: ",j))  
-  } 
+  }
+  
 } 
+
 
 # b)
 for (i in 1:3){   
@@ -79,10 +85,10 @@ length(a_word)
 
 no_word<-length(word_data[str_detect(word_data, "a")])
 no_word
-sum(count)
+
 
 count<-str_count(string = word_data,pattern = "a")
-
+sum(count)
 no_a<-sum(str_count(string = word_data,pattern = "a"))
 no_a
 
@@ -111,6 +117,8 @@ wonder_woman <-function(year){
   if(year == 1930) print("Vigdis Finnbogadottir")
   if(!year %in% c(1815, 1897, 1930)) print("unknown")
 }
+
+# kolla upp vad operatorn %in% gör!
 
 {wonder_woman(year = 1815);wonder_woman(year = 1897);wonder_woman(year = 1930);wonder_woman(year = 1765)}
 
