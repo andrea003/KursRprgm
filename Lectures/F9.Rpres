@@ -45,15 +45,14 @@ Dagens föreläsning:
 - Inför tentamen
 - R i andra kurser
 - Gammal tenta
-- Frågor
 
 Kompletteringar av labbar
 ========================================================
 - Deadline för kompletteringar finns [kurshemsidan](http://www.ida.liu.se/~732G33/info/courseinfo.sv.shtml)
-- Ny tid för komp2
-- Ev underkända labbar kommer att markeras med `kompletteras` under ordinarie inlämning på Lisam. 
+- Ny tid för komp2: **2019-04-07 kl 23.59**
+- Ev underkända labbar markeras med `kompletteras` under ordinarie inlämning på Lisam. 
 - Kompletteringar lämnas då in på samma labb som är underkänd. OBS: missa inte deadline!
-- Om någon labb inte är godkänd efter alla kompletteringar måste alla labbar och miniprojektet göras om nästa gång kursen ges.
+- Om någon labb inte är godkänd efter **alla** kompletteringar måste alla labbar och miniprojektet göras om nästa gång kursen ges.
 
 
 Utvärdering
@@ -64,7 +63,7 @@ Utvärdering
 
 Inför tentamen
 ========================================================
-- Tenta i datorsal 08.00-12.00
+- Tenta i datorsal 14:00-18.00
 - Kom minst 20 min innan och följ vakternas instruktioner.
 - Tentan kommer likna de gamla tentorna, som ni hittar [[här]](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams), det finns lösnngar till dessa
 
@@ -77,28 +76,28 @@ Inför tentamen
 
 Inför tentamen
 ========================================================
-- Tenta, "fusklappar" och eventualla dataset kommer ni att få tillgång till elektroniskt (ta inte med några papper)
-- Se länkarna nedan för info om tentan:
-  + [här](http://www.ida.liu.se/~examadm/student/index.sv.shtml)
+- Tenta, "fusklappar" och eventualla dataset kommer ni att få tillgång till elektroniskt (ta inte med några papper, ni får kladdpapper)
 - Tentan är anonym
 - **Endast anmälda studenter bereds plats på tentamen.**
 
 Inför tentamen
 ========================================================
-- Tenta i datorsal
-- Tentan kommer likna de gamla tentorna, som ni hittar [[här]](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams), det finns lösningar till dessa
-- Hjälpmedel: 
-  - Den inbyggda hjälpen i R (ej internet)
-  - Samtliga "fusklappar" som finns på Github
-      
+- Se denna länk för info om tentan:
+  + [här](http://www.ida.liu.se/~examadm/student/index.sv.shtml)
+- Nytt OS: Nya rutiner för inloggning jämfört med länken.
+  + Ni loggar in med vanligt liuid och vanligt lösenord
+  + Ni får instruktioner innan tentan (kom i god tid!)
+- **Studentklienten** kommer att användas för att:
+  + lämna in lösnignen som **en** R-fil. 
+  + ställa frågor till läraren digitalt under tentan
+
+
 Inför tentamen
 ========================================================
-- Tenta, "fusklappar" och eventualla dataset kommer ni att få tillgång till elektroniskt (ta inte med några papper)
-- Se länkarna nedan för info om tentan:
-  + [här](http://www.ida.liu.se/~examadm/rutiner/student/index.sv.shtml)
-  + eller [här](https://github.com/STIMALiU/KursRprgm/blob/master/Other/SEA%20och%20AES%20studenter.txt)
-- Tentan är anonym
-- **Endast anmälda studenter bereds plats på tentamen.**
+ - Spara filen med namnet tentaX.R där X är ditt SC-nummer (klientnummer). 
+ - Det numret kan du se i studentklienten. 
+ - Exempel: om du har SC-nummer SC12345 så ska filen heta tentaSC12345.R
+
 
 
 R i andra kurser
@@ -120,10 +119,22 @@ Ex:
 - Kandidatuppsats
 - Multivariata metoder
 
+R i framtiden...
+========================================================
+- Programmering är en färskvara
+- Viktigt att programmera regelbundet för att hålla färdigheten vid liv
+- Se rubriken "Efter kursen" på [kurhemsidan](https://www.ida.liu.se/~732G33/info/courseinfo.sv.shtml) för inspiration för fortsatt inlärning
 
 Gammal tenta
 ========================================================
-Tentan "exam2017-08-14.pdf", finns [här](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams/20170814/)
+Tentan "exam20180814.pdf", finns [här](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams/20180814/)
 
-Frågor
-========================================================
+Vad har vi lärt oss?
+- Variabler, tilldelning, typer
+- Datastrukturer
+- Kontrollstrukturer
+- Funktioner, miljöer
+- Tillämpningar: grafik, statistik, texthantering, etc
+
+
+

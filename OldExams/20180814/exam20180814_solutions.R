@@ -55,6 +55,9 @@ for (i in 1:3){
   if(i == 2 & j == 1) break
 } 
 
+# "break breaks out of a for, while or repeat loop;
+# control is transferred to the first statement outside the inner-most loop."
+
 #----------------------------------------------------------------------------------------
 #----------------------------------------------------------------------------------------
 # 3)
