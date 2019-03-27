@@ -3476,7 +3476,79 @@ status open
 
 \begin_layout Plain Layout
 
+myListWeight <- split(x = ChickWeight$weight, f = ChickWeight$Diet)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Räkna ut medelvärde, varians och percentiler för weight i varje element
+ i 
+\family typewriter
+myListWeight
+\family default
+ med 
+\family typewriter
+lapply()
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Skapa 
+\family typewriter
+myList
+\family default
+ enligt nedan.
+ Vad innehåller varje element i listan? Skapa en anonym funktion som beräknar
+ medelvärdet för variabeln 
+\family typewriter
+weight
+\family default
+.
+ Använd sedan din anonyma funktion och 
+\family typewriter
+lapply()
+\family default
+ för att beräkna medelvärdet för 
+\family typewriter
+weight
+\family default
+ för alla element i 
+\family typewriter
+myList
+\family default
+.
+ Om du gjort rätt ska du erhålla samma resultat som i uppgift 9.
+ Upprepa samma sak, fast beräkna variansen istället.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE,echo=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
 myList <- split(x = ChickWeight, f = ChickWeight$Diet)
+\end_layout
+
+\begin_layout Plain Layout
+
+lapply(X = myList, FUN = function(x){...min kod...})
 \end_layout
 
 \begin_layout Plain Layout
