@@ -18,13 +18,13 @@
 
 
 
-  <link crossorigin="anonymous" media="all" integrity="sha512-pWLt6abkYhNeAHaDrPVG0yXCtIGRuCkwSUqQpsyN6smAIpIt+Iuq2IZKmoH9l3Cy/9ZnjvVrFZnvFFjGiqE3EA==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-a3b8a10d4a9e37a78f033ef4a4f525f5.css" />
-  <link crossorigin="anonymous" media="all" integrity="sha512-SJFQqYJ9+0kVizLKBec6JGEKZQYJdQlYcrVD5F5NJ0Xxuj/3FTaCOKqxEMleU21EeszhKfvbDr1RWAAA4ruhWA==" rel="stylesheet" href="https://github.githubassets.com/assets/github-126ea3c592ab494d4bafa2cbe89b3814.css" />
-  
-  
-  <link crossorigin="anonymous" media="all" integrity="sha512-L+Xfjk72/sIPS5T8Z8Wy/+/78ngrN7jAjVpE5Zoo2KfZYqr9s8p6selV7sLydYrh0Y3Pu02CuEa7uuq70RjSxg==" rel="stylesheet" href="https://github.githubassets.com/assets/site-278e4176d194ae782983c71f1f767503.css" />
-  
-  
+  <link crossorigin="anonymous" media="all" integrity="sha512-RPWwIpqyjxv5EpuWKUKyeZeWz9QEzIbAWTiYOuxGieUq7+AMiZbsLeQMfEdyEIUoNjLagHK0BEm92BmXnvaH4Q==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-40c1c9d8ff06284fb441108e6559f019.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-SUcCfd/JEajhY9PBJRkLqJayKdKJo8njHXOMeNGmff0lsDCXCPwTSiR7u7F/szVtOpfkCQ8hfEvPy6DTeEpPKw==" rel="stylesheet" href="https://github.githubassets.com/assets/site-ee3375059d76a2986813c5b7bd605ab3.css" />
+    <link crossorigin="anonymous" media="all" integrity="sha512-3CnDMoFJPvbM39ryV5wc51yRo/6j6eQPt5SOlYaoBZhR9rVL/UZH3ME+wt72nsTlNFaSQ3nXT/0F4sxE1zbA6g==" rel="stylesheet" href="https://github.githubassets.com/assets/github-38162889e1878fa3b887aa360e70ab6c.css" />
+    
+    
+    
+    
 
   <meta name="viewport" content="width=device-width">
   
@@ -41,7 +41,7 @@
   
   <meta name="pjax-timeout" content="1000">
   
-  <meta name="request-id" content="D14C:20C58:13FC869:1EBC140:5C653859" data-pjax-transient>
+  <meta name="request-id" content="E9BE:01CD:BA759D:1585B7F:5C6FBAA2" data-pjax-transient>
 
 
   
@@ -52,7 +52,7 @@
     <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
 
-  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="D14C:20C58:13FC869:1EBC140:5C653859" /><meta name="octolytics-dimension-region_edge" content="ams" /><meta name="octolytics-dimension-region_render" content="iad" />
+  <meta name="octolytics-host" content="collector.githubapp.com" /><meta name="octolytics-app-id" content="github" /><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event" /><meta name="octolytics-dimension-request_id" content="E9BE:01CD:BA759D:1585B7F:5C6FBAA2" /><meta name="octolytics-dimension-region_edge" content="iad" /><meta name="octolytics-dimension-region_render" content="iad" />
 <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" />
 
 
@@ -70,13 +70,13 @@
     <meta name="user-login" content="">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="ODBkOTljYTc0NjVkMzFmZGRmYmIzNjg1MTFjMGVhOGM4YjVlMGM0YTFhNDlkNzNkY2QyODgwN2I3YTA2NTkzY3x7InJlbW90ZV9hZGRyZXNzIjoiMTMwLjIzNi4xODIuMTcxIiwicmVxdWVzdF9pZCI6IkQxNEM6MjBDNTg6MTNGQzg2OToxRUJDMTQwOjVDNjUzODU5IiwidGltZXN0YW1wIjoxNTUwMTM3NDMzLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+    <meta name="js-proxy-site-detection-payload" content="NDJlOTRhNjMzN2I1YjMzY2ZmNDUyZDcwMTUxOWQyMDFjNjY1NGVlOWRiMzZlOGU1M2Y0YTQ3NzhkMDZmMDhmYXx7InJlbW90ZV9hZGRyZXNzIjoiMTMwLjIzNi4xODIuMTcxIiwicmVxdWVzdF9pZCI6IkU5QkU6MDFDRDpCQTc1OUQ6MTU4NUI3Rjo1QzZGQkFBMiIsInRpbWVzdGFtcCI6MTU1MDgyNjE0NywiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="UNIVERSE_BANNER,MARKETPLACE_PLAN_RESTRICTION_EDITOR,MARKETPLACE_BROWSING_V2">
 
-  <meta name="html-safe-nonce" content="fc00bbaf4abacbe1c22886f232dae5994a787864">
+  <meta name="html-safe-nonce" content="79f94ccf587c193b0b6b2fd0a2962e76ee479cb4">
 
-  <meta http-equiv="x-pjax-version" content="2856d4715ad0c0d534db764b5a550f0f">
+  <meta http-equiv="x-pjax-version" content="fe602614af4c1a740e12e3bc8fce8de2">
   
 
       <link href="https://github.com/STIMALiU/KursRprgm/commits/master.atom" rel="alternate" title="Recent Commits to KursRprgm:master" type="application/atom+xml">
@@ -255,7 +255,7 @@
           aria-autocomplete="list"
           aria-controls="jump-to-results"
           aria-label="Search"
-          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=29QpA2Pnz1lpkPF3h3OiVLF2+Napo3LKSQj4Btv6tWwzIJPczfX8UepTFVLXo3tpGoEBSZL2m6QFGjaPJkWRRA=="
+          data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations#csrf-token=nMzzcYmFIG2CSUtK5Gr5I5nOyCemCXETZ8GaE2JltvNNx4YOytT1uo/rJy5ZFYxdybd2fWYn8DB8MGvCPonfgQ=="
           spellcheck="false"
           autocomplete="off"
           >
@@ -528,14 +528,14 @@
 
 
   
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/STIMALiU/KursRprgm/blob/dea98143a4d0f316e19fab3ce996879fd75619e9/Labs/DataFiles/Apple.RData">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/STIMALiU/KursRprgm/blob/925d6b3c5df3ff45ab0ceabdc768989e47f18339/Labs/DataFiles/Apple.RData">Permalink</a>
 
     <!-- blob contrib key: blob_contributors:v21:c741fe6150a1f6bfa312b56ea407de1c -->
 
         <div class="signup-prompt-bg rounded-1">
       <div class="signup-prompt p-4 text-center mb-4 rounded-1">
         <div class="position-relative">
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/site/dismiss_signup_prompt" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Iltgrb0oUeXUl2C425E5I92MyVaibvalkNp8rKpeGz0tjkqMSHfp8OXGleWwIbabd11027l0AngzWFfb2C10TQ==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/site/dismiss_signup_prompt" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="l3uoGSq/xo/JQUwpcI66T082iAmt6I9OGLl7s4b7fAs+wssvMjMP3pz+nZRLtyyjwjoIST22AfcG3LOMEfiKJA==" />
             <button type="submit" class="position-absolute top-0 right-0 btn-link link-gray" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss">
               Dismiss
             </button>
@@ -595,12 +595,12 @@
 
 
 
+
     <div class="file ">
       
 <div class="file-header">
 
   <div class="file-actions">
-
 
     <div class="BtnGroup">
       <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/STIMALiU/KursRprgm/raw/master/Labs/DataFiles/Apple.RData">Download</a>
@@ -609,7 +609,7 @@
 
 
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/STIMALiU/KursRprgm/delete/master/Labs/DataFiles/Apple.RData" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="nkmx3dBeeRpDEee2tUqJawCMJgTL9yYa9oCTam0Be495o7dMUWW1/7oHQnasro1U+CiGBVkLGRAsOgurqut6Fg==" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/STIMALiU/KursRprgm/delete/master/Labs/DataFiles/Apple.RData" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="9jSWX/TWx2DFwCGL7K3kDJJiHpXz/vZGHhhHIkSAgc/LGAmjg4AoKDYKfubWCQANVKdqkXOKJMVEneWdj9tBxA==" />
           <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
             aria-label="You must be signed in to make or propose changes" data-disable-with>
             <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -658,7 +658,7 @@
 <div class="footer container-lg px-3" role="contentinfo">
   <div class="position-relative d-flex flex-justify-between pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
     <ul class="list-style-none d-flex flex-wrap ">
-      <li class="mr-3">&copy; 2019 <span title="0.21058s from unicorn-65b68f9656-w69jw">GitHub</span>, Inc.</li>
+      <li class="mr-3">&copy; 2019 <span title="0.21004s from unicorn-5cdd57f567-cr29s">GitHub</span>, Inc.</li>
         <li class="mr-3"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
         <li class="mr-3"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
@@ -696,9 +696,9 @@
 
 
     <script crossorigin="anonymous" integrity="sha512-47ZXWJASen/yLysPiEpAb7/WvHBIHIRKo+7W5g0YYFiInTWqpjYBHTpeHut0QWEf51gExNhSEy55XQmxrZ+0xA==" type="application/javascript" src="https://github.githubassets.com/assets/compat-742699bf681282d2e3cf809d2b9de73a.js"></script>
-    <script crossorigin="anonymous" integrity="sha512-wGR6eNtxDxWfqfl2Qkc6PJi53UcuimD2jIlCQ9JVbhdV7fXMj7VlfzHSjjsBpFWnM5YNKz2LY2SSNvKgStXdow==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-60e34f08371384b8f7942cee70fec187.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-N6BPdqxnrYL4kxWa5gDIlmhui/SEMiHoobwzTpVOWheR111Zxv5GOnCtGpt5qhE5rIpi9RHMeyngI5w6WhGfnw==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-0339542411b5666802ea364ae561d67e.js"></script>
     
-    <script crossorigin="anonymous" async="async" integrity="sha512-8fIPyuXGtZcKUsyZ/VgBTVkGgZiG3QhCBEGXQL4LNDzliTpJPK6eaFFESBDyhu6fYPVOpSaP/5qbfYXNxRDZ8Q==" type="application/javascript" src="https://github.githubassets.com/assets/github-d67b1747c60f6bf91747fcf5d4306c2c.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-D/8iR8ROD3vVOmwLSVsS1j1knDeAOuW9NLNRFb3Pyd68G/gC1b3xRH/krz0K2nuECEZRjVsUAU5caoJKAwoLwA==" type="application/javascript" src="https://github.githubassets.com/assets/github-27e2e2875f3fc6cfce6518e479adf7b8.js"></script>
     
     
     
