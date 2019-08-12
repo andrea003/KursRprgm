@@ -15,9 +15,9 @@ test_that("fast_swe_pop()", {
   expect_silent(fast_swe_pop_output <- fast_swe_pop())
   checkmate::expect_class(fast_swe_pop_output, "data.frame",
               info="Fel: fast_swe_pop() returnerar inte en data.frame.")
-  expect_names(names(fast_swe_pop_output), permutation.of =  c("year", "population"),info="Variabelnamn är inte korrekta")
-  expect_numeric(fast_swe_pop_output$year,info="year är inte nummerisk")
-  expect_numeric(fast_swe_pop_output$population,info="population är inte nummerisk")
+  checkmate::expect_names(names(fast_swe_pop_output), permutation.of =  c("year", "population"),info="Variabelnamn är inte korrekta")
+  checkmate::expect_numeric(fast_swe_pop_output$year,info="year är inte nummerisk")
+  checkmate::expect_numeric(fast_swe_pop_output$population,info="population är inte nummerisk")
 
   expect_equal(fast_swe_pop_output$year[12:15], c(1979,1980,1981,1982),info = "Årtalen är inte korrekta")
   expect_equal(fast_swe_pop_output$population[12:15], c(8303010,8317937,8323033,8327484),info = "Värdet på populationen är inte korrekt")
