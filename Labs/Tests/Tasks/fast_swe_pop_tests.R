@@ -12,7 +12,7 @@ test_that("fast_swe_pop()", {
 
   
   expect_silent(fast_swe_pop_output <- fast_swe_pop())
-  expect_class(fast_swe_pop_output, "data.frame",
+  checkmate::expect_class(fast_swe_pop_output, "data.frame",
               info="Fel: fast_swe_pop() returnerar inte en data.frame.")
   expect_names(names(fast_swe_pop_output), permutation.of =  c("year", "population"),info="Variabelnamn är inte korrekta")
   expect_numeric(fast_swe_pop_output$year,info="year är inte nummerisk")

@@ -10,7 +10,7 @@ test_that("Assignment: sum_of_random_dice()", {
   expect_function_arguments(sum_of_random_dice, c("K","lambda","my_seed"))
   
   expect_silent(res <- sum_of_random_dice(K=10,lambda=2,my_seed=4711))
-  expect_class(sum_of_random_dice(K=10, lambda=2, my_seed=4711), "data.frame")
+  checkmate::expect_class(sum_of_random_dice(K=10, lambda=2, my_seed=4711), "data.frame")
 
   checkmate::assert_names(names(sum_of_random_dice(K=2, lambda=2, my_seed=4711)), permutation.of = c("value", "dice"))
   expect_equal(nrow(sum_of_random_dice(K=3, lambda=2, my_seed=4711)), 3)
