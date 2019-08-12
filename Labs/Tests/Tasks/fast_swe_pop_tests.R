@@ -3,6 +3,7 @@ context("fast_swe_pop()")
 
 test_that("fast_swe_pop()", {  
   library(pxweb)
+  library(checkmate)
   expect_attached_package("pxweb")
   expect_true(exists("fast_swe_pop"),
               info = "Fel: fast_swe_pop() saknas.")
