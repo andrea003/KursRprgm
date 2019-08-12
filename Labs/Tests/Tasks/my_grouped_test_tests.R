@@ -13,13 +13,13 @@ test_that("Assignment: my_grouped_test()", {
   
   data(chickwts)
   chickwts_results <- my_grouped_test(chickwts[,1], chickwts[,2], 0.05)
-  expect_class(chickwts_results, "matrix",
+  checkmate::expect_class(chickwts_results, "matrix",
                info = "chickwts_results <- my_grouped_test(chickwts[,1], chickwts[,2], 0.05)")
   
-  expect_names(colnames(chickwts_results), permutation.of = c("Lower CI-limit", "Mean", "Upper CI-limit", "No of obs."),
+  checkmate::expect_names(colnames(chickwts_results), permutation.of = c("Lower CI-limit", "Mean", "Upper CI-limit", "No of obs."),
                info = "chickwts_results <- my_grouped_test(chickwts[,1], chickwts[,2], 0.05)")
   
-  expect_names(rownames(chickwts_results), permutation.of = c("casein", "horsebean", "linseed", "meatmeal", "soybean", "sunflower"),
+  checkmate::expect_names(rownames(chickwts_results), permutation.of = c("casein", "horsebean", "linseed", "meatmeal", "soybean", "sunflower"),
                info = "chickwts_results <- my_grouped_test(chickwts[,1], chickwts[,2], 0.05)")
 
   expect_equal(dim(chickwts_results), c(6,4),
@@ -30,13 +30,13 @@ test_that("Assignment: my_grouped_test()", {
 
   data(InsectSprays)
   insect_results <- my_grouped_test(InsectSprays$count, InsectSprays$spray, 0.1)
-  expect_class(insect_results, "matrix",
+  checkmate::expect_class(insect_results, "matrix",
                info = "insect_results <- my_grouped_test(InsectSprays$count, InsectSprays$spray, 0.1)")
   
-  expect_names(colnames(insect_results), permutation.of = c("Lower CI-limit", "Mean", "Upper CI-limit", "No of obs."),
+  checkmate::expect_names(colnames(insect_results), permutation.of = c("Lower CI-limit", "Mean", "Upper CI-limit", "No of obs."),
                info = "insect_results <- my_grouped_test(InsectSprays$count, InsectSprays$spray, 0.1)")
   
-  expect_names(rownames(insect_results), permutation.of = c("A", "B", "C", "D", "E", "F"),
+  checkmate::expect_names(rownames(insect_results), permutation.of = c("A", "B", "C", "D", "E", "F"),
                info = "insect_results <- my_grouped_test(InsectSprays$count, InsectSprays$spray, 0.1)")
   
   expect_equal(dim(insect_results), c(6,4),

@@ -26,7 +26,7 @@ test_that("apartment()", {
   expect_true(object = all(sapply(test1,FUN = function(x){is.numeric(x)|is.integer(x)})),
               info="Elementen i listan är inte numeriska")
   
-  expect_class(x = test1, classes = "apartment",
+  checkmate::expect_class(x = test1, classes = "apartment",
               info="Fel: Funktionen returnerar inte ett apartment-objekt.")
   
   expect_error(object = apartment(0,29),
