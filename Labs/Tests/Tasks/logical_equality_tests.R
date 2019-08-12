@@ -13,7 +13,7 @@ test_that("logical_equality()", {
   expect_function_arguments(logical_equality, c("A", "B"))
 
   expect_silent(logical_equality(TRUE, TRUE))
-  expect_logical(logical_equality(TRUE, TRUE))
+  checkmate::expect_logical(logical_equality(TRUE, TRUE))
   
   expect_true(logical_equality(TRUE, TRUE))
   expect_false(logical_equality(FALSE, TRUE))

@@ -5,7 +5,7 @@ test_that("Assignment: bmi()", {
   
   expect_true(exists("bmi"),
               info = "Fel: bmi() saknas.")
-  expect_function(bmi,
+  checkmate::expect_function(bmi,
               info = "Fel: bmi är inte en funktion.")
   expect_function_self_contained(object = bmi,
                         "Fel: Funktionen innehåller fria variabler")

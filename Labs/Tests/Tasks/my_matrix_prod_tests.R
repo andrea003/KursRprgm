@@ -26,7 +26,7 @@ test_that("Assignment: my_matrix_prod()", {
               info = "Fel: Argumenten i funktionen har felaktiga namn.")
   
   expect_silent(my_matrix_prod(A=testMatA1, B=testMatB1))
-  expect_matrix(my_matrix_prod(A=testMatA1, B=testMatB1),
+  checkmate::expect_matrix(my_matrix_prod(A=testMatA1, B=testMatB1),
               info = "Fel: Funktionen returnerar inte en matris.")
   
   expect_equal(my_matrix_prod(A=testMatA1, B=testMatB1), testMatA1%*%testMatB1,
