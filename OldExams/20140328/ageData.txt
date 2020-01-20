@@ -1,7 +1,0 @@
-Person 1   Jag är 35 år
-Person 2   3 år
-Person 3   min ålder är 78 vårar
-Person 4   Ålder? 56.
-Person 5   43
-Person 6   jag är 28
-Person 7   jag fyllde 102 förra månaden
