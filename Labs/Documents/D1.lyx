@@ -196,6 +196,65 @@ Introduktion till R och R-Studio
 \end_layout
 
 \begin_layout Section
+SU-salarna och Ubuntu
+\end_layout
+
+\begin_layout Standard
+De schemalagda datorlaborationerna kommer att vara i SU-salarna som har
+ Linux (Ubuntu Mate) som operativsystem.
+ För att få tillgång till R, Rstudio och de R-paket som kursen använder
+ gör du följande:
+\end_layout
+
+\begin_layout Itemize
+Tryck: 
+\family typewriter
+Ctrl+Alt+T
+\family default
+ för att öppna en terminal.
+ Här kan du skriva olika kommandon, dessa aktiveras när du trycker enter.
+\end_layout
+
+\begin_layout Itemize
+Skriv: 
+\family typewriter
+module load courses/732G33/2020-01-13.1
+\family default
+ och tryck enter
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Detta läser in kursmodulen, som innehåller de programvaror som behövs i
+ kursen.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Skriv 
+\family typewriter
+rstudio
+\family default
+ i terminalen och tryck enter
+\end_layout
+
+\begin_layout Standard
+Andra program som är bra att känna till
+\end_layout
+
+\begin_layout Itemize
+caja: filhanterare
+\end_layout
+
+\begin_layout Itemize
+pluma: enkel textredigerare, bra att använda för att titta på datafiler
+\end_layout
+
+\begin_layout Itemize
+LibreOffice: kontorsprogram
+\end_layout
+
+\begin_layout Section
 R och R-Studio
 \end_layout
 
@@ -455,7 +514,7 @@ Inf
 
 \begin_layout Enumerate
 Självklart finns alla tänkbara matematiska funktioner som kvadratroten,
- absolutbelopp, logaritmer (i olika baser), 
+ absolutbelopp, logaritmer (i olika baser), heltalsdivision, 
 \series bold
 \color blue
 
@@ -468,12 +527,22 @@ literal "false"
 \end_inset
 
 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ger resten vid heltalsdivision
+\end_layout
+
+\end_inset
+
+
 \series default
 \color inherit
  och trigonometriska funktioner.
  
 \series bold
-Det som definierar funktioner i R är att de följs direkt av en parantes.
+Det som definierar funktioner i R är att de följs direkt av en parentes.
 
 \series default
  Pröva följande kod:
@@ -530,7 +599,26 @@ factorial(3)
 
 \begin_layout Plain Layout
 
-7 %% 3
+7 %/% 3  # heltalsdivision
+\end_layout
+
+\begin_layout Plain Layout
+
+7 %% 3  # modulus
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+10 %/% 5 
+\end_layout
+
+\begin_layout Plain Layout
+
+10 %% 5  
 \end_layout
 
 \begin_layout Plain Layout
@@ -2209,6 +2297,35 @@ För att genom programkod komma åt hjälpen för en viss funktion använder
 ?log
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+För att få fram hjälp på vissa specialla funktioner (operatorer) så krävs
+ det att ni skriver på formen: 
+\family typewriter
+?
+\begin_inset Quotes sld
+\end_inset
+
+<-
+\begin_inset Quotes srd
+\end_inset
+
+
+\family default
+, 
+\family typewriter
+?
+\begin_inset Quotes sld
+\end_inset
+
+%%
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 På samma sätt kan vi söka efter funktionen i R-Studios panel 
 \begin_inset Quotes eld
@@ -2722,7 +2839,8 @@ Vektorer
 \begin_layout Standard
 Vektorer är grunden för analyser i R.
  Vektorer påminner om vektorer inom matematiken men med vissa mindre skillnader.
- Kortfattat kan en vektor beskrivas som ett antal element med olika värden.
+ Kortfattat kan en vektor beskrivas som en lista med ett antal element med
+ olika värden.
  Ett exempel på vektor är 
 \begin_inset Formula $v=(1,4,2,1)$
 \end_inset
@@ -3182,7 +3300,7 @@ täcka
 \begin_inset Quotes erd
 \end_inset
 
- den längre vektorn.
+ den längre vektorn, detta kallas i R för recycling.
  Är den långa vektorn inte en multipel av den kortare vektorn får vi en
  varning.
 \end_layout
@@ -3224,6 +3342,11 @@ myVec4 <- c(-2, 1, 22, 0, 1)
 \begin_layout Plain Layout
 
 myVec5 <- 10:1
+\end_layout
+
+\begin_layout Plain Layout
+
+myVec6 <- rep(10,5)
 \end_layout
 
 \begin_layout Plain Layout
@@ -3275,6 +3398,16 @@ myVec1 / myVec4
 \begin_layout Plain Layout
 
 myVec2 ^ myVec3
+\end_layout
+
+\begin_layout Plain Layout
+
+myVec6%/%myVec1
+\end_layout
+
+\begin_layout Plain Layout
+
+myVec6%%myVec1
 \end_layout
 
 \begin_layout Plain Layout
@@ -3400,7 +3533,17 @@ Textvektorer har också en del enklare funktioner.
 \family typewriter
 stringr
 \family default
- och regular expressions.
+ och regular expressions
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Detta kommer senare i kursen.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -5855,6 +5998,48 @@ all(x)
 
 \end_layout
 
+\begin_layout Enumerate
+
+\family typewriter
+sum()
+\family default
+ kan användas för att räkna ut hur många 
+\family typewriter
+TRUE
+\family default
+ det finns i en vektor.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+sum(x)
+\end_layout
+
+\begin_layout Plain Layout
+
+sum(!x)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 * Extraproblem
 \end_layout
@@ -6663,7 +6848,9 @@ source()
 \begin_layout Standard
 När vi har skapat ett antal funktioner vill vi ofta läsa in alla dessa funktione
 r på en gång.
- Om vi vill köra en R-fil använder vi funktionen source(
+ Om vi vill köra en R-fil använder vi funktionen 
+\family typewriter
+source(
 \begin_inset Quotes eld
 \end_inset
 
@@ -6671,7 +6858,9 @@ sökväg
 \begin_inset Quotes erd
 \end_inset
 
-).
+)
+\family default
+.
  Denna funktion läser in en hel R-fil på en och samma gång.
 \end_layout
 
@@ -6844,137 +7033,6 @@ c
  och returnerar de två kvadratrötterna.
 \end_layout
 
-\begin_layout Chapter
-Discord
-\end_layout
-
-\begin_layout Section
-Bli bekväm med Discord
-\end_layout
-
-\begin_layout Standard
-Du ska nu logga in på Discord och göra följande:
-\end_layout
-
-\begin_layout Enumerate
-Gå till Statistik och Datanalysservern.
-\end_layout
-
-\begin_layout Enumerate
-Se till att du har rätt roll, antingen 
-\begin_inset Quotes sld
-\end_inset
-
-year one
-\begin_inset Quotes srd
-\end_inset
-
- eller 
-\begin_inset Quotes sld
-\end_inset
-
-independent
-\begin_inset Quotes srd
-\end_inset
-
-.
- Se kanalen #roller för instruktion.
-\end_layout
-
-\begin_layout Enumerate
-Gå till kategorin 
-\begin_inset Quotes sld
-\end_inset
-
-732G33
-\begin_inset Quotes srd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Hitta kanalen #sayhello och skriv ett meddelande som innehåller följande:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-En kort R-kod (1-5 rader) med nått som du har lärt dig under vecka 1.
- För att få en bra formattering på koden, ska ni innan och efter koden ska
- ni skriva tre accent-symboler 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-`{}
-\backslash
-`{}
-\backslash
-`{}
-\end_layout
-
-\end_inset
-
-.
- Om koden innehåller radbrytningar eller 
-\begin_inset CommandInset href
-LatexCommand href
-name "indentering"
-target "https://sv.wikipedia.org/wiki/Indrag_(text)"
-literal "false"
-
-\end_inset
-
-, använd då ctrl+shift+v för att klistra in koden.
- Se exempel nedan:
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-`{}
-\backslash
-`{}
-\backslash
-`{}
-\end_layout
-
-\begin_layout Plain Layout
-
-print("hello world")
-\end_layout
-
-\begin_layout Plain Layout
-
-print("abc 123")
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-`{}
-\backslash
-`{}
-\backslash
-`{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -7135,8 +7193,8 @@ exercise_solutions
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2017/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
@@ -7447,6 +7505,11 @@ status open
 \begin_layout Plain Layout
 
 orth_scalar_prod(a = c(3,1,12,2,4), b = c(1,2,3,4,5))
+\end_layout
+
+\begin_layout Plain Layout
+
+orth_scalar_prod(a = 1:4, b = 4:1)
 \end_layout
 
 \begin_layout Plain Layout
