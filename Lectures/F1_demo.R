@@ -13,6 +13,11 @@
 
 # mer hjälp: http://www.rstudio.com/wp-content/uploads/2016/01/rstudio-IDE-cheatsheet.pdf
 
+# Koden skrivs i console eller i ett script (här tex)
+
+# hitta flikarna Enviroment, History, Files och Help
+
+
 #-----------------------------------------------------------------------------------------------------------------------
 # variables 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -43,6 +48,14 @@ length(my_num)
 ## Variabeltyper
 typeof(my_vector)
 typeof(my_num)
+
+# heltal skapar med ett "L" på slutet
+
+3L
+x<-5L
+y<-5
+typeof(x)
+typeof(y)
 
 
 #-----------------------------------------------------------------------------------------------------------------------
@@ -102,23 +115,28 @@ assignment_path <-
 
 set_assignment(assignment_path)
 
-
+show_assignment()
 ## Uppgift:
 # Mandatory: Assign you name to my_name 
 my_name <- "Mans Magnusson"
 
 ## task1: Create a vector with the values pi and e
-task1 <- c(2 * pi, exp(1)) # Wrong
-
-
-mark_my_assignment("task1")
-
+pi
+exp(1)
 
 task1 <- c(pi, exp(1)) # Correct
 
 mark_my_assignment("task1")
 
-## task2: Create a function that return the sum of the first and last element
+task1 <- c(3.1, exp(1)) # Wrong
+
+mark_my_assignment("task1")
+
+
+## task2: Create a function that returns the sum of the first and last element
+x<-c(2,4,1)
+length(x)
+
 task2 <- function(vector){
   vector[2] + vector[length(vector)] # Wrong
 }
@@ -145,11 +163,26 @@ minBool <- c(TRUE, FALSE, FALSE, TRUE)
 minVektor[minBool]
 
 
+3>4
+4>3
+
+x<-TRUE
+y<-FALSE
+!x
+
+x&y
+x|y
+
+
+
 x <- 1:10
 y <- x != 5
 z <- x > 2
 x[y & !z]
 
+
+index<-y & !z
+x[index]
 
 
 #-----------------------------------------------------------------------------------------------------------------------

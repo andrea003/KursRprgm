@@ -42,15 +42,20 @@ STIMA, Linköpings universitet
 Föreläsning 1: Innehåll 
 ========================================================
 incremental: true
+- Upprop
+- Kursvärdering: 732G45 "Grundläggande statistik och dataanalys"
 - Kursens upplägg och praktisk information
 - R, R-Studio och vetenskaplig programmering
 - Introduktion till programering i R
-  - R som miniräknare 
-  - Variabler
-  - Numeriska vektorer
-- Att söka hjälp 
-- Funktioner
-- Logik
+  - miniräknare,variabler, vektorer, hjälp, funktioner, logik
+
+Kursvärdering: 732G45 
+========================================================
+Gäller programstudenter på "Statistik och dataanalys"
+- 732G45 “Grundläggande statistik och dataanalys”
+- Svara på din dator/mobil
+- Studentmail: sök på 732G45, kursvärdering
+- 5 min
 
 
 Kursens upplägg och praktisk information
@@ -63,13 +68,13 @@ Lärare
 - Josef Wilzén
 
 ### Labbassar:
-- Georgia Mushe, Jacob Nilsson, Jakob Lindén, Otto Moen, Patrick Jonsson
+- Andrea Dahl Sturedahl, Faton Rekathati, Hugo Knape och Sidney Rydström
 
 Kursens mål
 ========================================================
 incremental: true
 
-Information om kursen finns i **[kursplanen](http://kdb-5.liu.se/liu/fil/kp_detail_print_sv.lasso?&ID=2017074)**. Denna kan sammanfattas till:
+Information om kursen finns i **[kursplanen](https://liu.se/studieinfo/kurs/732g33/vt-2018#)**. Denna kan sammanfattas till:
 
 - Mål 0. Bli bekväma med datorer
 - Mål 1. Tänka som en programmerare. Ställa upp problemet rätt. Struktur.
@@ -128,12 +133,12 @@ Praktisk information
 Hemsidan innehåller bland annat schema, föreläsningar m.m. och finns [[här]](http://www.ida.liu.se/~732G33/). Kursen har också en github-sida [[här]](https://github.com/STIMALiU/KursRprgm)
 
 [LISAM](http://lisam.liu.se/): används för inlämning av labbar och kompletteringar.   
-[Discord](https://discordapp.com/): används för kommunikation
+[Teams](https://teams.microsoft.com/downloads#allDevicesSection): används för kommunikation
 
 Kurskod: **732G33**, **732G83**
 
 ## Programvara
-För denna kurs krävs [R](http://www.r-project.org/) och [R-Studio](http://www.rstudio.com/).
+För denna kurs krävs [R](https://cran.r-project.org/) och [R-Studio](https://rstudio.com/products/rstudio/).
 
 
 
@@ -297,7 +302,7 @@ Installation av R och R-Studio
 
 ## R-Studio
 1. Gå till [http://www.rstudio.com/](http://www.rstudio.com/)
-2. Powerful IDE for R > Download now > Download RStudio Desktop
+2. Download > Download RStudio Desktop
 3. Välj ditt operativsystem, ladda ned och installera R-Studio
 
 Se kurshemsidan för mer info.
@@ -348,10 +353,6 @@ cat("Error in eval(expr, envir, enclos) : object 'x' not found")
 ```
 - Mer information i RP:s video ["How to get Help"](https://www.youtube.com/watch?v=ZFaWxxzouCY)
 
-Demo: Variabler och vektorer
-====================================
-type: section
-
 Variabeltyper
 ========================================================
 type: section
@@ -373,10 +374,18 @@ Variabeltyper, översikt
 Beskrivning | Synonymer | ```typeof()``` | Exempel i R
 ----- | ---- | ----- | ---- | ----
 Heltal ($\mathbb{Z}$) | ```int``` | ```integer``` | ```-1, 0, 1``` 
-Reella tal ($\mathbb{R}$) | ```real```, ```double```, ```float``` | ```numeric``` | ```1.03, -2.872``` 
+Reella tal ($\mathbb{R}$) | ```real```, ```float``` | ```double``` (```numeric```) | ```1.03, -2.872``` 
 Komplexa tal ($\mathbb{C}$) | ```cplx``` | ```complex``` | ```1 + 2i``` 
 Logiska värden | ```boolean```, ```bool```, ```logi``` | ```logical``` | ```TRUE FALSE``` 
 Textsträngar | ```string```, ```char``` | ```character``` |  ```Go R!``` 
+
+
+
+Demo: Variabler och vektorer
+====================================
+type: section
+
+
 
 
 
@@ -415,13 +424,14 @@ incremental: true
 
 ```{r,echo=TRUE,eval=TRUE}
 f <- function(x, y){
-  resultat <- x + y
-  return(resultat)
+  res <- x + y
+  return(res)
 }
 ```
 
 ```{r,echo=TRUE,eval=TRUE}
 f(x = 3, y = 2)
+f(x = 1, y = 11)
 ```
 
 Lokal miljö
@@ -474,7 +484,7 @@ incremental: true
   + I R: Användas för indexering (välja ut rader/kolumner)
 - I R: De logiska värdena: ```TRUE, FALSE, NA```
   (```NA``` betyder saknade värden och används i olika sammanhang)
-- I R:Skapas på två sätt:
+- I R: Skapas på två sätt:
   + Som vanliga vektorer
   + Med relationsoperatorer
 
