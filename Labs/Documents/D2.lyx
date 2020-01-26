@@ -903,8 +903,8 @@ min_matris[c(2,1),1]
 \end_layout
 
 \begin_layout Standard
-En av de mindre bra egenskaperna i R är att väljs en rad eller kolumn ut
- reduceras detta automatiskt till en vektor.
+En av de mindre bra egenskaperna i R är att väljs en rad eller en kolumn
+ ut reduceras detta automatiskt till en vektor.
  Vill vi inte att detta ska ske (om vi exempelvis vill räkna med en rad
  eller kolumnmatris) måste vi ange att matrisformatet ska behållas med argumente
 t 
@@ -4093,6 +4093,7 @@ books
 authors
 \family default
 .
+ (Alltså byt ordning på dataseten.)
 \end_layout
 
 \begin_layout Enumerate
@@ -5349,7 +5350,7 @@ status open
 
 \begin_layout Plain Layout
 
-minSokvag <- getwd()
+myOldDir <- getwd()
 \end_layout
 
 \begin_layout Plain Layout
@@ -5369,6 +5370,15 @@ Välj en katalog du vill arbeta i och skriv ned sökvägen som ett textelement
 mittWorkingDirectory
 \family default
 .
+ Filhanteraren som används i SU-salarna heter caja.
+ Testa att öppna caja och navigera till någon mapp.
+ Testa att trycka 
+\family typewriter
+Crtl+L
+\family default
+ för att visa sökvägen (path) till den aktuella mappen i caja.
+ Om du inte vet sökvägen utantill är detta ett smidigt sätt att ta reda
+ på den.
  
 \begin_inset Newline newline
 \end_inset
@@ -5437,8 +5447,18 @@ getwd()
 \end_layout
 
 \begin_layout Enumerate
+Testa sen att ändra tillbaka till den gamla working directory genom att
+ använda variabeln 
+\family typewriter
+myOldDir
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
 Hitta filhanteraren i RStudio och se vilka filer som ligger i några olika
  mappar.
+ 
 \end_layout
 
 \begin_layout Section
@@ -5455,7 +5475,11 @@ Hitta filhanteraren i RStudio och se vilka filer som ligger i några olika
 
 \begin_layout Standard
 Som en första steg ska vi pröva att importera csv-filer och txt-filer.
- Vi ska nu pröva att läsa in filen Apple.txt som du kan ladda ned 
+ Vi ska nu pröva att läsa in filen 
+\family typewriter
+Apple.txt
+\family default
+ som du kan ladda ned 
 \series bold
 \color blue
 
@@ -5511,6 +5535,23 @@ literal "false"
 \series default
 \color inherit
 .
+\end_layout
+
+\begin_layout Enumerate
+En god vana är att först titta på data som kommer csv/txt-filer i en enkel
+ filhanterare innan de läses in i R.
+ I SU-salarna kan pluma användas, testa att öppna 
+\family typewriter
+Apple.txt
+\family default
+ och 
+\family typewriter
+google.csv
+\family default
+ i pluma.
+ Kolla hur data verkar vara organiserat.
+ Vad finns det för variabler? Vilket tecken används som avgränsare mellan
+ variabler? Vilket tecken används som decimaltecken?
 \end_layout
 
 \begin_layout Enumerate
@@ -5615,6 +5656,11 @@ head()
 tail()
 \family default
 .
+ Testa att ändra argumentet 
+\family typewriter
+n
+\family default
+.
 \end_layout
 
 \end_deeper
@@ -5644,6 +5690,15 @@ read.table()
  Vilken funktion fungerar för den aktuella csv-filen? Läs i dokumentation
  hur du gör för att kontrollera om kategoriska variabler ska vara av typen
  character eller factor.
+ [
+\series bold
+Tips:
+\series default
+ 
+\family typewriter
+stringsAsFactors=
+\family default
+]
 \end_layout
 
 \begin_layout Enumerate
@@ -5708,6 +5763,11 @@ google
 write.table()
 \family default
 .
+\end_layout
+
+\begin_layout Enumerate
+Gör om steg 4 och 5 men spara filerna i andra mappar och med andra namn.
+ Kontrollera med filhanteraren att filerna ligger där de ska.
 \end_layout
 
 \begin_layout Section
@@ -6235,133 +6295,6 @@ Vad är skillnaden mellan Rdata-filer och rds-filer? Formulera svarat i egna
  ord och skriv ner det.
 \end_layout
 
-\begin_layout Chapter
-Bli bekväm med Discord
-\end_layout
-
-\begin_layout Section
-Bli bekväm med Discord
-\end_layout
-
-\begin_layout Standard
-Du ska nu logga in på Discord och göra följande:
-\end_layout
-
-\begin_layout Enumerate
-Gå till Statistik och Datanalysservern.
-\end_layout
-
-\begin_layout Enumerate
-Se till att du har rätt roll, antingen 
-\begin_inset Quotes sld
-\end_inset
-
-year one
-\begin_inset Quotes srd
-\end_inset
-
- eller 
-\begin_inset Quotes sld
-\end_inset
-
-independent
-\begin_inset Quotes srd
-\end_inset
-
-.
- Se kanalen #roller för instruktion.
-\end_layout
-
-\begin_layout Enumerate
-Gå till kategorin 
-\begin_inset Quotes sld
-\end_inset
-
-732G33
-\begin_inset Quotes srd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Hitta kanalen #sayhello och skriv ett meddelande som innehåller följande:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-En kort R-kod (1-5 rader) med nått som du har lärt dig under vecka 1 eller
- 2.
- För att få en bra formattering på koden, ska ni innan och efter koden ska
- ni skriva tre accent-symboler 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-`{}
-\backslash
-`{}
-\backslash
-`{}
-\end_layout
-
-\end_inset
-
-.
- Om koden innehåller radbrytningar eller 
-\begin_inset CommandInset href
-LatexCommand href
-name "indentering"
-target "https://sv.wikipedia.org/wiki/Indrag_(text)"
-literal "false"
-
-\end_inset
-
-, använd då ctrl+shift+v för att klistra in koden.
- Se exempel nedan:
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-`{}
-\backslash
-`{}
-\backslash
-`{}
-\end_layout
-
-\begin_layout Plain Layout
-
-print("hello world")
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-`{}
-\backslash
-`{}
-\backslash
-`{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -6481,8 +6414,8 @@ exercise_solutions
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
@@ -6612,6 +6545,121 @@ set_assignment(lab_path)
 \end_layout
 
 \begin_layout Section
+Bli bekväm med Teams
+\end_layout
+
+\begin_layout Standard
+Du ska nu logga in på Teams och göra följande:
+\end_layout
+
+\begin_layout Enumerate
+Gå till Teamet för 
+\begin_inset Quotes sld
+\end_inset
+
+Team_732G33_2020_student
+\begin_inset Quotes srd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Hitta kanalen #sayhello och skriv ett meddelande som innehåller följande:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+ditt liu-ID och ditt för- och efternamn.
+\end_layout
+
+\begin_layout Enumerate
+En kort R-kod (1-5 rader) med nått som du har lärt dig under vecka 1 eller
+ 2.
+ För att få en bra formattering på koden, gör då följande:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Klicka på 
+\begin_inset Quotes sld
+\end_inset
+
+Format
+\begin_inset Quotes srd
+\end_inset
+
+, finns under fältet där du skriver meddelanden.
+\end_layout
+
+\begin_layout Enumerate
+Klicka på 
+\begin_inset Quotes sld
+\end_inset
+
+More options
+\begin_inset Quotes srd
+\end_inset
+
+ (har tre små prickar som ikon)
+\end_layout
+
+\begin_layout Enumerate
+Klicka på 
+\begin_inset Quotes sld
+\end_inset
+
+Code snippet
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+I rullistan uppe till höger: välj 
+\begin_inset Quotes sld
+\end_inset
+
+R
+\begin_inset Quotes srd
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Enumerate
+Skriv in din kod och klicka på 
+\begin_inset Quotes sld
+\end_inset
+
+Insert
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Standard
+När du har gjort steg 2.
+ så är du godkänd på denna uppgift.
+ Uppgiften examineras med en inlämning på Lisam (som heter 
+\begin_inset Quotes sld
+\end_inset
+
+sayhello
+\begin_inset Quotes srd
+\end_inset
+
+), där ni inte ska lämna in nåt.
+ Det räcker att ni gör steg 2 på Teams i kanalen #sayhello.
+ Notera: För att bli godkänd på denna uppgift måste koden ha korrekt formatterin
+g.
+\end_layout
+
+\begin_layout Section
 
 \family typewriter
 leap_year()
@@ -6668,7 +6716,17 @@ TRUE
 \series bold
 Tips
 \series default
-: Använd modulusoperatorn och relationsoperatorer.
+: Använd modulusoperatorn och relationsoperatorer
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se laboration för mer info om modulusoperatorn och relationsoperatorer.
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -6875,6 +6933,11 @@ status open
 \begin_layout Plain Layout
 
 A <- matrix(2:5, nrow=2)
+\end_layout
+
+\begin_layout Plain Layout
+
+A
 \end_layout
 
 \begin_layout Plain Layout
@@ -7161,14 +7224,14 @@ status open
 
 \begin_layout Plain Layout
 
-apple_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgm/Labs/DataFiles/Ap
-pleTest.csv"
+apple_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/Labs/DataFiles/
+AppleTest.csv"
 \end_layout
 
 \begin_layout Plain Layout
 
-google_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgm/Labs/DataFiles/g
-oogle2.csv"
+google_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/Labs/DataFiles
+/google2.csv"
 \end_layout
 
 \begin_layout Plain Layout
@@ -7391,14 +7454,14 @@ google2.csv"
 
 \begin_layout Plain Layout
 
-apple_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgm/Labs/DataFiles/Ap
-pleTest.csv"
+apple_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/Labs/DataFiles/
+AppleTest.csv"
 \end_layout
 
 \begin_layout Plain Layout
 
-google_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgm/Labs/DataFiles/g
-oogle2.csv"
+google_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/Labs/DataFiles
+/google2.csv"
 \end_layout
 
 \begin_layout Plain Layout

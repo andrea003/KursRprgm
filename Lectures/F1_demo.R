@@ -37,6 +37,8 @@ num_vec <- c(1, 1, 2)
 my_vector[num_vec]
 
 length(my_variable)
+length(num_vec)
+
 
 my_vector[length(my_vector)]
 
@@ -84,7 +86,7 @@ f <- function(z){
 # - Pröva att funktionen fungerar som den ska
 f(3)
 f(12)
-
+f(z = 5)
 
 # kolla vad som finns inuti:
 f
@@ -110,8 +112,7 @@ install.packages("markmyassignment")
 library(markmyassignment)
 
 ## Ställ in uppgift
-assignment_path <- 
-  file.path(system.file(package = "markmyassignment"), "extdata", "example_assignment01.yml")
+assignment_path <- file.path(system.file(package = "markmyassignment"), "extdata", "example_assignment01.yml")
 
 set_assignment(assignment_path)
 
