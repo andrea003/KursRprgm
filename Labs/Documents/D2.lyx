@@ -6576,7 +6576,15 @@ ditt liu-ID och ditt för- och efternamn.
 \begin_layout Enumerate
 En kort R-kod (1-5 rader) med nått som du har lärt dig under vecka 1 eller
  2.
- För att få en bra formattering på koden, gör då följande:
+ 
+\series bold
+OBS: ingen kod från någon inlämningsuppgift!
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+För att få en bra formattering på koden, gör då följande:
 \end_layout
 
 \begin_deeper
@@ -6657,6 +6665,9 @@ sayhello
  Det räcker att ni gör steg 2 på Teams i kanalen #sayhello.
  Notera: För att bli godkänd på denna uppgift måste koden ha korrekt formatterin
 g.
+ Notera att det inte är tillåtet att publicera lösningar på inlämningsuppgifter
+ på Teams i någon publik kanal, det går bra att göra det i direktchattar
+ med lärare/laborationsassistenter.
 \end_layout
 
 \begin_layout Section
