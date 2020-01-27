@@ -253,6 +253,7 @@ aggregate(x = iris[,-5],by=list(iris$Species),FUN = sd)
 ?getwd
 getwd()
 dir()
+# /home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/Labs/DataFiles
 setwd(dir = "/home/josef/Dropbox/Josef/732G33_VT2018/temp")
 dir()
 

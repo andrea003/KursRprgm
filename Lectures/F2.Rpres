@@ -42,7 +42,9 @@ Linköpings universitet
 
 Föreläsning 2: Innehåll 
 ========================================================
-- Quiz!
+- Intro
+  - Quiz
+  - labb 2
 - Datastrukturer
   - Matriser
   - Data.frame
@@ -50,9 +52,10 @@ Föreläsning 2: Innehåll
 - Grundläggande databearbetning
 - Input och output (I/O) i R
 
-Quiz
+Intro
 ========================================================
 type: section
+
 
 Quiz: kahoot
 ========================================================
@@ -77,6 +80,13 @@ my_func<-function(){
 }
 
 ```
+
+Labb 2
+========================================================
+- Kräver att ni kommer in på Teams
+- Mjuk deadline på söndag
+- Övningsuppgifterna viktiga!
+- Programmering är både en praktisk och teoretisk färdighet
 
 
 Markmyassignmnet:
@@ -179,6 +189,10 @@ minMatris
 minMatris[, 2] <- c(0, 1)
 minMatris
 ```
+
+Demo: Matriser
+========================================================
+type: section
 
 
 Data.frame
@@ -299,6 +313,11 @@ rownames(iris)[1:5]
 ```
 
 
+Demo: Data.frame
+========================================================
+type: section
+
+
 Listor
 ========================================================
 type: sub-section
@@ -336,6 +355,11 @@ minLista[[1]]
 ```
 
 
+Demo: Listor
+========================================================
+type: section
+
+
 Att studera objekt i R
 ========================================================
 type: sub-section
@@ -364,7 +388,7 @@ Sammanfoga data
   + ```merge()```
 - Aggregera data används ```aggregate()```
 
-Demo: Matriser, data.frame, listor och databearbetning 
+Demo: Databearbetning 
 ========================================================
 type: section
 
@@ -422,6 +446,7 @@ För andra datakällor finns andra paket:
 
 | R-Paket | Filtyp |
 | --- | --- |  
+| ```readr``` | Olika typer (del av tidyverse)|
 | ```XLConnect```, ```gdata``` | Excel-filer|
 | ```foreign``` | Filer från Epi Info, Minitab, S, SAS, SPSS, Stata, Systat and Weka |
 | ```RODBC```, ```RMySQL``` m.m.| Kontakta databaser från R |
