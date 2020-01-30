@@ -2059,7 +2059,7 @@ I love R!
 
 \begin_layout Enumerate
 Skriver ut summan av talen 
-\begin_inset Formula $1,\ldots,N$
+\begin_inset Formula $1,2,3,\ldots,N$
 \end_inset
 
  är 
@@ -2186,7 +2186,7 @@ I love R!
 
 \begin_layout Enumerate
 Skriver ut summan av talen 
-\begin_inset Formula $1,\ldots,N$
+\begin_inset Formula $1,2,3,\ldots,N$
 \end_inset
 
  är 
@@ -2272,7 +2272,7 @@ Skapa följande funktion (som avbryts om
 \family typewriter
 x>10
 \family default
-) och pröva lite olika värden på 
+) och pröva att köra funktionen med olika värden på 
 \family typewriter
 x
 \family default
@@ -2489,10 +2489,28 @@ test_funktion <- function(x){
 \begin_layout Enumerate
 Om ett program genererar flera varningar sparas dessa och det går att gå
  igenom samtliga varningar efter att programmet kört klart.
- För att koma åt dessa varningar använder vi funktionen 
+ För att komma åt dessa varningar använder vi funktionen 
 \family typewriter
 warnings()
 \family default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Notera det finns alltså en funktion som heter 
+\family typewriter
+warning()
+\family default
+ och en funktionen som heter 
+\family typewriter
+warnings()
+\family default
+ som gör olika saker.
+\end_layout
+
+\end_inset
+
 .
  Pröva följande kod.
 \begin_inset Newline newline
@@ -3073,6 +3091,28 @@ a
 b
 \family default
 .
+ Exempel: om 
+\family typewriter
+a=1
+\family default
+ och 
+\family typewriter
+b=c(1,2,3)
+\family default
+ så ska funktionen returnera 
+\family typewriter
+TRUE
+\family default
+.
+ Om däremot 
+\family typewriter
+a=10
+\family default
+ så ska funktionen returnera 
+\family typewriter
+FALSE
+\family default
+.
  Hon skrev då funktionen 
 \family typewriter
 isIn
@@ -3399,6 +3439,72 @@ Se till att du förstår funktionen
 
 \family default
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# Exempel med %in%
+\end_layout
+
+\begin_layout Plain Layout
+
+x<-1:10 
+\end_layout
+
+\begin_layout Plain Layout
+
+y<-c(1,3,5,9) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# Denna kod kollar vilka värden i  vektorn x 
+\end_layout
+
+\begin_layout Plain Layout
+
+# som även finns i vektorn y 
+\end_layout
+
+\begin_layout Plain Layout
+
+x %in% y 
+\end_layout
+
+\begin_layout Plain Layout
+
+# testa att ändra på elementen i x och y och kör sedan 
+\end_layout
+
+\begin_layout Plain Layout
+
+x %in% y 
+\end_layout
+
+\begin_layout Plain Layout
+
+# testa att byta plats på x och y.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -3707,8 +3813,8 @@ exercise_solutions
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2019/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
