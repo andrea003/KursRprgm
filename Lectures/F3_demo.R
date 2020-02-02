@@ -61,6 +61,10 @@ mean("abc")
 
 # Egen version av sign(), testa ?sign
 ?sign
+sign(20)
+sign(-32)
+sign(0)
+
 my_sign<-function(x){
   if(is.numeric(x)){
     
@@ -73,7 +77,7 @@ my_sign<-function(x){
     }
     
   } else {
-    print(x)
+    print("x is not numeric!")
   }
   
 }
@@ -179,7 +183,8 @@ j<-2
 i<-1
 print(paste("rad:", j, "kolumn:", i, "värde=",A[j,i]))
 
-# multiplicera heltal:
+# multiplicera heltal = multiplikationstabellen
+
 mult_mat <- matrix(0, nrow = 10, ncol = 10)
 mult_mat
 for ( i in 1:10 ) {
@@ -188,6 +193,7 @@ for ( i in 1:10 ) {
   }
 }
 mult_mat
+# Sätt alla under diagonalen till 0:
 index<-lower.tri(mult_mat,diag = FALSE)
 mult_mat[index]<-0
 mult_mat
@@ -260,12 +266,14 @@ while(cond){
   temp<-iris[,index]
   if(is.numeric(temp)){
     print(median(temp))
-    index <- index+1
+    
   } else{
     print("not numeric!")
     cond <- FALSE
   }
+  index <- index+1
 }
+
 
 
 # -------------------------------------------------------------------------------------------
@@ -291,6 +299,7 @@ a
 b<-my_mean(x=c(TRUE,FALSE,FALSE))
 b
 
+# skriv ut info till i konsolen 
 my_mean<-function(x){
   print(typeof(x))
   val1<-mean(x)
@@ -312,6 +321,7 @@ debug(my_mean)
 my_mean(x = 1:8)
 my_mean(x=c(TRUE,FALSE,FALSE))
 undebug(my_mean)
+my_mean(x = 1:8)
 
 my_mean<-function(x){
   print(typeof(x))
@@ -321,7 +331,7 @@ my_mean<-function(x){
   y<-list(mean=val1,var=val2)
   return(y)
 }
-
+my_mean(x = 1:8)
 
 
 h<-function(x){
@@ -357,9 +367,9 @@ h<-function(x){
 }
 
 
-h(1:4)
+my_val<-h(1:4)
 my_val<-h(2:5)
-
+my_val
 
 
 

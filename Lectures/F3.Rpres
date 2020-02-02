@@ -51,6 +51,10 @@ Föreläsning 3: Innehåll
 
 Allmänt
 ========================================================
+- Inlämningsuppgifter
+  - Ta inte med markmyassignment-kod 
+  - Ta inte med funktionsanrop
+  - Vecka 2: sayhello på Teams
 - Några frågor så här långt?
 
 
@@ -60,7 +64,6 @@ type: section
 
 Programkontroll
 ========================================================
-incremental: true
 
 - Att kontrollera körning av program / funktioner
 - Det finns olika kontroller vi kan vilja göra, exempelvis:
@@ -76,8 +79,8 @@ type: section
 
 Villkorssatser - Syntax
 ========================================================
-incremental: true
 
+[Pseudokod](https://en.wikipedia.org/wiki/Pseudocode):
 ```{r, eval=FALSE}
 if ( Villkor ) { 
   Kod om Villkor == TRUE 
@@ -85,9 +88,7 @@ if ( Villkor ) {
 ```
 
 - Om Villkor är en logisk vektor prövas bara det **första** elementet
-
--  [Pseudokod](https://en.wikipedia.org/wiki/Pseudocode):
-
+- Logisk switch:
 ```{r, eval=FALSE}
 if ( Villkor ) {
   Kod om Villkor == TRUE 
@@ -112,7 +113,6 @@ if ( Villkor 1 ) {
 Villkorssatser - Exempel
 ========================================================
 type: prompt
-incremental: true
 ```{r, eval=TRUE}
 prgm <- "R"
 if ( prgm == "R" ) { cat("Kul!") }
@@ -155,7 +155,6 @@ type: sub-section
 
 Vad är en "for-loop"?
 ========================================================
-incremental: true
 - Kontrollerar upprepningar av (samma) kod
 - I R används ```for```, loopar över en vektor/lista
 ```{r, eval=FALSE}
@@ -180,7 +179,18 @@ for ( element in vektor ) {
 ```
 
 
-Loopar (for - loop): Exempel II
+Loopar (for-loop): Exempel
+========================================================
+type: prompt
+incremental: true
+```{r, eval=TRUE}
+for ( element in 1:5 ) { 
+  print(element) 
+}
+```
+
+
+Loopar (for - loop): Exempel 
 ========================================================
 type: prompt
 incremental: true
@@ -205,17 +215,26 @@ Demo: for-loopar
 ========================================================
 type: sub-section
 
-
 Nästlade loopar (nested loops)
 ========================================================
 - Om vi vill loopa i flera dimensioner/nivåer
 - Delas upp i "Inre" och "yttre" loop
+- Tänk klocka
+  - Timmar: yttersta loopen
+  - Minuter: gör 60 iterationer/ timme
+  - Sekunder: gör 60 iterationer/ minut
 
-```{r, eval=TRUE}
-A <- matrix(1:4, nrow = 2)
+
+Nästlade loopar (nested loops)
+========================================================
+type: prompt
+
+```{r eval=TRUE}
+A <- matrix(1:6, nrow = 2)
 for ( i in 1:2 ) {
-  for ( j in 1:2 ) {
-    print(A[i,j])
+  for ( j in 1:3 ) {
+    text<-paste("r:",i,"  k:",j,"  v:",A[i,j])
+    print(text)
   }
 }
 ```
@@ -233,9 +252,9 @@ Kontrollstrukturer för loopar
 - Vi vill ofta kontrollera hur looparna arbetar
 - För detta finns följande kontrollstrukturer:
 
-| Kontrollstruktur i R | Effekt |
+| Kontrollstruktur | Effekt |
 | --- | --- |
-| ```next()``` | Börjar om loopen direkt. | 
+| ```next()``` | Börjar om med nästa iteration direkt | 
 | ```break()``` | Avbryter den aktuella/innersta loopen. | 
 | ```stop()``` | Avbryter allt och genererar ett felmeddelande (Fungerar även i funktioner) | 
 
@@ -244,6 +263,7 @@ Exempel: next()
 type: prompt
 incremental: true
 ```{r, eval=TRUE}
+# skriv ut udda tal:
 for ( i in 1:10 ) {
   if(i %% 2 == 0) { next() }
   print(i)
@@ -328,12 +348,14 @@ Varningsmeddelanden
 - Varningar sparas och skrivs ut sist
 - ```warnings()```: skriva ut tidigare varningar
 
+
+Varningsmeddelanden
+========================================================
 ```{r,eval=FALSE}
 for (i in 1:2){
   print(i)
   warning(paste("Farligt värre", i))
 }
-
 ```
 ```{r,eval=TRUE,echo=FALSE}
 cat("[1] 1\n[1] 2\nWarning messages:\n1: Farligt värre 1 \n2: Farligt värre 2 ")
@@ -352,6 +374,7 @@ Olika typer av fel:
 Debugging
 ========================================================
 - Använd ```cat()```, ```print()``` eller ```message()``` för att skriva ut värden på olika variabler -> få en uppfattning av vad som händer i en funktion
+  - Använd ```paste()``` för att kombinera text och variabler
 - ```browser()```: "hoopar in i funktionen på valt ställe"
   - ```n```: kör nästa rad kod
   - ```c```: kör allt i funktion/loop
