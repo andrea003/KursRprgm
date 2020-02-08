@@ -351,7 +351,7 @@ status open
 
 \begin_layout Plain Layout
 
-module load courses/732G33
+module load courses/732G33/2020-01-13.1 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1679,6 +1679,16 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+En integral anger arean under en funktionskurva.
+\end_layout
+
+\end_inset
+
  en funktion 
 \begin_inset CommandInset href
 LatexCommand href
@@ -1899,6 +1909,34 @@ integrate(f=exp_pdf, 0, 1, lambda = 1)
 
 \end_layout
 
+\begin_layout Enumerate
+Testa sen att beräkna integralerna
+\begin_inset Formula 
+\[
+\int_{0}^{1}f_{X}(x,\lambda=2)dx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{1}^{2}f_{X}(x,\lambda=2)dx
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\int_{0}^{4}f_{X}(x,\lambda=0.1)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Ellipsis (
 \family typewriter
@@ -2104,6 +2142,48 @@ do.call()
 \family default
  är en mycket kraftfull funktion när det gäller hantering av funktioner
  i funktioner.
+ 
+\family typewriter
+do.call()
+\family default
+ har två huvudsakliga argument 
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+what
+\family default
+: En funktion
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+args
+\family default
+: En lista, elementen i listan är argument till funktionen 
+\family typewriter
+what
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+do.call()
+\family default
+ tar funktionen som ges av 
+\family typewriter
+what
+\family default
+ och anropar den med argumenten som anges i 
+\family typewriter
+args
+\family default
+.
+ Detta är användbart i många situationer.
 \end_layout
 
 \begin_layout Enumerate
@@ -2122,6 +2202,49 @@ status open
 \begin_layout Plain Layout
 
 <<eval=FALSE,echo=TRUE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+a<-iris$Sepal.Length
+\end_layout
+
+\begin_layout Plain Layout
+
+mean(x = a) 
+\end_layout
+
+\begin_layout Plain Layout
+
+median(x = a)
+\end_layout
+
+\begin_layout Plain Layout
+
+do.call(what = mean,args = list(x=a)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+do.call(what = median,args = list(x=a))
+\end_layout
+
+\begin_layout Plain Layout
+
+arg_list<-list(x=a)
+\end_layout
+
+\begin_layout Plain Layout
+
+do.call(what = median,args = arg_list)
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -2186,6 +2309,11 @@ do.call(g,mylist)
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+# se fler exempel i dokumentation för do.call()
 \end_layout
 
 \begin_layout Plain Layout
@@ -3673,7 +3801,7 @@ apply(X = iris[,-5],MARGIN = 2,FUN = quantile,probs=c(0.1,0.5,0.9))
 \begin_layout Chapter
 Dokumentation av funktioner - 
 \family typewriter
-ROxygen
+ROxygen2
 \end_layout
 
 \begin_layout Standard
@@ -3722,16 +3850,17 @@ Vill vi dokumentera våra funktioner utan att skapa egna paket använder vi
  
 \begin_inset CommandInset href
 LatexCommand href
-name "ROxygen"
-target "http://roxygen.org/roxygen.pdf"
+name "ROxygen2"
+target "https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html"
 literal "false"
 
 \end_inset
 
 .
  Det är ett format för att dokumentera funktioner direkt i R.
- Har vi väl dokumenterat våra funktioner med Roxygen kan vi generera R documenta
-tion-filer automatiskt om vi väljer att lägga in funktionen i ett paket.
+ Har vi väl dokumenterat våra funktioner med Roxygen2 kan vi generera R
+ documentation-filer automatiskt om vi väljer att lägga in funktionen i
+ ett paket.
  
 \end_layout
 
@@ -4125,7 +4254,9 @@ Kodstil
 \end_layout
 
 \begin_layout Standard
-Kolla på de olika stilguiderna:
+Det är viktigt att skriva läsbar och tillgänglig kod.
+ Därför har det skapats olika kodstilar i olika programmeringsspråk.
+ Kolla på de olika stilguiderna för R:
 \end_layout
 
 \begin_layout Itemize
@@ -4312,7 +4443,7 @@ Hur bör jag kommentera min kod?
 
 \begin_layout Enumerate
 Vilken operator ska jag använda vid vanlig tilldelning? (Dvs.
- jag vill jag variabeln 
+ jag vill att variabeln 
 \family typewriter
 x
 \family default
@@ -4325,6 +4456,11 @@ Hur ser ett bra filnamn ut?
 
 \begin_layout Enumerate
 Att diskutera: Varför är det viktigt att ha en bra kodstil? 
+\end_layout
+
+\begin_layout Enumerate
+Att diskutera: Vissa din kod från några övningsuppgifter för någon annan
+ och diskutera hur kodstilen kan förbättras.
 \end_layout
 
 \begin_layout Standard
@@ -4368,8 +4504,8 @@ status open
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
@@ -6063,7 +6199,12 @@ moment_func(densities = test_list1,moment = 1:10)
 
 \begin_layout Plain Layout
 
-moment_func(densities = test_list1,moment = E_discrete)
+D<-moment_func(densities = test_list1,moment = E_discrete)
+\end_layout
+
+\begin_layout Plain Layout
+
+D
 \end_layout
 
 \begin_layout Plain Layout
