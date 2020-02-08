@@ -4724,7 +4724,7 @@ x
  beräknas genom formeln:
 \begin_inset Formula 
 \begin{equation}
-y_{t}=\frac{x_{t}+\cdots+x_{t+n-1}}{n}\label{eq:MA}
+y_{t}=\frac{x_{t}+\cdots+x_{t-(n-1)}}{n}\label{eq:MA}
 \end{equation}
 
 \end_inset
@@ -4821,9 +4821,18 @@ y
 \end_layout
 
 \begin_layout Enumerate
-Loopa över alla element i 
+Beräkningen av glidande medelvärde kan nu göras på två likvärdiga sätt:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Utgå från index för 
 \family typewriter
-y
+x
+\family default
+ och loopa över alla element i 
+\family typewriter
+x
 \family default
  och genomför beräkningen i 
 \begin_inset CommandInset ref
@@ -4839,6 +4848,39 @@ y
 .
 \end_layout
 
+\begin_layout Enumerate
+Utgå från index för 
+\family typewriter
+y
+\family default
+ och loopa över alla element i 
+\family typewriter
+y
+\family default
+ och genomför beräkningen
+\begin_inset Formula 
+\[
+y_{t}=\frac{x_{t}+\cdots+x_{t+(n-1)}}{n}
+\]
+
+\end_inset
+
+och spara värdet på rätt ställe i vektorn 
+\family typewriter
+y
+\family default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Notera att looparna använder olika index i fall (a) och fall (b).
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Returnera 
 \family typewriter

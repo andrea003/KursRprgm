@@ -24,6 +24,7 @@ if(2 > 4) print("Nej!")
 # if-esle:
 x <- 10
 x <- 40
+
 if(x <= 20){
   print("litet x")
 } else {
@@ -32,7 +33,7 @@ if(x <= 20){
 
 
 # vad händer nedan?
-x <- 1:2
+x <- 0:10
 if(x >= 1) print("hej")
 
 
@@ -102,7 +103,7 @@ vector
 
 # beror inte av loop-index "i"
 for(i in vector){
-  print(my_sign( -10 ))
+  print(my_sign( x = -10 ))
 }
 
 # beror inte av loop-index "i"
@@ -112,7 +113,7 @@ for(i in 1:3){
 
 vector
 for(i in vector){
-  print(my_sign( i ))
+  print(my_sign( x = i ))
 }
 
 
@@ -141,6 +142,8 @@ for(i in seq_along(vec)){
 }
 sum_0
 
+
+
 for(j in 1:5){
   print(j)
   if(j %% 2 == 0){
@@ -158,7 +161,8 @@ for(j in 1:5){
 
 A <- matrix(c(3,6,9,2), nrow = 2)
 A
-i <- 1
+#i <- 1
+
 for ( i in 1:2 ) {
   for ( j in 1:2 ) {
     print(A[i,j])
