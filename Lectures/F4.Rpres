@@ -71,8 +71,8 @@ Inför del 2 av kursen
 ========================================================
 - Labbar ska göras i par 
   - De som läser om kursen gör labbarna ensam eller tillsammans med någon anna som läser om kursen. 
-- På Discord finns en länk till ett dokument där ni ska fylla i er.
-- Ni blidar grupper själva. Deadline söndag (17/2) kväll· 
+- På Teams finns en länk till ett dokument där ni ska fylla i er.
+- Ni blidar grupper själva. Deadline lördag (15/2) kväll.
 
 Mer om funktioner
 ========================================================
@@ -81,7 +81,6 @@ type: section
 
 Kort repetition
 ========================================================
-incremental: true
 En funktion i R består av:
 - ett funktionsnamn (ex. ```f```)
 - en funktionsdefinition med   ```function()```
@@ -108,7 +107,6 @@ class(f)
 
 Allmänt om funktioner
 ========================================================
-incremental: true
 - Funktioner har tre delar: 
   - argument
   - funktionskropp
@@ -144,7 +142,6 @@ integrate(square_function, lower = 0, upper = 1)
 
 Allmänt om funktioner (forts. II)
 ========================================================
-incremental: true
 - Vi behöver inte namnge argumenten
 ```{r}
 f(1,5) # Samma som f(x = 1, y = 5)
@@ -182,8 +179,6 @@ type: sub-section
 
 Globala miljöer, lokala miljöer och namespaces
 ========================================================
-incremental: true
-
 Objekt kan definieras/skapas i...
 
 - Den global miljön 
@@ -193,7 +188,6 @@ Objekt kan definieras/skapas i...
 
 Hur vet R vad vi menar?
 ========================================================
-incremental: true
 - objektnamn och objekt
 
 - R:s söklista:
@@ -203,7 +197,6 @@ incremental: true
 
 Fria variabler
 ========================================================
-incremental: true
 
 ```{r,eval=FALSE}
 f <- function(x) x + y
@@ -234,7 +227,6 @@ f(3)
 
 Hur vet R vad vi menar? II
 ========================================================
-incremental: true
 - Se R:s söklista: ```search()```
 - Se var en funktion skapats: ```enviroment()```
 - Anropa en funktion i en given namespace/miljö: ```::```
@@ -254,9 +246,8 @@ environment(f)
 environment(base::mean)
 ```
 
-Lite mer om att skapa objekt
+Mer om att skapa objekt
 ========================================================
-incremental: true
 
 Att skapa / definiera objekt kallas att tilldela (assign)
 
@@ -283,7 +274,7 @@ Bygger på artikeln *Best practices for scientific computing* som finns [här](h
 God (vetenskaplig) programmering
 ========================================================
 - Kod är stor del av vetenskap/analys
-- Forskare spenderar 30% eller mer på att skriva kod
+- Forskare/statistiker spenderar stor del av sin tid med att skriva kod
 - Det är enkelt att det blir fel
 
 8 steg för god programmering
@@ -300,7 +291,6 @@ God (vetenskaplig) programmering
 
 1. Skriv kod för människor, inte datorer
 ========================================================
-incremental: true
 - Läsare ska inte behöva hålla allt i huvudet - använd funktioner
 - Använd objektnamn som är tydliga och meningsfulla
 - Använd en kodstil (coding style):
@@ -308,32 +298,28 @@ incremental: true
 
 2. Låt datorn göra arbetet
 ========================================================
-incremental: true
 - Låt datorn upprepa uppgifter 
 - Återanvänd kod - använd funktioner
 - Automatisera arbetsflödet (one file to rule them all)
 
 3. Arbeta i små steg
 ========================================================
-incremental: true
 - Skriv kod i små steg, testa och ändra löpande, spara ofta
 - [Versionshantera](https://en.wikipedia.org/wiki/Version_control) din kod (överkurs)
   - Git finns implementerat direkt i R-Studio [mer info](http://www.molecularecologist.com/2013/11/using-github-with-r-and-rstudio/)
-- Versionshantera ALLT som inte skapas av koden (överkurs)
-  - Data, rapporter, (kurser i [R programmering](https://github.com/STIMALiU/KursRprgm))
+  - Versionshantera ALLT som inte skapas av koden (överkurs)
+    - Data, rapporter, (kurser i [R programmering](https://github.com/STIMALiU/KursRprgm))
 - Det finns enkel versionshantering i OneDrive, Dropbox och Google drive
 
 
 4. Upprepa aldrig din (eller andras) kod (DRY - principle)
 ========================================================
-incremental: true
 - All data ska bara finnas på ett ställe (ex. konstanter)
 - Skapa funktioner istället för att copy-paste
 - Återvinn (din och andras) kod istället för att skriva egen - **R-paket!**
 
 5. Planera för misstag
 ========================================================
-incremental: true
 - Skapa kontroller av input och output: ```stop()```
 - Det ska smälla högt och tidigt
 - Använd testpaket (överkurs)
@@ -344,7 +330,6 @@ incremental: true
 
 6. Optimera kod först när den fungerar korrekt
 ========================================================
-incremental: true
 - Se till att ha en kod som löser ditt problem
 - Sen kan du fundera på om den behöver vara:
     - snabbare
@@ -357,7 +342,6 @@ incremental: true
 
 7. Dokumentera
 ========================================================
-incremental: true
 - Dokumentera syftet med koden, **inte** vad koden gör
 - Gör koden enkel att förstå
 - Kombinera kod och dokumentation
@@ -367,7 +351,6 @@ incremental: true
 
 8. Samarbeta
 ========================================================
-incremental: true
 - Låt andra titta på/kolla din kod
 - Använd parprogrammering för att:
   - hjälpa kollegor in i projekt
@@ -389,7 +372,6 @@ type: section
 
 Vad är R-paket?
 ========================================================
-incremental: true
 
 - R:s största styrka!
 - En samling funktioner
@@ -403,22 +385,24 @@ incremental: true
 
 Läsa in redan installerade R-paket
 ========================================================
-incremental: true
-
 - Läsa in paket görs med ```library()```
 - Anropa funktioner (utan att ladda paket görs med ```::```)
   - ```base::mean()```
 - Installera paket:
   - ```install.packages()``` (CRAN)
   - ```devtools::install_github()``` (GitHub)
+
+
+Läsa in redan installerade R-paket
+========================================================
 - En del paket följer med R 
 - ```ls("package:MASS")``` visar vilka funktioner som finns i paketet MASS.
 - I Rstudio finns en flik för pakethantering
 - Lista alla inlästa paket: ```sessionInfo()```
 
+
 Semantic versioning
 ========================================================
-incremental: true 
 
 - Ett versionsnummer består av tre delar:
   [MAJOR].[MINOR].[PATCH]
@@ -433,7 +417,6 @@ R.version.string
 
 Att hitta rätt paket
 ========================================================
-incremental: true
 
 - Alla paket håller inte samma kvaliet. Följande tips för att granska:
   1. Kommer paketet med R eller någon från R Core Team?
@@ -449,7 +432,6 @@ incremental: true
 
 Installera paket
 ========================================================
-incremental: true
 
 CRAN:
 
@@ -471,8 +453,8 @@ library(lubridate)
 ```
 
 SU-salar: Läsa in paket relaterade till kursen: 
-- kör följande i en terminal
-- ```module load courses/732G33```
+- kör följande i en terminal:
+  - ```module load courses/732G33/2020-01-13.1```
 - så kommer ni få tillgång till R, RStudio samt de R-paket som behövs i kursen. 
 - Öppna en terminal genom att trycka ctrl+alt+T
 
