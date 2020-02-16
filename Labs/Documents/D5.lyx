@@ -1044,6 +1044,16 @@ literal "false"
 
 \end_inset
 
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Mer om detta kursvecka 6.
+\end_layout
+
+\end_inset
+
  och i många fall använder vi plot för att visualisera olika typer av objekt.
  Testa
 \family typewriter
@@ -1457,7 +1467,7 @@ Sepal.Length~Species
 \family default
  är ett exempel på formel-objekt.
  Formel-objekt används i olika sammanhang i R, men ett vanligt exempel är
- när linjär regerssion
+ när 
 \begin_inset CommandInset href
 LatexCommand href
 name "linjär regerssion"
@@ -2590,6 +2600,14 @@ Skapa en vektor med 50 slumptal från t-fördelningen, med medelvärde 1 och
  5 frihetsgrader (degrees of freedom), döp den till 
 \family typewriter
 minT
+\family default
+.
+ 
+\series bold
+Tips:
+\series default
+ För att ändra medelvärdet på en slumpvariabel kan en konstant adderas/subtraher
+as till variabeln.
 \end_layout
 
 \begin_layout Enumerate
@@ -3370,20 +3388,17 @@ knitta
 \begin_inset Quotes erd
 \end_inset
 
- till både PDF, HTML och word-dokument.
+ till både PDF
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Notera att det behövs en installation av TEX för att kunna knitta till PDF.
 \end_layout
 
-\begin_layout Enumerate
-I R-Studio finns hjälp om R-markdown med knappen 
-\begin_inset Quotes eld
 \end_inset
 
-?
-\begin_inset Quotes erd
-\end_inset
-
-.
- Pröva att få fram hjälp på detta sätt.
+, HTML och word-dokument.
 \end_layout
 
 \begin_layout Subsection
@@ -4533,6 +4548,11 @@ download(url = apple_remote, destfile = apple_local)
 
 \begin_layout Plain Layout
 
+# den här filen hamnar i den working directory.
+\end_layout
+
+\begin_layout Plain Layout
+
 @
 \end_layout
 
@@ -4843,7 +4863,6 @@ Det går att få en snabb introduktion till detta paket med funktionen
 vignette()
 \family default
 .
- Dock är denna labb mer utförlig än vignetten.
 \begin_inset Newline newline
 \end_inset
 
@@ -5445,14 +5464,14 @@ suppressWarnings(a<-interactive_pxweb())
 \end_layout
 
 \begin_layout Section
-Namnstatistik 2018
+Namnstatistik 2019
 \end_layout
 
 \begin_layout Standard
 Använd pxweb för att ta reda på vilka namn som var vanliga att ge till nyfödda
- barn 2018.
+ barn 2019.
  Målet är att hitta de 5 vanligaste flicknamnen och de 5 vanligste pojknamnen
- som gavs till nyfödda barn 2018.
+ som gavs till nyfödda barn 2019.
 \end_layout
 
 \begin_layout Section
@@ -5677,18 +5696,12 @@ status open
 
 \begin_layout Plain Layout
 
-#solution_path<-"/Users/mansmagnusson/Dropbox (Personlig)/Doktorandstudier/Under
-visning/Statistisk programmering i R/KursRprgmTeacher/Labs/exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2019/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
@@ -5888,6 +5901,11 @@ str(pop)
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+str(tail(pop))
 \end_layout
 
 \begin_layout Plain Layout

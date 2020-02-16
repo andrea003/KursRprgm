@@ -135,6 +135,12 @@ PDF
 .Rmd
 \series default
 -fil.
+ Om ni har problem att skapa PDF så går det bra att lämna in som 
+\series bold
+HTML
+\series default
+-fil.
+ Notera att PDF är att föredra.
  Det är ok att skapa en HTML som ni sedan sparar/skriver ut som PDF.
  Filerna ska kallas: 
 \family typewriter
@@ -149,7 +155,11 @@ PDF
 \begin_inset Newline newline
 \end_inset
 
-Exempel på inlämning av miniprojekt del 1 är följande två filer: 
+Exempel på inlämning av miniprojekt del 1 är följande 
+\series bold
+två
+\series default
+ filer: 
 \end_layout
 
 \begin_deeper
@@ -370,10 +380,10 @@ månadsnivå
 \series default
  och innehålla data från 
 \series bold
-minst 5 år
+minst 10 år
 \series default
- (60 månder).
- Här ska ni alltså hitta en variabel som observerats under minst 60 tidpunkter,
+ (120 månder).
+ Här ska ni alltså hitta en variabel som observerats under minst 120 tidpunkter,
  men fler går bra.
  Data ska alltså innehålla två kolumner, en med variabeln som vi är intresserade
  av och en med tidpunkterna.
@@ -386,7 +396,7 @@ minst 5 år
 Obs!
 \series default
  Tidsperioden ska vara fix, d.v.s ex.
- jan 2005 - jan 2012.
+ jan 2005 - jan 2015.
  Detta innebär att ni måste ange ett fixt tidsintervall när ni laddar ner
  data med 
 \family typewriter
@@ -546,7 +556,7 @@ Inga output från R console/varningar/meddelanden/felmeddelanden ska visas
 \end_layout
 
 \begin_layout Section
-Del II: Analys
+Del II: Analys (Ej uppdaterad)
 \end_layout
 
 \begin_layout Standard
