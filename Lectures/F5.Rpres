@@ -109,7 +109,7 @@ R-programmering - del II:
   - **Båda** är delaktiga i programmeringen
 
 
-Miniprojektet
+Miniprojekt del 1
 ========================================================
 Info [här](https://github.com/STIMALiU/KursRprgm/blob/master/Miniproject/Instruktioner.pdf?raw=true)
 - Hitta data på webben (eller lägg upp eget)
@@ -139,6 +139,7 @@ Enkel grafik: plot()
   - ```plot(x,y)```, ger en scatterplot, här är x och y vektorer som ger x- och y-koordinater
   - ```plot(X)```, om X en data.frame så skapas en matrix-plot
   - Vanliga argument: "```type=```","```main=```", "```xlab=```,"```ylab=```","```xlim=```,"```ylim=```", "```col=```"
+
   
 Exempel: plot()
 ========================================================  
@@ -195,6 +196,7 @@ Lägg till "lager på lager":
 - ```lines(x, y) lägger``` till linjer
 - ```abline(a, b, h, v, ...)``` lägger till räta linjer
 - ```legend(x, y, legend, ...)``` lägger till en förklaringsruta
+- ```par()```: Fler alternativ
 
 Lågnivågrafik
 ========================================================
@@ -220,6 +222,7 @@ prefix | Beskrivning | Exempel
 ```p``` | kulmulativ fördelninsgfunktion (cdf) | ```pnorm()```
 ```q``` | inversa kulmulativa fördelningsfunktionen | ```qnorm()```
 
+- ```?Distributions```
 - Se CRAN task view: Distributions [här](http://cran.r-project.org/web/views/Distributions.html)
 
 Slumptal och simulering: Urval och slumpfrön
