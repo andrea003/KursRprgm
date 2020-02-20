@@ -10,6 +10,7 @@
 data("iris")
 head(iris)
 plot(x = iris$Sepal.Length, y = iris$Petal.Length)
+str(iris)
 plot(iris)
 
 plot(x = iris$Sepal.Length, y = iris$Petal.Length,col="red")
@@ -20,15 +21,23 @@ col_var<-iris$Species
 
 plot(x = iris$Sepal.Length, y = iris$Petal.Length,col=col_var,pch=16,cex=1.5)
 
+plot(x = iris$Sepal.Length, y = iris$Petal.Length,col="red",pch=16,cex=as.integer(col_var))
+
 data("AirPassengers")
 y<-as.numeric(AirPassengers)
 plot(x=y,t="l",lty=3,lwd=3,main="AirPassengers")
+
+plot(x=y,t="l",lty=1,lwd=3,main="AirPassengers")
 
 # AirPassengers är ett ts-objekt (ts=tidserie), så det går att plotta direkt:
 plot(AirPassengers)
 
 
 boxplot(y)
+
+hist(y,breaks = 10,col="blue",freq = FALSE)
+
+?par
 
 
 
@@ -44,6 +53,16 @@ rnorm(n = 5, mean = 10, sd = 1)
 set.seed(20180218)
 rnorm(n=5, mean=10, sd=1)
 
+
+y<-rnorm(n = 10000,mean = 4,sd = 2)
+
+hist(x = y,breaks = 100,freq = FALSE)
+
+x<-seq(-3,3,length=1000)
+y<-dnorm(x = x,mean = 0,sd = 1)
+plot(x,y,t="l")
+
+
 text <- c("Linköpings", "Universitet")
 set.seed(20180218)
 sample(x=text, size=4, replace=TRUE)
@@ -51,9 +70,18 @@ sample(x=text, size=4, replace=TRUE)
 set.seed(20180218)
 sample(x=text, size=4, replace=TRUE)
 
+sample(x=iris$Species, size=10, replace=FALSE)
+dim(iris)
+
+set.seed(4983)
+rand_index<-sample(x=150, size=10, replace=FALSE)
+rand_index
+
+iris[rand_index,]
+
 ?Distributions
 
-
+z
 z<-rexp(n = 1000,rate = 10)
 hist(z,breaks = 30,freq = FALSE)
 
@@ -73,7 +101,8 @@ pexp(q = 2,rate = 0.1)
 
 # 2. 
 # https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf
-
+---
+  
 # 3. 
 # Markdown file + Notebook
 

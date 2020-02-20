@@ -57,10 +57,7 @@ Info:
 ========================================================
 - Glöm inte att anmäla er till datortentan!
 - Endast anmälda studenter får skriva
-  - Anmälan öppnas: 2019-02-27
-  - Anmälan stänger: 2019-03-19
-- Labben flyttad till em imorgon
-- Mittkursutvärdering
+- Kommer vara i SU-salarna -> bli bekväm med Linux!
 
 Quiz
 ========================================================
@@ -100,7 +97,7 @@ Funktionell programmering
 
 Objektorientering (OO) i R
 ========================================================
-incremental: true
+
 
 - Stor skillnad mellan R och andra statistikprogram
 
@@ -114,7 +111,7 @@ incremental: true
 
 Objektorientering i R
 ========================================================
-incremental: true
+
 - Alla objekt i R har en klass
   - ```matrix```, ```data.frame```, ```lm```
 - Vi kan undersöka ett objekts klass med ```class()```  
@@ -131,7 +128,7 @@ Objektorientering i R
 
 Objektorientering i R
 ========================================================
-incremental: true
+
 Olika typer av klasser i R:
 - basklasser
 - S3 (informellt): "lista med klassattribut" -> Den här kursen
@@ -141,7 +138,7 @@ Olika typer av klasser i R:
 
 Generiska funktioner (S3)
 ========================================================
-incremental: true
+
 
 - OO i R utgår från generiska funktioner (polymorfism).
 - Generisk = allmänn
@@ -152,7 +149,7 @@ incremental: true
 
 Metoder
 ========================================================
-incremental: true
+
 
 - En funktion för en specifik klass
 - Metoderna utgår från generisk funktion
@@ -181,7 +178,7 @@ type: section
 
 Datum och tid
 ========================================================
-incremental: true
+
 
 - Datum är klurigt att arbeta med - men används extremt mycket
 - Två typer av tid
@@ -203,7 +200,7 @@ lubridate
 ========================================================
 - Paket för enkel och effektiv datumhantering
 - Sammansatt av "lubricant" och "date"
-- Introduktion: [Dates and Times Made Easy with lubridate](http://www.jstatsoft.org/v40/i03/paper) (kurslitteratur)
+- Introduktion: [Dates and Times Made Easy with lubridate](http://www.jstatsoft.org/v40/i03/paper) (kurslitteratur), mer länker på kurshemsidan
 
 
 Paketet lubridate
@@ -290,7 +287,7 @@ instant och interval: exempel
 library(lubridate)
 instant_1 <- ymd("2001-06-17")
 instant_2 <- ymd("2009-01-11")
-my_interval <- new_interval(start = instant_1, end = instant_2)
+my_interval <- interval(start = instant_1, end = instant_2)
 my_interval
 ```
 
@@ -359,13 +356,21 @@ Linjär algebra: Matriser
 Linjär algebra
 ========================================================
 - Transponat $\mathbf{X}'$ eller $\mathbf{X}^{T}$ : ```t(X)```
-- Invertera matris $X^{-1}$ : ```solve(X)```
-- Lösa ekvationssystem $Ax=b$: ```solve(a=A,b=b)```
+- Diagonalmatris: ```diag(c(1,3,5))```
+- Enhetsmatrisen  $\mathbf{I}$ : ```diag(3)```
+
+
+
+
+Linjär algebra
+========================================================
 - Matrismultiplikation $\mathbf{A}\cdot\mathbf{B}$ eller $\mathbf{AB}$ : ```A%*%B```
   - Kan bara göras med klassen ```matrix```, ej vektorer
   - Undvika att en matris blir en vektor med ```X[,1,drop=FALSE]```
-- Diagonalmatris: ```diag(c(1,3,5))```
-- Enhetsmatrisen  $\mathbf{I}$ : ```diag(3)```
+- Invertera matris $X^{-1}$ : ```solve(X)```
+  - Kom ihåg: $XX^{-1}=\mathbf{I}$
+- Lösa ekvationssystem $Ax=b$: ```solve(a=A,b=b)```
+  - $x=A^{-1}b$
 
 Linjär algebra
 ========================================================
@@ -381,6 +386,7 @@ Linjär algebra: Matrix
 - Matriserna i **Matrix** baseras på S4 klasser.
 - I **Matrix** är det skillnad på [glesa](https://sv.wikipedia.org/wiki/Gles_matris) och täta matriser.
 - Kolla på vingetterna [här](https://cran.r-project.org/web/packages/Matrix/index.html) för mer info.
+- Rekomenderas för mer avancerade tillämpningar 
 
 
 Linjär algebra i R: Demo
