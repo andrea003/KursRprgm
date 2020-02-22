@@ -3719,8 +3719,8 @@ visning/Statistisk programmering i R/KursRprgmTeacher/Labs/exercise_solutions/"
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2018/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
@@ -3992,7 +3992,7 @@ För blodgivare finns vissa regler för när hen får ge blod.
 \begin_inset CommandInset href
 LatexCommand href
 name "Här"
-target "http://geblod.nu/bli-blodgivare/kan-du-ge-blod/"
+target "https://geblod.nu/fragor-och-svar/"
 literal "false"
 
 \end_inset
@@ -4644,7 +4644,16 @@ där
 \end_layout
 
 \begin_layout Standard
-Vilket kan beskrivas som räta linjens ekvation i ett x-y-planet.
+Vilket kan beskrivas som 
+\begin_inset CommandInset href
+LatexCommand href
+name "räta linjens ekvation"
+target "https://sv.wikipedia.org/wiki/Linj%C3%A4r_ekvation"
+literal "false"
+
+\end_inset
+
+ i ett x-y-planet.
  Om vi har fler, tex tre stycken oberoende variabler ser modellen ut så
  här: 
 \end_layout
