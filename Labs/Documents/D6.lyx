@@ -1573,6 +1573,27 @@ Vi kan även självklart arbeta med blockmatriser för att skapa större matrise
 
 \end_layout
 
+\begin_layout Standard
+där 
+\begin_inset Formula $\mathbf{B}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{C}$
+\end_inset
+
+, 
+\begin_inset Formula $\mathbf{D}$
+\end_inset
+
+ och 
+\begin_inset Formula $\mathbf{F}$
+\end_inset
+
+ är matriser med lämpliga dimensioner.
+ 
+\end_layout
+
 \begin_layout Enumerate
 För att sätta samman två matriser kolumnvis används 
 \family typewriter
@@ -1886,7 +1907,16 @@ solve(B)
 \family typewriter
 solve()
 \family default
- kan även användas för att lösa linjära ekvationssystem.
+ kan även användas för att lösa 
+\begin_inset CommandInset href
+LatexCommand href
+name "linjära ekvationssystem"
+target "https://sv.wikipedia.org/wiki/Linj%C3%A4rt_ekvationssystem"
+literal "false"
+
+\end_inset
+
+.
  Testa 
 \family typewriter
 ?solve()
@@ -1976,6 +2006,19 @@ print(x)
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+Testa att ändra några värden i matrisen 
+\begin_inset Formula $B$
+\end_inset
+
+ och vektorn 
+\begin_inset Formula $b$
+\end_inset
+
+, och lös det nya ekvationssystemet.
+ Notera dock att vissa ekvationssystem saknar unika lösningar.
 \end_layout
 
 \begin_layout Enumerate
@@ -2112,7 +2155,16 @@ dim(A)
 \end_layout
 
 \begin_layout Enumerate
-Vill vi beräkna determinanten för en given matris använder vi 
+Vill vi beräkna 
+\begin_inset CommandInset href
+LatexCommand href
+name "determinanten"
+target "https://sv.wikipedia.org/wiki/Determinant"
+literal "false"
+
+\end_inset
+
+ för en given matris använder vi 
 \family typewriter
 det()
 \family default
@@ -2476,6 +2528,16 @@ reference "sec:Egenvärden-och-egenvektorer"
 
 \begin_layout Section
 * Extraproblem
+\end_layout
+
+\begin_layout Enumerate
+Skapa ett linjära ekvationssystem med fyra och sex ekvationer och lös dem
+ sedan med 
+\family typewriter
+solve()
+\family default
+.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -3456,7 +3518,279 @@ Hur många år du levt.
 
 \end_deeper
 \begin_layout Section
-* Extraproblem
+Sekvenser med datum
+\end_layout
+
+\begin_layout Standard
+Funktionen 
+\family typewriter
+seq()
+\family default
+ är en generisk funktion, som kan användas för att skapa sekvenser med datum.
+ Detta är användbart om vi t.ex.
+ vill skapa en vektor som innehåller alla datum för tio år.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+?seq.Date() 
+\end_layout
+
+\begin_layout Plain Layout
+
+methods(seq)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Testa koden nedan.
+ Vad händer?
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(from = ymd('2012-04-07'),to = ymd('2014-03-22'),by='weeks') 
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(ymd('2012-04-07'),ymd('2014-03-22'), by = '1 week') 
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(ymd('2012-04-07'),ymd('2014-03-22'), by = '2 week')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(ymd('2012-04-07'),ymd('2014-03-22'),by='days') 
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(ymd('2012-04-07'),ymd('2014-03-22'),by='15 days')
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(ymd('2012-04-07'),ymd('2014-03-22'),by='months') 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+seq(ymd('2012-04-07'),ymd('2014-03-22'),by='years') 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Skapa följande sekvenser:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Alla dagar mellan 2014-01-20 till 2017-03-28
+\end_layout
+
+\begin_layout Enumerate
+Varanan dag mellan 2014-01-20 till 2014-03-28, med start på den första dagen
+\end_layout
+
+\begin_layout Enumerate
+Med datumet för alla fredagar under 2020
+\end_layout
+
+\begin_layout Enumerate
+Med datumen för var fjärde vecka under hela 2019, med start 2019-01-01.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Tidserieplottar: Ibland vill vi göra plottar med data som varierar över
+ tid.
+ Då kommer sekvenser med datum väl till pass.
+ Funktionen 
+\family typewriter
+plot()
+\family default
+ kan anpassa sig automatiskt om x-variabeln är av datumklass.
+ Testa koden nedan, och notera x-axeln i plottarna i båda fallen.
+ Detta är användbart i samband med miniprojektet.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# skapa tidseriedata: 
+\end_layout
+
+\begin_layout Plain Layout
+
+x1<-seq(ymd("2017-01-01"),ymd("2020-12-31"),by="days") 
+\end_layout
+
+\begin_layout Plain Layout
+
+N<-length(x1) X<-scale(cbind(1:N,(1:N)^2,(1:N)^3)) 
+\end_layout
+
+\begin_layout Plain Layout
+
+set.seed(403) 
+\end_layout
+
+\begin_layout Plain Layout
+
+y<-130+2*X[,1]-2*X[,2]-10*X[,3]+rnorm(n = N,sd=1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+class(x1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+class(y) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# tidserieplot
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(x1,y,t="l") 
+\end_layout
+
+\begin_layout Plain Layout
+
+# vilken skala har x-axeln?
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# lite mindre data: 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(x1[1:365],y[1:365],t="l") 
+\end_layout
+
+\begin_layout Plain Layout
+
+# vilken skala har x-axeln?
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+x2<-1:N 
+\end_layout
+
+\begin_layout Plain Layout
+
+class(x2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(x2,y,t="l") 
+\end_layout
+
+\begin_layout Plain Layout
+
+# vilken skala har x-axeln?
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mer övningar
 \end_layout
 
 \begin_layout Enumerate
@@ -3486,40 +3820,6 @@ lubridate
 .
 \end_layout
 
-\begin_layout Enumerate
-Skapa följande sekvenser: [
-\series bold
-Tips!
-\series default
- 
-\family typewriter
-date + days(1:100)
-\family default
-]
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Alla dagar mellan 2014-01-20 till 2014-03-28
-\end_layout
-
-\begin_layout Enumerate
-Varanan dag mellan 2014-01-20 till 2014-03-28, med start på den första dagen
-\end_layout
-
-\begin_layout Enumerate
-Med datumet för alla fredagar under 2014
-\end_layout
-
-\begin_layout Enumerate
-Med datumen för var fjärde vecka under hela 2014, med start 2014-01-01.
-\end_layout
-
-\end_deeper
 \begin_layout Enumerate
 Skapa datumet 
 \begin_inset Quotes eld
@@ -3634,6 +3934,38 @@ Månaden till september.
 \end_layout
 
 \end_deeper
+\end_deeper
+\begin_layout Enumerate
+Vill du ha mer övning på datum och tider? 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Gå igenom koden här: 
+\begin_inset CommandInset href
+LatexCommand href
+name "vignette"
+target "https://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Gå igenom koden här: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Boken R for Data Science: 16 Dates and times"
+target "https://r4ds.had.co.nz/dates-and-times.html"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Newpage pagebreak
@@ -4366,7 +4698,31 @@ status open
 
 \begin_layout Plain Layout
 
-library(lubridate) x <- ymd("2012-03-28") 
+# lägg denna funktion utanför give_blood() i filen ni lämnar in
+\end_layout
+
+\begin_layout Plain Layout
+
+wrap_month<-function(x){   month.name[x] }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(lubridate) 
+\end_layout
+
+\begin_layout Plain Layout
+
+# exempel på datum:
+\end_layout
+
+\begin_layout Plain Layout
+
+x <- ymd("2012-03-28") 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4381,12 +4737,21 @@ print(month.name)
 
 \begin_layout Plain Layout
 
-y<-substr(x = month.name[month(x)],start = 1,stop = 3) 
 \end_layout
 
 \begin_layout Plain Layout
 
-print(y) 
+# ha denna kod i give_blood().
+\end_layout
+
+\begin_layout Plain Layout
+
+month_name_eng<-substr(x = wrap_month(month(x),label = FALSE),start = 1,stop
+ = 3) 
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
