@@ -9,7 +9,7 @@ context("my_ols()")
 
 test_that("Assignment: my_ols()", {
 
-  expect_true(exists("my_ols"))
+  expect_true(object = exists("my_ols"))
   checkmate::expect_function(my_ols, nargs = 2)
   expect_function_arguments(my_ols, c("X", "y"))
   
@@ -23,7 +23,7 @@ test_that("Assignment: my_ols()", {
   expect_true(object = all(names(my_ols(X=data.frame(var1=c(1:5)), y=rep(1,5))) %in% c("beta_hat", "sigma2_hat","e_hat")),
               info="Fel: Funktionen returnerar inte en lista med korrekt elementnamn (beta_hat, sigma2_hat, e_hat).")
   
-  expect_equal(rownames(my_ols(X=data.frame(var1=c(1:5)), y=rep(1,5))$beta_hat)[1], "(Intercept)", 
+  expect_equal(object = rownames(my_ols(X=data.frame(var1=c(1:5)), y=rep(1,5))$beta_hat)[1], "(Intercept)", 
                info = "Fel: Beta1 har inte (rad)namnet '(Intercept)'")
 
   expect_function_code(object = my_ols, expected = "return\\(", 
