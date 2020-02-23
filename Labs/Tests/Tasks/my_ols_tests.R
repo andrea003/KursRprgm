@@ -20,6 +20,9 @@ test_that("Assignment: my_ols()", {
   expect_that(object = length(my_ols(X=data.frame(var1=c(1:5)), y=rep(1,5))) == 3, expect_true(),
             info = "Fel: Funktionen returnerar inte en lista med tre element")
   
+  expect_true(object = length(my_ols(X=data.frame(var1=c(1:5)), y=rep(1,5))) == 3,
+              info = "Fel: Funktionen returnerar inte en lista med tre element")
+  
   expect_true(object = all(names(my_ols(X=data.frame(var1=c(1:5)), y=rep(1,5))) %in% c("beta_hat", "sigma2_hat","e_hat")),
               info="Fel: Funktionen returnerar inte en lista med korrekt elementnamn (beta_hat, sigma2_hat, e_hat).")
   
