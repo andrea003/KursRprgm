@@ -71,7 +71,7 @@ employee <- function(name, age,company){
   return(obj)
 }
 
-x<-employee(name = "Josef",age = 30,company = "abc")
+x<-employee(name = "Josef",age = 78,company = "abc")
 x
 class(x)
 
