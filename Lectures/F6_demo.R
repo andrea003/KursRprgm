@@ -52,6 +52,9 @@ age <- function(x) {
 
 age.default<-function(x) "No method available!"
 
+age(x = 1:10)
+
+
 age.employee<-function(x){
   return(x$age)
 }
@@ -77,6 +80,10 @@ class(x)
 
 
 
+
+
+
+
 #-------------------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------------------
 # Datum och tid
@@ -85,9 +92,20 @@ class(x)
 
 library(lubridate)
 
+x<-ymd("2015-01-01")
+class(x)
+
+
 a<-interval(ymd("2015-01-01"),ymd("2015-01-06"))
 a
+
+ymd("2015-01-01")%--%ymd("2015-01-06")
+
+
 print(a)
+
+a@start
+
 class(a)
 str(a)
 
@@ -121,7 +139,7 @@ class(a)
 str(a)
 
 # vad är by= i de olika fallen?
-seq(as.Date("2010-1-1"), as.Date("2015-1-1"), by = "years")
+seq(from = as.Date("2010-1-1"), to = as.Date("2015-1-1"), by = "years")
 
 seq(as.Date("2010-1-1"), as.Date("2015-1-1"), by = "months")
 
