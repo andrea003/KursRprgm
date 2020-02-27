@@ -4620,7 +4620,7 @@ Tex om föreslaget datum är 2014-02-21 så ska strängen bli:
 \begin_inset Quotes eld
 \end_inset
 
-year=2014, month=Feb, day=19, weekday=Friday
+year=2014 month=Feb day=19 weekday=Friday
 \begin_inset Quotes erd
 \end_inset
 
@@ -4703,7 +4703,7 @@ status open
 
 \begin_layout Plain Layout
 
-wrap_month<-function(x){   month.name[x] }
+wrap_month<-function(x){ month.name[x] }
 \end_layout
 
 \begin_layout Plain Layout
@@ -4746,8 +4746,8 @@ print(month.name)
 
 \begin_layout Plain Layout
 
-month_name_eng<-substr(x = wrap_month(month(x),label = FALSE),start = 1,stop
- = 3) 
+month_name_eng<-substr(x = wrap_month(month(x,label = FALSE)),start = 1,stop
+ = 3)  
 \end_layout
 
 \begin_layout Plain Layout
