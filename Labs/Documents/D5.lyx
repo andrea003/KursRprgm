@@ -6125,6 +6125,18 @@ result
 \series bold
 Obs!
 \series default
+ Notera att funktionen 
+\family typewriter
+sum_of_dice()
+\family default
+ ska vara inkluderad i filen som ni lämnar in.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Obs!
+\series default
  Om du inte implementerar funktionen på detta sätt kan den fortfarande fungera
  korrekt, men eftersom slumptalen används i olika ordning kan det vara så
  att du inte får samma resultat som i exemplen nedan.

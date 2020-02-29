@@ -1085,13 +1085,40 @@ geom_point(color="blue", size=4)
 \end_layout
 
 \begin_layout Enumerate
-Om vi nu vill förtydliga vissa delar av grafen med olika färger eller använder
- vi 
+Om vi vill att färgen på någon del av grafen ska bero av en annan variabel
+ så behöver vi ändra 
 \family typewriter
 aes
 \family default
- i den del av grafen vi vill ändra.
- Först ska vi skapa en ny faktorvariabel vi vill visualisera.
+ i den delen som berörs.
+ T.ex.
+ om vi vill att färgen på punkterna ska bero på en kategorisk variabel 
+\family typewriter
+cat_var
+\family default
+, så anger vi 
+\family typewriter
+geom_line(aes(color=cat_var))
+\family default
+.
+ Notera skillnaden om vi vill ha en 
+\begin_inset Quotes sld
+\end_inset
+
+fix
+\begin_inset Quotes srd
+\end_inset
+
+ färg, då vi anger 
+\family typewriter
+geom_line(color="red")
+\family default
+ utan att anävnda 
+\family typewriter
+aes
+\family default
+.
+ Nu ska färgen på vår graf ändras, skapa först en ny faktorvariabel.
 \begin_inset Newline newline
 \end_inset
 
@@ -1135,12 +1162,15 @@ Nile$period <- as.factor(Nile$period)
 \end_layout
 
 \begin_layout Enumerate
-Vill vi nu exempelvis lyfta in visualiseringen i linjerna måste vi lägga
- 
+Nu låter vi färgen på linjen bero på variabeln 
+\family typewriter
+period
+\family default
+ genom att ändra 
 \family typewriter
 aes
 \family default
- där.
+ på lämpligt ställe.
 \begin_inset Newline newline
 \end_inset
 
@@ -1170,7 +1200,11 @@ p <- ggplot(data=Nile) + aes(x=years, y=level) + geom_line(aes(color=period))
 \end_layout
 
 \begin_layout Enumerate
-Vill vi istället modifiera punkterna lägger vi till det i geom_point().
+Vill vi istället modifiera punkterna lägger vi till det i 
+\family typewriter
+geom_point()
+\family default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -1231,7 +1265,17 @@ p <- ggplot(data=Nile) + aes(x=years, y=level, color=period) + geom_line()
 \end_layout
 
 \begin_layout Enumerate
-Baserat på graferna ovan pröva att göra följande förändringar:
+Baserat på graferna ovan pröva att göra följande 
+\begin_inset Quotes sld
+\end_inset
+
+fixa
+\begin_inset Quotes srd
+\end_inset
+
+ förändringar.
+ Alltså om ni ändrar typ av linje så ska typen vara samma för all data i
+ grafen.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1276,8 +1320,301 @@ alpha
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+Gå nu till dokumentationen för 
+\family typewriter
+geom_point()
+\family default
+ och 
+\family typewriter
+geom_line()
+\family default
+.
+ Läs under rubriken 
+\begin_inset Quotes sld
+\end_inset
+
+Aesthetics
+\begin_inset Quotes srd
+\end_inset
+
+ och ta reda på vilka mer saker som ni kan styra genom att ändra aes.
+ Testa nu att låta följande saker bero på variabeln 
+\family typewriter
+period
+\family default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Typen av linje i grafen 
+\end_layout
+
+\begin_layout Enumerate
+Typen av punkter i grafen 
+\end_layout
+
+\begin_layout Enumerate
+Punkternas storlek
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Lägga till räta linjer: Ibland vill vi lägga till räta linjer till plottar,
+ t.ex.
+ som referenslinjer.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+x<-scale(1:100) 
+\end_layout
+
+\begin_layout Plain Layout
+
+set.seed(4939) 
+\end_layout
+
+\begin_layout Plain Layout
+
+y<-2+4*x+rnorm(n = 100) 
+\end_layout
+
+\begin_layout Plain Layout
+
+A<-data.frame(x=x,y=y) 
+\end_layout
+
+\begin_layout Plain Layout
+
+p<-ggplot(data = A,mapping = aes(x=x,y=y))+geom_point() 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p+geom_hline(yintercept=0,linetype=3) p+geom_hline(yintercept=-5:5,linetype=3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p+geom_vline(xintercept=c(-1,0,1),linetype=3)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p+geom_abline(slope = 4,intercept = 2,linetype=2,col=
+\begin_inset Quotes srd
+\end_inset
+
+blue
+\begin_inset Quotes srd
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p+geom_abline(slope = 4,intercept =2,linetype=1,size=1.5,col="red") 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_vline(xintercept=0,linetype=3) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_hline(yintercept=0,linetype=3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Vi kan även lägga till regressionslinjer med hjälp av 
+\family typewriter
+geom_smooth()
+\family default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Linjär regression:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+x<-scale(1:100) 
+\end_layout
+
+\begin_layout Plain Layout
+
+set.seed(4939) 
+\end_layout
+
+\begin_layout Plain Layout
+
+y<-2+4*x+rnorm(n = 100,sd=1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+A<-data.frame(x=x,y=y) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# anpassade värden från linjär regression:
+\end_layout
+
+\begin_layout Plain Layout
+
+p+geom_smooth(method = lm, se = FALSE) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# med osäkerhetsband:
+\end_layout
+
+\begin_layout Plain Layout
+
+p+geom_smooth(method = lm, se = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Icke-linjär regression
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# linjär regression: 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(mpg, aes(displ, hwy)) +geom_point() +geom_smooth(method = lm,se=TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# icke-linjär regression: 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(mpg, aes(displ, hwy)) +geom_point() +geom_smooth(method = loess,se=TRUE)
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(mpg, aes(displ, hwy)) +geom_point() +geom_smooth(span=0.2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
-Barplot, histogram och boxplot
+Barplot
 \end_layout
 
 \begin_layout Standard
@@ -1288,7 +1625,7 @@ För att pröva dessa diagram använder vi oss av datamaterialet mtcars.
 ?mtcars
 \family default
 .
- Vi gör också om:
+ Vi gör också om ett par variabler:
 \end_layout
 
 \begin_layout Standard
@@ -1336,7 +1673,8 @@ geoms
 \end_layout
 
 \begin_layout Enumerate
-Vill vi exempelvis skapa ett stapeldiagram anger vi bara en axel och ett
+Stapeldiagram utgår från kategoriska variabler.
+ Vill vi exempelvis skapa ett stapeldiagram anger vi bara en axel och ett
  annat geom, men i övrigt är det inge större skillnad mot en linjegraf:
  
 \begin_inset Newline newline
@@ -1406,7 +1744,19 @@ Skillnaden ligger i att det finns lite andra aestetics för stapeldiagram
 fill
 \family default
 .
- 
+ Läs under 
+\begin_inset Quotes sld
+\end_inset
+
+Aesthetics
+\begin_inset Quotes srd
+\end_inset
+
+ i dokumentationen för 
+\family typewriter
+geom_bar()
+\family default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -1453,24 +1803,44 @@ status open
 
 \begin_layout Plain Layout
 
-p <- ggplot(data=mtcars) + aes(x=cyl, fill=gear) + geom_bar(position="stack")
+p1 <- ggplot(data=mtcars) + aes(x=cyl, fill=gear) + geom_bar(position="stack")
 \end_layout
 
 \begin_layout Plain Layout
 
-p <- ggplot(data=mtcars) + aes(x=cyl, fill=gear) + geom_bar(position="dodge")
+p2 <- ggplot(data=mtcars) + aes(x=cyl, fill=gear) + geom_bar(position="dodge")
 \end_layout
 
 \begin_layout Plain Layout
 
-p + scale_fill_discrete(name="Testa
+\end_layout
+
+\begin_layout Plain Layout
+
+p1 + scale_fill_discrete(name="Testa
 \backslash
 nDetta")
 \end_layout
 
 \begin_layout Plain Layout
 
-p + scale_fill_manual(values=c("black", "blue", "red"))
+p1 + scale_fill_manual(values=c("black", "blue", "red"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p2 + scale_fill_discrete(name="Testa
+\backslash
+nDetta")
+\end_layout
+
+\begin_layout Plain Layout
+
+p2 + scale_fill_manual(values=c("black", "blue", "red"))
 \end_layout
 
 \begin_layout Plain Layout
@@ -1481,6 +1851,12 @@ p + scale_fill_manual(values=c("black", "blue", "red"))
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+Utgå nu från datamaterialet nedan.
+ Skapa ett stapeldiagram för variablen new_spec i iris2 med ggplot.
+ De olika staplarna ska ha olika färg på fyllningen.
 \end_layout
 
 \begin_layout Subsection
@@ -1488,49 +1864,12 @@ Histogram
 \end_layout
 
 \begin_layout Enumerate
-Den egentliga skillnaden mellan ett stapeldiagram och ett histogram är bara
- huruvida variabeln är kontinuerlig eller inte.
- Detta gör att för att skapa ett histogram gör vi på exakt samma sätt, men
- vi använder oss av en kontinuerlig variabel:
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=TRUE,fig.height=4, fig.width=4, fig.align='center'>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-p <- ggplot(data=mtcars) + aes(x=mpg) + geom_bar(fill="darkblue", colour="red")
-\end_layout
-
-\begin_layout Plain Layout
-
-p
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-Sättet ovan är ett sätt att skapa ett histogram.
- Vi kan också använda den specialgjorda geometriska funktionen 
+När vi vill göra histogram så utgår vi ifrån en kontinuerlig variabel.
+ Om vi vill göra ett histogram så använder vi oss av 
 \family typewriter
 geom_histogram()
 \family default
- om vi vill kunna hantera histogram enklare.
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -1550,12 +1889,12 @@ p <- ggplot(data=mtcars) + aes(x=mpg)
 
 \begin_layout Plain Layout
 
-p <- p + geom_histogram(fill="darkblue", colour="red",binwidth=10)
+p + geom_histogram(fill="yellow", colour="red",binwidth=7) 
 \end_layout
 
 \begin_layout Plain Layout
 
-p
+p + geom_histogram(fill="yellow", colour="red",binwidth=3)
 \end_layout
 
 \begin_layout Plain Layout
@@ -1568,51 +1907,28 @@ p
 
 \end_layout
 
-\begin_layout Subsection
-Boxplot
-\end_layout
-
 \begin_layout Enumerate
-Boxplottar är egentligen en kombination av kontinuerliga variabler.
- Precis som tidigare inleder vi skapa en 
+Det går också att skapa histogram med 
 \family typewriter
-ggplot
+geom_bar()
 \family default
- med ett datamaterial och definierar vilka variabler vi vill använda.
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=TRUE, fig.height=4, fig.width=4, fig.align='center'>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-p <- ggplot(data=mtcars) + aes(x=cyl, y=mpg) + geom_boxplot()
-\end_layout
-
-\begin_layout Plain Layout
-
-p
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
+, men det är bättre att använda 
+\family typewriter
+geom_histogram()
+\family default
+.
+ Den egentliga skillnaden mellan ett stapeldiagram och ett histogram är
+ bara huruvida variabeln är kontinuerlig eller inte.
 \end_layout
 
 \begin_layout Enumerate
-Vill vi sedan göra förändringar kan vi lägga till det till och från.
+Ibland vill vi ha en relativ skala på y-axeln när vi gör histogram.
+ Detta kan göras med att lägga till 
+\family typewriter
+aes(y=..density..)
+\family default
+ Testa koden nedan.
+ Notera hur skalan på y-axeln ändras.
 \begin_inset Newline newline
 \end_inset
 
@@ -1627,7 +1943,313 @@ status open
 
 \begin_layout Plain Layout
 
-p + coord_flip() + xlab("X") + ggtitle("Hejsan")
+p <- ggplot(data=mtcars) + aes(x=mpg)
+\end_layout
+
+\begin_layout Plain Layout
+
+p + geom_histogram(aes(y=..density..),fill="yellow", colour="red",binwidth=3)
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Density plots: Vi kan representera fördelningen över olika värden med histogram.
+ Vi kan tänka att den övre kanten av histogrammet är approxiamtion av en
+ underliggande täthetsfunktion.
+ Det finns statistika metoder som kan skatta den underliggande tätheten
+ (se t.ex.
+ funktionen 
+\family typewriter
+density()
+\family default
+).
+ Ibland vill vi plotta dessa täthetsfunktioner,och då kan vi använda geom_densit
+y().
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+# skapa data:
+\end_layout
+
+\begin_layout Plain Layout
+
+set.seed(4390) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+y<-c(rnorm(n = 1000,mean = 7,sd = 1),
+\end_layout
+
+\begin_layout Plain Layout
+
+rnorm(n = 200,mean = 4,sd = 0.1),
+\end_layout
+
+\begin_layout Plain Layout
+
+rgamma(n = 2000,shape = 1,rate = 1))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Y<-data.frame(var1=y) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# vanligt histogram:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1,y=..density..))+geom_histogram(,binwidth = 0.3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# density plots:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1))+geom_density() 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1))+geom_density(adjust=1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1))+geom_density(adjust=0.1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1))+geom_density(adjust=1.5)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# fler ex:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1))+geom_density(adjust=0.1,alpha=0.5,fill="red")
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1))+geom_density(adjust=0.1,alpha=0.1,fill="blue")
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# kombinera:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = Y,aes(x=var1,y=..density..))+geom_histogram(,binwidth = 0.3)+geom_densi
+ty(adjust=0.3)
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Utgå från irisdata.
+ Gör ett histogram för varje numerisk variabel.
+ Ändra 
+\family typewriter
+binwidth
+\family default
+ så att figuerna ser bra ut.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Boxplot
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset href
+LatexCommand href
+name "Boxplottar"
+target "https://sv.wikipedia.org/wiki/L%C3%A5dagram"
+literal "false"
+
+\end_inset
+
+ kan användas när vi vill plotta en kontinuerlig variabel eller när vi vill
+ gruppera en kontinuerlig efter en kategorisk variabel.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+En kontinuerlig variabel:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE, fig.height=4, fig.width=4, fig.align='center'>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+?chickwts 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = chickwts,aes(y=weight))+geom_boxplot(fill="green") 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,aes(y=Sepal.Length))+geom_boxplot(fill="yellow")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Gruppera:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=TRUE, fig.height=4, fig.width=4, fig.align='center'>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = chickwts,aes(y=weight,x=feed))+geom_boxplot(fill="green")
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,aes(y=Sepal.Length,x=Species))+geom_boxplot(fill="yellow")
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Vi kan sen lägga till fler lager till våra plottar.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+p <- ggplot(data=mtcars,aes(x=cyl, y=mpg)) + geom_boxplot()
+\end_layout
+
+\begin_layout Plain Layout
+
+p
+\end_layout
+
+\begin_layout Plain Layout
+
+p + coord_flip() + xlab("X") + ggtitle("Hejsan") 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1678,7 +2300,7 @@ ggplot2
  genomgående är Pensionsmyndighetens 
 \begin_inset CommandInset href
 LatexCommand href
-name "[Orange rapport]"
+name "Orange rapport"
 target "https://www.pensionsmyndigheten.se/om-pensionsmyndigheten/vart-uppdrag-och-organisation/arsredovisningar"
 literal "false"
 
@@ -1814,8 +2436,8 @@ s framgår
 
 \begin_inset CommandInset href
 LatexCommand href
-name "[här]"
-target "https://github.com/jrnold/ggthemes"
+name "här"
+target "https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/"
 literal "false"
 
 \end_inset
@@ -1870,6 +2492,65 @@ p + theme_tufte()
 
 @
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mer övningar
+\end_layout
+
+\begin_layout Standard
+Det finns en stor mängd guider och introduktioner till ggplot2 på internet.
+ Nedan följer några tips om ni vill öva mer:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "R Graphics Cookbook, 2nd edition"
+target "https://r-graphics.org/"
+literal "false"
+
+\end_inset
+
+: Finns kaptiel för olika typer av plottar t.ex.
+ Bar Graph.
+ Här finns mycket information om hur ni kan kontrollera detaljer i plottarna.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "An Introduction to ggplot2"
+target "https://uc-r.github.io/ggplot_intro"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "3 Data visualisation"
+target "https://r4ds.had.co.nz/data-visualisation.html"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "28 Graphics for communication"
+target "https://r4ds.had.co.nz/graphics-for-communication.html"
+literal "false"
 
 \end_inset
 
@@ -1980,12 +2661,21 @@ choose()
 
 \begin_layout Enumerate
 Nu ska ni implementera en funktion som ska beräkna täthetsfunktionen för
- för binomalfördelninen.
+ för binomialfördelningen.
  Titta i 
 \family typewriter
 ?dbinom
 \family default
- och se hur tätheten beräknas.
+ eller 
+\begin_inset CommandInset href
+LatexCommand href
+name "här"
+target "https://sv.wikipedia.org/wiki/Binomialf%C3%B6rdelning"
+literal "false"
+
+\end_inset
+
+ och se hur tätheten ska beräknas.
  Ni kan sedan använda 
 \family typewriter
 dbinom()
@@ -2054,7 +2744,7 @@ Som ett första steg vill vi pröva att producera korstabeller.
 \family typewriter
 iris
 \family default
- finns bara en kategorisk variabel, därför klassindlear vi två kontinuerliga
+ finns bara en kategorisk variabel, därför klassindelar vi två kontinuerliga
  variabler på följande sätt.
 \begin_inset Newline newline
 \end_inset
