@@ -5801,7 +5801,17 @@ tet till
 pxweb
 \family default
 .
- Tips! om ni använder det gamla gränssnittet, kör:
+ 
+\series bold
+Tips!
+\series default
+ Använd det engelska gränssnittet till SCB:s api så slipper ni problem med
+ variabelnamn som har å, ä och ö.
+ 
+\series bold
+Tips!
+\series default
+ om ni använder det gamla gränssnittet, kör:
 \end_layout
 
 \begin_layout Standard

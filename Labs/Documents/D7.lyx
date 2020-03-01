@@ -2499,6 +2499,713 @@ p + theme_tufte()
 \end_layout
 
 \begin_layout Section
+Kombinera plottar
+\end_layout
+
+\begin_layout Subsection
+facet_grid()
+\end_layout
+
+\begin_layout Standard
+Det finns olika sätt att kombinera flera plottar eller skapa subplots med
+ ggplot2.
+ Ett sätt är att använda 
+\family typewriter
+facet_grid()
+\family default
+.
+ 
+\family typewriter
+facet_grid()
+\family default
+ är bra när vi vill skapa subplots baserat på olika kategoriska variabler
+ i datasetet.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+
+\family typewriter
+facet_grid()
+\family default
+ utgår från ett formelobjekt, som kommer att styra hur våra subplottar skapas.
+ Låt 
+\family typewriter
+var1
+\family default
+ och 
+\family typewriter
+var2
+\family default
+ vara två kategoriska variabler i vår data.frame med minst två unika värden.
+ Beroende på hur vi definerar formelobjektet så kommer 
+\family typewriter
+facet_grid()
+\family default
+ att dela upp data i olika delar och skapa samma sorts plot men för olika
+ delmängder av data i de olika delplottarna.
+ Nedan följer exempel på hur formelobjeten kan skapas
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\family typewriter
+var1~.
+
+\family default
+ skapar rader med plottar där data delas upp baserat på värdena i 
+\family typewriter
+var1
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+.~var1
+\family default
+ skapar kolumner med plottar där data delas upp baserat på värdena i 
+\family typewriter
+var1
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+var1~var2
+\family default
+ skapar rader och kolumner med plottar där data delas upp baserat på värdena
+ i både 
+\family typewriter
+var1
+\family default
+ och 
+\family typewriter
+var2
+\family default
+.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Utgå från Iris-data.
+ Vi vill gör subplots baserat på variablen 
+\begin_inset Quotes sld
+\end_inset
+
+species
+\begin_inset Quotes srd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Vi börjar med att göra histogram över variabeln 
+\begin_inset Quotes sld
+\end_inset
+
+Sepal.Length
+\begin_inset Quotes srd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# all data i samma plot:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,mapping = aes(x = Sepal.Length)) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_histogram(binwidth = 0.2,fill="green",col="black") 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# kolumner: 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,mapping = aes(x = iSepal.Length)) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_histogram(binwidth = 0.2,fill="green",col="black") 
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid(.~Species) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# rader: 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,mapping = aes(x = Sepal.Length))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_histogram(binwidth = 0.2,fill="green",col="black") 
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid(Species~.) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Nu vill vi göra scatter plots mellan 
+\begin_inset Quotes sld
+\end_inset
+
+Sepal.Length
+\begin_inset Quotes srd
+\end_inset
+
+ och 
+\begin_inset Quotes sld
+\end_inset
+
+Sepal.Width
+\begin_inset Quotes srd
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# all data i samma plot:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,mapping = aes(x = Sepal.Length,y=Sepal.Width)
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# rader: 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,mapping = aes(x = Sepal.Length,y=Sepal.Width)) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=3)+facet_grid(Species~.) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# med regressionslinje:
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = iris,mapping = aes(x = Sepal.Length,y=Sepal.Width)) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=3)+facet_grid(Species~.) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_smooth(method = lm,se=FALSE)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Nedan följer några exempel med mpg-data.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+mpg<-as.data.frame(mpg) 
+\end_layout
+
+\begin_layout Plain Layout
+
+head(mpg) 
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = mpg,mapping = aes(x =cty ,y=hwy))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=1)
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid(cyl~.) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = mpg,mapping = aes(x =cty ,y=hwy))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=1)
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid(cyl~drv) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ggplot(data = mpg,mapping = aes(x =cty ,y=hwy))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=0.8)
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid(trans~class) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+cowplot
+\end_layout
+
+\begin_layout Standard
+Ibland vill vi kombinera godtyckliga plottar till subplottar.
+ Detta kan göras med paket cowplot.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Vill vi skapa subplots så använder vi funktionen 
+\family typewriter
+plot_grid()
+\family default
+.
+ Kolla i dokumentationen för 
+\family typewriter
+plot_grid()
+\family default
+.
+ Anta att vi har sparat tre ggplot2-objekt som vi kallar 
+\family typewriter
+p1
+\family default
+, 
+\family typewriter
+p2
+\family default
+ och 
+\family typewriter
+p3
+\family default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Alternativ 1: Skriv in alla plot-objekt direkt som objekt 
+\family typewriter
+plot_grid(p1,p2,p3)
+\family default
+.
+ Detta är ofta smidigt om vill skapa enstaka plottar med subplots.
+\end_layout
+
+\begin_layout Enumerate
+Alternativ 2: Lägg alla plottarna i en lista 
+\family typewriter
+plot_grid(plotlist=list(p1,p2,p3)
+\family default
+).
+ Detta är ofta avnändbart om vi vill använda i 
+\family typewriter
+plot_grid()
+\family default
+ en loop eller en funktion.
+ Andra fall då 
+\family typewriter
+plotlist=
+\family default
+ är bra är om mängden plottar eller deras namn varierar.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Skapa först några ggplot2-objekt och spara dessa.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+library(cowplot) 
+\end_layout
+
+\begin_layout Plain Layout
+
+mpg<-as.data.frame(mpg) 
+\end_layout
+
+\begin_layout Plain Layout
+
+head(mpg)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p0<-ggplot(data = mpg,mapping = aes(x =  cty ))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_histogram(binwidth = 2) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p1<-ggplot(data = mpg,mapping = aes(x =  cty ,y=hwy))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p2<-ggplot(data = mpg,mapping = aes(x =  cty ,y=hwy)) 
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=1)
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid( cyl~.) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p3<-ggplot(data = mpg,mapping = aes(x =  cty ,y=hwy))
+\end_layout
+
+\begin_layout Plain Layout
+
++ geom_point(size=0.8)
+\end_layout
+
+\begin_layout Plain Layout
+
++ facet_grid(drv ~.) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Nu sätter vi samman dessa plottar:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+<<eval=FALSE>>=
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_grid(p0,p1)
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_grid(p1,p0)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+g1<-plot_grid(p3,p1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+print(g1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_grid(p0,p1,nrow = 1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_grid(p0,p1,nrow = 2,labels = "AUTO") 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_grid(p0,p1,nrow = 2,labels = c("ABC","123"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p_list<-list(p0,p1,p2,p3) 
+\end_layout
+
+\begin_layout Plain Layout
+
+plot_grid(plotlist = p_list,nrow = 2,ncol = 2,labels = "AUTO") 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+@
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Skapa nu minst tre plottar baserat på iris-data som ni sätter ihop med 
+\family typewriter
+plot_grid()
+\family default
+.
+\end_layout
+
+\begin_layout Section
 Mer övningar
 \end_layout
 
