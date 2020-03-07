@@ -99,7 +99,7 @@ Grundläggande strängfunktioner
 stringr | base | Användning
 --- | ----- | ---- | 
 `str_sub()` | `substr()` | substring,  välja ut en del av en sträng (regex)
-`str_c()` | `paste()` | slår ihop strängelement
+`str_c()` | `paste()`, `paste0()` | slår ihop strängelement
 `str_split()` |`strsplit()` | dela upp en sträng i flera element (regex)
 `str_length()` | `nchar()` | beräknar antalet tecken
 `str_trim()` | - | tar bort mellanslag (före/efter textelement)
@@ -117,13 +117,18 @@ regular expression (regexp)
 ========================================================
 > In computing, regular expressions provide a concise and flexible means for identifying strings of text of interest, such as particular characters, words, or patterns of characters.
 
-- Hitta specifika delar av en sträng som uppfyller ett villkor
+- Notation för att beskriva vissa mängder av strängar.
+  - Hitta specifika delar av en sträng som uppfyller ett villkor
+  - Textmanipulation
+
+
+regular expression (regexp)
+========================================================
 - Byggs upp av:
   - literals: "vanliga bokstäver och siffror"
   - metacharacters: (metatecken) sätter upp speciella regler för matchning
-- Se RP:s video [Regular Expressions](https://www.youtube.com/watch?v=NvHjYOilOf8) : Regular Expressions
-- **Tips!** Regexp Golf: https://alf.nu/RegexGolf
-- Testa: https://regex101.com/
+- Se RP:s video: [Regular Expressions](https://www.youtube.com/watch?v=NvHjYOilOf8)
+
 
 regular expression: metacharacters
 ========================================================
@@ -141,7 +146,7 @@ Tecken| Betydelse
 ```(...)``` | Gruppering
 ```\``` | Används för att "undvika" metatecken/specialtecken. 
 
-**Obs!** I R: ```\\``` krävs
+**Obs!** I R krävs: ```\\``` 
 
 regular expression: teckenklass
 ========================================================
@@ -155,7 +160,7 @@ Tecken| Betydelse| Exempel
 ```^``` | ICKE | \^0-9 
 ```\``` | specialtecken | \t\n
 
-**Obs!** I R: ```\\``` krävs
+**Obs!** I R krävs: ```\\``` 
 
 regular expression: teckenklass
 ========================================================
@@ -172,7 +177,8 @@ regular expression: länkar
 ========================================================
 - Sida för att testa regular expression: [regexpal.com](http://regexpal.com)
 - Från [wikipedia](http://sv.wikipedia.org/wiki/Regulj%C3%A4ra_uttryck)
-
+- Regexp Golf: https://alf.nu/RegexGolf
+- Testa: https://regex101.com/
 
 Pattern matchingfunktioner i R 
 ========================================================
