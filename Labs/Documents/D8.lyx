@@ -293,7 +293,7 @@ Boken finns fritt tillgänglig
 
 \begin_inset CommandInset href
 LatexCommand href
-name "[här]"
+name "här"
 target "http://gastonsanchez.com/Handling_and_Processing_Strings_in_R.pdf"
 literal "false"
 
@@ -664,8 +664,8 @@ visning/Statistisk #programmering i R/KursRprgmTeacher/Labs/exercise_solutions/"
 
 \begin_layout Plain Layout
 
-solution_path<-"/home/josef/Dropbox/Josef/732G33_VT2019/KursRprgmTeacher/Labs/ex
-ercise_solutions/"
+solution_path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgmTeacher/Labs/
+exercise_solutions/"
 \end_layout
 
 \begin_layout Plain Layout
@@ -1058,6 +1058,30 @@ head(wordcount(text=rep("a",10)))
 
 \begin_layout Plain Layout
 
+set.seed(39) 
+\end_layout
+
+\begin_layout Plain Layout
+
+random_text<-sample(month.name,size = 60,replace = TRUE)
+\end_layout
+
+\begin_layout Plain Layout
+
+A<-wordcount(text=random_text)
+\end_layout
+
+\begin_layout Plain Layout
+
+head(A)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 @
 \end_layout
 
@@ -1382,6 +1406,11 @@ henify(txt1)
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Branch removed
+inverted 0
+status collapsed
+
 \begin_layout Section
 Minsta editeringsavstånd
 \end_layout
@@ -1670,6 +1699,11 @@ minimum_editing_distance("programmering", TRUE)
 \begin_layout Plain Layout
 
 @
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

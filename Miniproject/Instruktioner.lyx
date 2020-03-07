@@ -699,8 +699,8 @@ Producera minst ett histogram.
 \end_layout
 
 \begin_layout Enumerate
-Producera minst en barplot, om ni bara har kontinuerliga funktioner kan
- ni använda 
+Producera minst en barplot, om ni bara har kontinuerliga variabler kan ni
+ använda 
 \family typewriter
 cut()
 \family default

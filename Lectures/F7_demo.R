@@ -20,15 +20,20 @@ data(mpg)
 ?mpg
 
 
-# Quick plot:
-qplot(mpg$displ, mpg$hwy)
-qplot(displ, hwy, data=mpg, facets=.~drv)
 
+plot
+# Quick plot:
+qplot(x = mpg$displ, y = mpg$hwy)
+
+qplot(x = mpg$displ, y = mpg$hwy,geom = "point")
+
+qplot(displ, hwy, data=mpg, facets=.~drv)
+qplot(displ, hwy, data=mpg, facets=drv~.)
 
 # How to do this the "correct" way
 class(mpg)
-p <- ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
-p + geom_point()
+
+ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point()
 # or
 p <- ggplot(data = mpg) + aes(x = displ,y = hwy) + geom_point()
 p
@@ -40,9 +45,11 @@ str(p)
 summary(p)
 class(p)
 
+# lägg til regressionslinje
 p + geom_smooth()
 p + geom_smooth(method="lm")
 
+# dela upp data i subplots:
 p + facet_grid(.~drv)
 
 p + geom_smooth(method="lm") + facet_grid(.~drv)
@@ -68,11 +75,11 @@ ggplot(data = mpg, mapping = aes(x = displ,y = hwy)) +
 
 
 ggplot(data = mpg, mapping = aes(x = displ,y = hwy)) + 
-  geom_point(color=15) +
+  geom_point(color=10) +
   geom_smooth(method="lm")
 
 ggplot(data = mpg, aes(displ,hwy)) + 
-  geom_point(color="green", size=3, alpha=0.5) +
+  geom_point(color="green", size=3, alpha=0.1) +
   geom_smooth(method="lm")
 
 
@@ -81,12 +88,19 @@ ggplot(data = mpg, aes(x = displ, y = hwy)) +
   geom_point(aes(color=drv),size=3)
   
 # bestämma färger manuellt:
-ggplot(data = mpg, aes(x = displ, y = hwy)) + geom_point(aes(color=drv),size=3)+scale_colour_manual(values = c("red","brown","blue"))
+ggplot(data = mpg, aes(x = displ, y = hwy)) + 
+  geom_point(aes(color=drv),size=3) + 
+  scale_colour_manual(values = c("red","brown","blue"))
   
 
 
 ggplot(data = mpg, aes(displ,hwy)) + 
-  geom_point(aes(shape=drv, color=drv),size=2) + 
+  geom_point(aes(shape=drv),size=2) + 
+  xlab("Displacement") + 
+  ylab("Highway miles")+ggtitle("Plot")
+
+ggplot(data = mpg, aes(displ,hwy)) + 
+  geom_point(aes(shape=drv, color=as.factor(cyl)),size=2) + 
   xlab("Displacement") + 
   ylab("Highway miles")+ggtitle("Plot")
 
@@ -112,12 +126,14 @@ Nile2$period <- as.factor(Nile2$period)
 
 head(Nile2)
 
+table(Nile2$period)
+
 ggplot(data=Nile2) + aes(x=years, y=level) + geom_line()
 
 ggplot(data=Nile2) + aes(x=years, y=level) + 
   geom_line(aes(color = period)) + scale_color_colorblind()
 
-ggplot(data=Nile2) + aes(x=years, y=level, color = period) + 
+ggplot(data=Nile2) + aes(x=years, y=level) + 
   geom_line(aes(linetype = period))
 
 ggplot(data=Nile2) + aes(x=years, y=level) + geom_line(aes(linetype = period))
@@ -158,11 +174,15 @@ data(chickwts)
 head(chickwts)
 table(chickwts$feed)
 dim(chickwts)
-a <- ggplot(data=chickwts, aes(x=weight))
-a <- a + geom_histogram(binwidth = 50)
+a0 <- ggplot(data=chickwts, aes(x=weight))
+a <- a0 + geom_histogram(binwidth = 20)
 a
 a <- a + facet_grid(.~feed)
 a
+
+# boxplot
+
+ggplot(data = chickwts,aes(y = weight))+geom_boxplot()
 
 ggplot(data = chickwts,aes(x = feed,y = weight))+geom_boxplot()
 
@@ -180,7 +200,12 @@ data("trees")
 head(trees)
 var(trees$Girth)
 var(trees$Height)
+
+cov(trees$Girth,trees$Height)
+
 cov(trees)
+
+cor(trees$Girth,trees$Height)
 cor(trees)
 
 ?cor.test
@@ -192,13 +217,19 @@ a$statistic
 a$p.value
 a$estimate
 a$conf.int
-
+a$conf.int[1]
 
 # t.test:
 
 summary(trees)
 
 # trees data:
+
+# vi vill testa om höjden är skild från 73 feet
+b<-t.test(x = trees$Height,alternative = "two.sided",mu = 73)
+b
+
+
 # vi vill testa om höjden är större än 73 feet
 
 b<-t.test(x = trees$Height,alternative = "greater",mu = 73)
@@ -211,14 +242,17 @@ b$p.value
 round(b$p.value,3)
 
 # beräkan KI för alla variabler i trees
-
+head(trees)
+# två gränser för KI och tre variabler i trees
 A<-matrix(0,2,3)
+A
 
 for(i in 1:3){
   temp<-t.test(x = trees[,i],conf.level = 0.99)
   A[,i]<-temp$conf
 }
 colnames(A)<-colnames(trees)
+rownames(A)<-c("lower","upper")
 A
 
 
