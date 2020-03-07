@@ -286,6 +286,19 @@ Kap
  6-6.1.3, 6.2.2, 6.4-6.4.10
 \end_layout
 
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
+
+\series bold
+Kap
+\begin_inset space ~
+\end_inset
+
+7
+\series default
+ 7.1, 7.2
+\end_layout
+
 \begin_layout Standard
 Boken finns fritt tillgänglig 
 \series bold
@@ -1941,6 +1954,14 @@ Tips!
  och 
 \family typewriter
 %/%
+\family default
+, 
+\family typewriter
+str_split()/strsplit()
+\family default
+ och 
+\family typewriter
+unlist()
 \family default
 ]
 \end_layout
