@@ -21,7 +21,8 @@ test_that("Assignment: wordcount()", {
 
   expect_that(wordcount, is_a("function"),
               info = "Fel: wordcount är inte en funktion.")
-  expect_that(all(names(formals(wordcount)) %in% c("text")), condition=is_true(),
+  
+  expect_true(all(names(formals(wordcount)) %in% c("text")),
               info = "Fel: Namnen på argumenten i funktionen är fel.")
 #  expect_function_self_contained(object = wordcount,
 #                        "Fel: Funktionen har fria variabler")
