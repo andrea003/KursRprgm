@@ -1761,8 +1761,8 @@ Detaljerna om för hur kön och kontrollsiffran beräknas finns i SCBs broschyr
  
 \begin_inset CommandInset href
 LatexCommand href
-name "[PDF]"
-target "https://www.scb.se/statistik/_publikationer/be9999_2007a01_br_be96st0701.pdf"
+name "PDF"
+target "https://github.com/STIMALiU/KursRprgm/blob/master/Labs/Documents/skv704-8.pdf"
 literal "false"
 
 \end_inset
@@ -1825,69 +1825,6 @@ sweidnumbr
 , detta paket får inte användas.
 \end_layout
 
-\begin_layout Standard
-Här är ett testexempel på hur funktionen ska fungera:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-<<eval=TRUE, echo=TRUE>>=
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr <- "196408233234" 
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr_ctrl(pnr)
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr <- "190101010101" 
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr_ctrl(pnr)
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr <- "198112189876" 
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr_ctrl(pnr)
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr <- "190303030303" 
-\end_layout
-
-\begin_layout Plain Layout
-
-pnr_ctrl(pnr)
-\end_layout
-
-\begin_layout Plain Layout
-
-@
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Uppgift12: 
 \family typewriter
@@ -1899,20 +1836,27 @@ Ni ska nu skapa en funktion som kan kontrollera om ett personnummer är korrekt
  eller inte.
  För att beräkna en kontrollsiffra används den så kallade Luhn-algoritmen,
  mer information finns 
-\series bold
 \color blue
 
 \begin_inset CommandInset href
 LatexCommand href
-name "[här]"
+name "här"
 target "http://sv.wikipedia.org/wiki/Luhn-algoritmen"
 literal "false"
 
 \end_inset
 
 
-\series default
 \color inherit
+ eller 
+\begin_inset CommandInset href
+LatexCommand href
+name "här"
+target "https://github.com/STIMALiU/KursRprgm/blob/master/Labs/Documents/skv704-8.pdf"
+literal "false"
+
+\end_inset
+
 .
  Vi ska skapa en funktion som använder Luhn-algoritmen för att testa om
  ett personnummer är korrekt eller inte.
