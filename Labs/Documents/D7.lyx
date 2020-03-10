@@ -1853,12 +1853,6 @@ p2 + scale_fill_manual(values=c("black", "blue", "red"))
 
 \end_layout
 
-\begin_layout Enumerate
-Utgå nu från datamaterialet nedan.
- Skapa ett stapeldiagram för variablen new_spec i iris2 med ggplot.
- De olika staplarna ska ha olika färg på fyllningen.
-\end_layout
-
 \begin_layout Subsection
 Histogram
 \end_layout
