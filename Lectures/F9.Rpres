@@ -49,7 +49,6 @@ Dagens föreläsning:
 Kompletteringar av labbar
 ========================================================
 - Deadline för kompletteringar finns [kurshemsidan](http://www.ida.liu.se/~732G33/info/courseinfo.sv.shtml)
-- Ny tid för komp2: **2019-04-07 kl 23.59**
 - Ev underkända labbar markeras med `kompletteras` under ordinarie inlämning på Lisam. 
 - Kompletteringar lämnas då in på samma labb som är underkänd. OBS: missa inte deadline!
 - Om någon labb inte är godkänd efter **alla** kompletteringar måste alla labbar och miniprojektet göras om nästa gång kursen ges.
@@ -63,42 +62,17 @@ Utvärdering
 
 Inför tentamen
 ========================================================
-- Tenta i datorsal 14:00-18.00
-- Kom minst 20 min innan och följ vakternas instruktioner.
-- Tentan kommer likna de gamla tentorna, som ni hittar [[här]](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams), det finns lösnngar till dessa
+- Hemtenta på Lisam
+- Mail har gått ut med detaljerade instruktioner
+- Finns under filken "Files" på #General på Teams
 
 Inför tentamen
 ========================================================
-- Hjälpmedel: 
-  - Den inbyggda hjälpen i R (ej internet)
-- Referenskort:
-  - se [här](https://github.com/STIMALiU/KursRprgm/tree/master/Cheetsheats)
-
-Inför tentamen
-========================================================
-- Tenta, "fusklappar" och eventualla dataset kommer ni att få tillgång till elektroniskt (ta inte med några papper, ni får kladdpapper)
-- Tentan är anonym
-- **Endast anmälda studenter bereds plats på tentamen.**
-
-Inför tentamen
-========================================================
-- Se denna länk för info om tentan:
-  + [här](http://www.ida.liu.se/~examadm/student/index.sv.shtml)
-- Nytt OS: Nya rutiner för inloggning jämfört med länken.
-  + Ni loggar in med vanligt liuid och vanligt lösenord
-  + Ni får instruktioner innan tentan (kom i god tid!)
-- **Studentklienten** kommer att användas för att:
-  + lämna in lösnignen som **en** R-fil. 
-  + ställa frågor till läraren digitalt under tentan
-
-
-Inför tentamen
-========================================================
- - Spara filen med namnet tentaX.R där X är ditt SC-nummer (klientnummer). 
- - Det numret kan du se i studentklienten. 
- - Exempel: om du har SC-nummer SC12345 så ska filen heta tentaSC12345.R
-
-
+- Rekommenderade hjälpmedel: 
+  - Den inbyggda hjälpen i R 
+  - Referenskort: [här](https://github.com/STIMALiU/KursRprgm/tree/master/Cheetsheats)
+  - Tentan är anonym
+  
 
 R i andra kurser
 ========================================================
@@ -116,8 +90,10 @@ R i andra kurser
 ========================================================
 Kan användas på eget initiativ i många kurser, kolla [här](https://cran.r-project.org/web/views/) för uppslag på metoder.
 Ex:
-- Kandidatuppsats
+- Tidseriesanalys
 - Multivariata metoder
+- Kandidatuppsats
+
 
 R i framtiden...
 ========================================================
@@ -127,7 +103,7 @@ R i framtiden...
 
 Gammal tenta
 ========================================================
-Tentan "exam20180814.pdf", finns [här](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams/20180814/)
+Tentan "exam_2019-03-29.pdf", finns [här](https://github.com/STIMALiU/KursRprgm/tree/master/OldExams/20190329/)
 
 Vad har vi lärt oss?
 - Variabler, tilldelning, typer
