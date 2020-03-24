@@ -361,6 +361,18 @@ minst
  variabler.
  Ni rekommenderas att välja totalt antal invånare i kommun som en variabel,
  då denna kommer att användas i del 2 av projektet.
+ När ni har valt ut era variabler ska ni ha en data.frame där 
+\series bold
+varje rad motsvarar en kommun
+\series default
+ och där det finns minst 4 kolumner med variabler.
+ Kommuner är alltså 
+\series bold
+observationer
+\series default
+ i era analyser.
+ Notera att många av de variabler som finns på SCB:s databas är frekvenser,
+ exempel antal arbetslösa i varje kommun.
  
 \end_layout
 
@@ -431,15 +443,20 @@ Inlämning av del I
 \begin_layout Standard
 Den första inlämningsuppgiften handlar om att läsa in i R och beskriva de
  material ni valt med R-markdown.
- Ni ska beskriva era material i text samt sammanfatta de variabler ni valt
+ Notera att kommuner ska vara observationer i ert datamaterial med kommunala
+ data, alltså en kommun motsvarar en rad i era data.frames/matriser med data.
+\end_layout
+
+\begin_layout Standard
+Ni ska beskriva era material i text samt sammanfatta de variabler ni valt
  med de beskrivande statistiska mått som ni själva finner lämpliga.
  Ta fram beskrivande statistik för 
 \series bold
 alla
 \series default
  variabler i data.
- Beroende på hur data ser ut så kan det vara medelvärden, frekvenstabeller
- mm.
+ Beroende på hur data ser ut så kan det vara medelvärden, medianer frekvenstabel
+ler mm.
  Ni kan göra relevanta transformationer av era variabler om ni vill, tex
  göra en numeriska variabel till en binär och räkna med andelar eller dela
  in kommunerna i stora, medelstora och små när det gäller befolkning.
@@ -494,7 +511,8 @@ Följande saker ska ni göra med data med basgrafiken i R:
 \end_layout
 
 \begin_layout Enumerate
-Ni ska minst ha ett histogram eller barplot per variabel i kommun-materialen.
+Ni ska minst ha ett histogram, barplot eller boxplot per variabel i kommun-mater
+ialen.
  Skriv en kort kommentar till varje plot.
 \end_layout
 
@@ -644,6 +662,8 @@ Slå samman de era dataset med kommundata så det blir ett dataset som innehåll
  variablerna från alla dataset.
  Om ni gör rätt här så ska ni få ett dataset med en variabel över kommun
  och minst 4 andra variabler.
+ Varje rad motsvarar en kommun, och en kommun är en observation i ert datamateri
+al.
  Detta kan göras på olika sätt, ett är att använda funktionen 
 \family typewriter
 merge()
@@ -663,6 +683,7 @@ literal "false"
 merge()
 \family default
 .
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -816,8 +837,8 @@ Exempel:
 \begin_inset Formula 
 \[
 \begin{array}{c}
-H_{0}:\mu_{sm\mathring{a}}-\mu_{sm\mathring{a}}=0\\
-H_{a}:\mu_{sm\mathring{a}}-\mu_{sm\mathring{a}}\ne0
+H_{0}:\mu_{sm\mathring{a}}-\mu_{stor}=0\\
+H_{a}:\mu_{sm\mathring{a}}-\mu_{stor}\ne0
 \end{array}
 \]
 
@@ -836,13 +857,26 @@ och testar sedan om ni kan förkasta
 Beräkna korrelationer mellan minst två variabler (fler går bra).
  Gör minst ett hypotestest där ni testar om korrelationen mellan två variabler
  är noll (=de är linjärt oberoende).
- Tips: 
+ Ni ska alltså använda hypoteserna:
+\begin_inset Formula 
+\[
+\begin{array}{c}
+H_{0}:cor\left(x_{1},x_{2}\right)=0\\
+H_{a}:cor\left(x_{1},x_{2}\right)\ne0
+\end{array}
+\]
+
+\end_inset
+
+Tips: 
 \family typewriter
 cor.test()
 \family default
 .
  Presentera relevant information i en eller flera tabeller.
  Beskriv kort hur ni tolkar resultatet.
+ Ni ska alltså presentera både den skattade korrelationen och information
+ från testet i rapporten.
 \end_layout
 
 \begin_layout Enumerate
@@ -856,8 +890,8 @@ pop_grupp
 
 \begin_deeper
 \begin_layout Enumerate
-Gör en scatterplot/histogram/barplot där färgen på observationerna ska bero
- på variabeln 
+Gör en scatterplot/histogram/barplot/boxplot där färgen på observationerna
+ ska bero på variabeln 
 \family typewriter
 pop_grupp
 \family default
@@ -869,7 +903,8 @@ pop_grupp
 \end_layout
 
 \begin_layout Enumerate
-Gör en scatterplot/histogram/barplot som är uppdelad i två plottar med 
+Gör en scatterplot/histogram/barplot/boxplot som är uppdelad i två plottar
+ med 
 \family typewriter
 facet_grid()
 \family default
@@ -1072,7 +1107,7 @@ Rmd
 \series default
 -fil och som 
 \series bold
-PDF
+PDF/HTML
 \series default
  i LISAM.
  Tänk på följande:
