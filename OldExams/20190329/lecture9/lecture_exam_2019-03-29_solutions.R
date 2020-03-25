@@ -369,31 +369,39 @@ x<-ymd("2020-02-01")-ymd("2020-03-01")
 x<-as.vector(x)
 abs(x)
 
-
 #---------------------------------------------------------------
-# random_days: "kort beskrivning av funktionen"
+#---------------------------------------------------------------
+# random_days: 
+# Funktion som ska kunna generera slumpmässiga datum, för en
+# given månad och år.
+#---------------------------------------------------------------
 #---------------------------------------------------------------
 # argument:
+#---------------------------------------------------------------
 # n: antal slumpmässiga datum
 # y: år
 # m: månad
 #---------------------------------------------------------------
+#---------------------------------------------------------------
 random_days<-function(n,y,m){
   # skapa ett datum med rätt månad och år
   start_date<-ymd(paste0(y,m,"01"))
-  # antal dagar
+  # tar fram antal dagar
   no_days<-days_in_month(x = start_date)
   # kontroll av n
   if(n>no_days){
     stop("n is too large!")
   }
-  # skapa sekvens med datum
+  # skapa sekvens med rätt datum
   date_seq<-seq(start_date,by="day",length=no_days)
   # dra urval med sample
   my_sample<-sample(x = date_seq,size = n,replace = FALSE)
-  
+  # skickar tillbaka urvalet
   return(my_sample)
 }
+
+
+
 
 random_days(n = 40,y = "1999",m = "03")
 
