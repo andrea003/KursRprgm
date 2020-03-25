@@ -145,11 +145,13 @@ A
 
 #---------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------
-# 2 a) Utgå från vektorerna x =(1 3 9) och y =(10 23 40). Dessa beskriver en
+# 2 a) 
+# Utgå från vektorerna x =(1 3 9) och y =(10 23 40). Dessa beskriver en
 # samling rektanglar. x anger längden på kortsidan och y anger längden på långsidan.
-# Lös följande med en nästlad for-loop: räkna ut kvoten mellan arean och omkretsen för
+# Lös följande med en nästlad for-loop: 
+# räkna ut kvoten mellan arean och omkretsen för
 # alla kombinationer av kortsidor och långsidor på rektanglarna: kvot = area/omkrets.
-# Dessa kvoter ska avrundas till tre decimaler och sen skrivas ut till konsolen tillsamans
+# Dessa kvoter ska avrundas till tre decimaler och sen skrivas ut till konsolen tillsammans
 # med information om längderna på rektangels sidor. Om du gjort rätt ska du erhålla
 # utskriften nedan (pdf)  2p
 #---------------------------------------------------------------------------------------------
@@ -251,7 +253,8 @@ while(iter<=no_col){
 
 #---------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------
-# 3 a) Läs in paketen lubridate och stringr i R. Läs sedan in datamaterialet “word_data.txt” 
+# 3 a) 
+# Läs in paketen lubridate och stringr i R. Läs sedan in datamaterialet “word_data.txt” 
 # och spara som vektorn word_data.   0.5p
 #---------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------
@@ -262,9 +265,11 @@ while(iter<=no_col){
 #---------------------------------------------------------------------------------------------
 library(lubridate)
 library(stringr)
+
 path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/OldExams/20190329/lecture9/word_data.txt"
-#word_data<-readLines(path)
-word_data<-readLines(path)
+
+word_data<-readLines(con = path)
+
 is.vector(word_data)
 head(word_data)
 tail(word_data)
@@ -272,7 +277,8 @@ tail(word_data)
 
 #---------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------
-# 3 b) Använd stringr för att: Välj ut de ord i word_data som har en vokal (a,e,i,o,u eller y)
+# 3 b) 
+# Använd stringr för att: Välj ut de ord i word_data som har en vokal (a,e,i,o,u eller y)
 # som andra tecken och sista tecken i ordet. Alla andra tecken kan vara antigen vokaler
 # eller konsonanter. Exempel på ord som uppfyller kraven är: “hate”, “necessary” och
 # “lie”. Spara som my_word. Räkna sen ut den genomsnittliga längden på orden i my_word,
@@ -289,10 +295,12 @@ tail(word_data)
 ?str_detect
 
 my_pattern<-"(^[A-Za-z][aeiouy][a-z]*[aeiouy]$)|(^[A-Za-z][aeiouy]$)"
+
 #---------------------------------------------------------------------------------------------
 # två fall:
 #---------------------------------------------------------------------------------------------
 # fall ett: ord med >=3 bokstäver
+
 # ^[A-Za-z] : början på ordet och första bokstaven
 # [aeiouy]  : andra bokstaven som vokal
 # [a-z]*  : bokstäver i "mitten"
@@ -310,6 +318,8 @@ my_pattern<-"(^[A-Za-z][aeiouy][a-z]*[aeiouy]$)|(^[A-Za-z][aeiouy]$)"
 
 # skapa index:
 index<-str_detect(string = word_data,pattern = my_pattern)
+sum(index)
+
 
 # välj ut ord
 my_word<-word_data[index]
@@ -319,13 +329,18 @@ my_word[str_length(my_word)==2]
 
 # kontrollera
 head(my_word)
+
+str_length(my_word)
+
 # genomsnittliga längden på orden
 average_length<-mean(str_length(my_word))
 average_length
 
+
 #---------------------------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------
-# 3 c) Nu ska du skapa funktionen random_days(n,y,m). Funktionen ska generera ett antal
+# 3 c) 
+# Nu ska du skapa funktionen random_days(n,y,m). Funktionen ska generera ett antal
 # (argumentet n) slumpmässiga dagar för ett givet år (argumentet y) och en given månad
 # (argumentet m). Så tex random_days(n=5,y=”2012”,m=”04”) innebär att vi vill
 # generara 5 slumpmässiga dagar från april 2012. Alla månadens dagar ska ha samma
@@ -346,28 +361,42 @@ n<-3
 y<-"1999"
 m<-"12"
 
+sample(x = 1:10,size = 3,replace = FALSE)
+
 # antal dagar i en månad?
 ?days_in_month
 x<-ymd("2020-02-01")-ymd("2020-03-01")
 x<-as.vector(x)
+abs(x)
 
+
+#---------------------------------------------------------------
+# random_days: "kort beskrivning av funktionen"
+#---------------------------------------------------------------
+# argument:
+# n: antal slumpmässiga datum
+# y: år
+# m: månad
+#---------------------------------------------------------------
 random_days<-function(n,y,m){
-  # skapa månad
+  # skapa ett datum med rätt månad och år
   start_date<-ymd(paste0(y,m,"01"))
   # antal dagar
-  no_days<-days_in_month(start_date)
+  no_days<-days_in_month(x = start_date)
+  # kontroll av n
   if(n>no_days){
     stop("n is too large!")
   }
   # skapa sekvens med datum
-  x<-seq(start_date,by="day",length=no_days)
+  date_seq<-seq(start_date,by="day",length=no_days)
   # dra urval med sample
-  y<-sample(x = x,size = n,replace = FALSE)
+  my_sample<-sample(x = date_seq,size = n,replace = FALSE)
   
-  return(y)
+  return(my_sample)
 }
 
 random_days(n = 40,y = "1999",m = "03")
+
 # notera att pga slumpen s? kan ni f? andra datum i exemplen
 a1<-random_days(n = 4,y = "1999",m = "03")
 a1
@@ -412,6 +441,8 @@ my_scale<-function(x){
   y<-x
   # antal kolumner
   p<-dim(x)[2]
+  
+  # loopa över antal kolumner
   for(i in 1:p){
     # om den är numerisk:
     if(is.numeric(x[,i])){
@@ -427,7 +458,8 @@ my_scale<-function(x){
 }
 
 
-
+data("iris")
+head(iris)
 X1<-my_scale(x = iris)
 # medelv?rdet ska vara 0 f?r numeriska variabler om du gjort  r?tt
 round(colMeans(X1[,1:4]),15) # avunda till 15 decimaler
@@ -438,6 +470,7 @@ dim(X1)
 dim(iris)
 class(X1)
 head(X1,3)
+
 
 X2<-my_scale(x = faithful)
 dim(X2)
