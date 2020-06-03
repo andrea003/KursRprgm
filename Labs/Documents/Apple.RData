@@ -19,8 +19,8 @@
 
 
   <link crossorigin="anonymous" media="all" integrity="sha512-ZUjVod2EvYMDbGqRSyW0rpfgBq3i+gnR/4PfrzLsy5f20oIcRfgFQFVKgi3Ztp917bP1K/kdP5q8+nAlJ3+cFA==" rel="stylesheet" href="https://github.githubassets.com/assets/frameworks-6548d5a1dd84bd83036c6a914b25b4ae.css" />
-  <link crossorigin="anonymous" media="all" integrity="sha512-HNV7VuXI98SSFimaE7r8eVsgrmzC37AMNXw1GrNbOl4wN3ATov+SdHusRTAAf4NPoRsUcOOQyYsOCA0AcN4m0w==" rel="stylesheet" href="https://github.githubassets.com/assets/site-1cd57b56e5c8f7c49216299a13bafc79.css" />
-    <link crossorigin="anonymous" media="all" integrity="sha512-6yFc9FSTi8nXD5tHofjHQbrKCUrMwAMlwFuHYHW3o79xPCVJKjuHFqCpr8KAuORzB3RbyhBdv3A4A4rM30suqg==" rel="stylesheet" href="https://github.githubassets.com/assets/github-eb215cf454938bc9d70f9b47a1f8c741.css" />
+  <link crossorigin="anonymous" media="all" integrity="sha512-0apm5h9SeiFvZrJ0BaPTNTzOkspSjFSFjXCzjZXuaboPWLUxvVT8mHrK/ASlS9tGw+Zz3KGhgeH22hhMesL0tA==" rel="stylesheet" href="https://github.githubassets.com/assets/site-d1aa66e61f527a216f66b27405a3d335.css" />
+    <link crossorigin="anonymous" media="all" integrity="sha512-aWCt/A1qCFFHv/UKBoS9jHRqexpzl4le8rrCfAyIIm8RdnEfFxDyhl0nZwbEgY9MXQrQaCOx6doLeYgiLhkJFw==" rel="stylesheet" href="https://github.githubassets.com/assets/github-6960adfc0d6a085147bff50a0684bd8c.css" />
     
     
     
@@ -42,7 +42,7 @@
   
   
 
-  <meta name="request-id" content="8C78:D835:1BFC100:2A2B6EB:5E49AC7E" data-pjax-transient="true"/><meta name="html-safe-nonce" content="5f13118754aae025954ca7cd5369edc418e01b17" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiI4Qzc4OkQ4MzU6MUJGQzEwMDoyQTJCNkVCOjVFNDlBQzdFIiwidmlzaXRvcl9pZCI6IjY0MTk1MDc2MDgyNDM3NzY2MzgiLCJyZWdpb25fZWRnZSI6ImFtcyIsInJlZ2lvbl9yZW5kZXIiOiJhbXMifQ==" data-pjax-transient="true"/><meta name="visitor-hmac" content="6390faeba9f88de8e605e9664af0b28dba9dbbd9db6b43c72bd88d197670301c" data-pjax-transient="true"/>
+  <meta name="request-id" content="CA5C:14431:23ECC28:33A8B6A:5E5AC9EE" data-pjax-transient="true"/><meta name="html-safe-nonce" content="4639e2682caf607a80bae15edd1a4387585a1f98" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJDQTVDOjE0NDMxOjIzRUNDMjg6MzNBOEI2QTo1RTVBQzlFRSIsInZpc2l0b3JfaWQiOiI1NzI5MjA0MjEyMjc1NTMwMjIyIiwicmVnaW9uX2VkZ2UiOiJhbXMiLCJyZWdpb25fcmVuZGVyIjoiYW1zIn0=" data-pjax-transient="true"/><meta name="visitor-hmac" content="f64431a5b6d0fa74caa7ed18e1029a36c3770dc554ec52699d7c2d333606b607" data-pjax-transient="true"/>
 
 
 
@@ -78,7 +78,7 @@
 
     <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,RELATED_ISSUES">
 
-  <meta http-equiv="x-pjax-version" content="18ec221c87e433e9ed183e49686be1bf">
+  <meta http-equiv="x-pjax-version" content="28d8d8026e57d74f08f6fb05bd40674a">
   
 
       <link href="https://github.com/STIMALiU/KursRprgm/commits/master.atom" rel="alternate" title="Recent Commits to KursRprgm:master" type="application/atom+xml">
@@ -283,7 +283,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="jSSF3EXc/qj2K+HA1/4ZH4qy3xdk1moQb26y7BH4XuvF/EG6Xf7IbZkcPdZME0+X+7wUoEW+7o/uS15mnT/TfA==" />
+          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="Lp9UDilHW2ru6/6EvJLOH96kZt0Tj4OeW1vrZdqAwGJzsddRDK4vvKuPdyaOdlBAfnjiOyxF5hBntE9acYXyKA==" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -434,7 +434,7 @@
 
       
 
-  <div class="js-notification-shelf-not-found-error" hidden></div>
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
 
 
 
@@ -459,7 +459,7 @@
 
 
 
-  <div class="pagehead repohead hx_repohead readability-menu bg-gray-light pb-0 pt-0 pt-lg-3  pb-0">
+  <div class="pagehead repohead hx_repohead readability-menu bg-gray-light pb-0 pt-0 pt-lg-3">
 
     <div class="container-lg mb-4 p-responsive d-none d-lg-flex">
 
@@ -498,7 +498,7 @@
 
   <li>
         <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:15731240,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/STIMALiU/KursRprgm/blob/master/Labs/DataFiles/Apple.RData&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="41292f3293eb7fa986ce07a322498cb5f852e6a84a0226c93dd953a62edd0328" href="/login?return_to=%2FSTIMALiU%2FKursRprgm">
-      <svg aria-label="star" height="16" class="octicon octicon-star v-align-text-bottom" viewBox="0 0 14 16" version="1.1" width="14" role="img"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
 
       Star
 </a>
@@ -563,7 +563,7 @@
     <a data-hotkey="g b" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /STIMALiU/KursRprgm/projects" href="/STIMALiU/KursRprgm/projects">
       <div class="d-inline"><svg class="octicon octicon-project" viewBox="0 0 15 16" version="1.1" width="15" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 00-1 1v14a1 1 0 001 1h13a1 1 0 001-1V1a1 1 0 00-1-1z"/></svg></div>
       Projects
-      <span class="Counter" >0</span>
+      <span class="Counter">0</span>
 </a>
     <a class="js-selected-navigation-item reponav-item" data-hotkey="g w" data-selected-links="repo_wiki /STIMALiU/KursRprgm/wiki" href="/STIMALiU/KursRprgm/wiki">
       <div class="d-inline"><svg class="octicon octicon-book" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg></div>
@@ -641,7 +641,7 @@
 
   
 
-  <div class="js-notification-shelf-not-found-error" hidden></div>
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
 
 
 <div class="container-lg clearfix new-discussion-timeline  p-responsive">
@@ -654,9 +654,9 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/STIMALiU/KursRprgm/blob/0c7d49d952d422ec60fe50cf8596378b33cf15fb/Labs/DataFiles/Apple.RData">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/STIMALiU/KursRprgm/blob/8bcba49fd8db687cfa98ee4f4f2d870f2ba98990/Labs/DataFiles/Apple.RData">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v21:4ee1560659f3e46cc782b13733c06e4e -->
+    <!-- blob contrib key: blob_contributors:v22:4ee1560659f3e46cc782b13733c06e4e -->
         <div class="signup-prompt-bg rounded-1 js-signup-prompt" data-prompt="signup" hidden>
     <div class="signup-prompt p-4 text-center mb-4 rounded-1">
       <div class="position-relative">
@@ -765,7 +765,7 @@
               <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
           </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/STIMALiU/KursRprgm/delete/master/Labs/DataFiles/Apple.RData" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" data-csrf="true" name="authenticity_token" value="Oekb+HYv1r3KKxU5bH3S+Fkaum3Kj6QSZlo44AZKACNQHYvbC+wDdqVPNA/e283/OeU+hfmky3tv83j5dVksLg==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/STIMALiU/KursRprgm/delete/master/Labs/DataFiles/Apple.RData" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" data-csrf="true" name="authenticity_token" value="RMG5jzwlJYeSVj+IEVSQ4rh7GPs5ILc7A80bJiAtwSLJxFdNRZR9iAVRDc6HbaNxy4TxLRM3+351FOEGH86R4A==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="You must be signed in to make or propose changes" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -850,10 +850,11 @@
   </div>
 
 
-    <script crossorigin="anonymous" async="async" integrity="sha512-0ME9ftiuUHsYYdeBdLtPHbeL4j0UjTAy9YxHpX0AaZLPPex/JTS5mmHozk8Bnp2czMkd3FmK8DfVID7zxmD5OA==" type="application/javascript" id="js-conditional-compat" data-src="https://github.githubassets.com/assets/compat-bootstrap-d0c13d7e.js"></script>
-    <script crossorigin="anonymous" integrity="sha512-TLzCXKAWFfmVHOvLRll41VeyfKWOe2F9x7YtPewoj4fUNvEx5rB4EnI7h68aC1CUU4ubBJrQXcbc/GKqVInrOg==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-4cbcc25c.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-o4vS4IKrjdy/HD+xr2+VhO6DxQmj5jikhHbEGrd8+JGhpmIOxRrpT1Qo5k3IhKimm8VXIu3pyYejLtOAkm+OsQ==" type="application/javascript" id="js-conditional-compat" data-src="https://github.githubassets.com/assets/compat-bootstrap-a38bd2e0.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-3yNijdFdVDBZQDWrBvMeD2J9gyXwI5MKUMJSWdEGP44DgS4NEPQw2TmVlDdNAWrseJO5C/sXBSTrL24DvGMDJw==" type="application/javascript" src="https://github.githubassets.com/assets/vendor-df23628d.js"></script>
+    <script crossorigin="anonymous" integrity="sha512-2MEeS8NBh+Chsps3QgggGd33YJffOUhWPlv63gsEJ0tMFa37BehDtz3BB0NC8OqgFW1aRd4ENUSYiG5/Bi7uLQ==" type="application/javascript" src="https://github.githubassets.com/assets/frameworks-d8c11e4b.js"></script>
     
-    <script crossorigin="anonymous" async="async" integrity="sha512-6rPYPj8HQc2k/X4a6+P9BpClYHbMZx9fUn25frOmIht/xbc9agJ0XFe0HIIDmDH0Rdi1jZxo29/0fx5R7lWf2A==" type="application/javascript" src="https://github.githubassets.com/assets/github-bootstrap-eab3d83e.js"></script>
+    <script crossorigin="anonymous" async="async" integrity="sha512-d5mDxNLT9bY/RPRQSsWE5dA8j7YrzN83ixQhT1I/Fq0iXbb69R3QHjsMfbxMAy1tigjH56D0su7vFQd5vLLfDw==" type="application/javascript" src="https://github.githubassets.com/assets/github-bootstrap-779983c4.js"></script>
     
     
     
