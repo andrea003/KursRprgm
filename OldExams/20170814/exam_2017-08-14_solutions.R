@@ -76,7 +76,8 @@ while(s+i<50){
 # 3:
 library(stringr)
 library(lubridate)
-robot<-readLines(con = "/home/josef/Dropbox/Josef/732G33_VT2017/KursRprgmTeacher/Exams/732G33 exam 2017-06-07/wiki_robot.txt")
+
+robot<-readLines(con = "/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/OldExams/20170814/wiki_robot.txt")
 
 # b)
 a<-str_extract_all(string = robot,pattern = "(^| )[Tt]he ")

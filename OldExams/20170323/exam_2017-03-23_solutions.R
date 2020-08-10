@@ -63,7 +63,7 @@ x[i-1]
 # 3 
 
 # a)
-setwd("/home/josef/Dropbox/Josef/732G33_VT2017/KursRprgmTeacher/Exams/732G33 exam 2017-03-23/")
+#setwd("/home/josef/Dropbox/Josef/732G33_VT2017/KursRprgmTeacher/Exams/732G33 exam 2017-03-23/")
 library(lubridate)
 library(stringr)
 
@@ -83,8 +83,14 @@ death <- ymd("1431-05-3")
 interval(birth, death) / months(1)
 
 # c)
-brb3kap <- readLines("brb3kap.txt")
+path<-"/home/joswi05/Dropbox/Josef/732G33_VT2020/KursRprgm/OldExams/20170323/brb3kap.txt"
+brb3kap <- readLines(path)
 length(unlist(str_extract_all(brb3kap, pattern="[^a-zA-Z][lL]ag[^a-zA-Z]")))
+
+a<-str_extract_all(string = brb3kap,pattern = "(^| )[Ll]ag ")
+a
+b<-str_extract(string = unlist(a),pattern = "[Ll]ag")
+length(b)
 
 
 # 4 
